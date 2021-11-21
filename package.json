@@ -1,0 +1,24 @@
+{
+  "name": "grupo_1_Bobdega",
+  "version": "1.0.0",
+  "description": "Grupo 1 del trabajo integrador, Digital House",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hyoukaji/grupo_1_Bobdega.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hyoukaji/grupo_1_Bobdega/issues"
+  },
+  "homepage": "https://github.com/Hyoukaji/grupo_1_Bobdega#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}
