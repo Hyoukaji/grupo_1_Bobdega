@@ -2,9 +2,15 @@
 Grupo 1 del trabajo integrador, Digital House
 
 Nombres:
+<<<<<<< HEAD
 -Pedro Martin Flores: Tengo 24 Años, mi pasatiempo es jugar con mis amigos de manera online, la programación es mas que una profeción, es una manera de vivir.
+=======
 
--Alejo Aliberti: 
+-Pedro Martin Flores:
+>>>>>>> 166c4ab66ab5c5f2bd432e5f41a9943552397313
+
+
+-Alejo Aliberti: 22 años, me gusta tocar la guitarra y jugar videojuegos.  
 
 -Juan Daniel Cabona: 
 
@@ -14,7 +20,7 @@ Nombres:
 Somos una empresa dedicada a la venta de vinos, en nuestras bodegas podras encontrar una gran variedad, desde los que se ajustan a su bolsillo hasta nuestra seleccion premium. Apuntamos a una clientela regular que sera premiada con ofertas y regalos siempre y cuenado este registrada.
 
 
-Bocetos:
+Bocetos:  
 
 -Home: https://wireframe.cc/pro/pp/ec7501d7b496227
 -Sign in: https://wireframe.cc/pro/pp/0e4e37c59496264
