@@ -8,7 +8,7 @@ Nombres:
 
 -Juan Daniel Cabona: 42 años, me gusta viajar y ver deportes.
 
--Leandro Bock:
+-Leandro Bock: 35 años, me gusta andar en bici y hacer deportes.
 
 
 Somos una empresa dedicada a la venta de vinos, en nuestras bodegas podras encontrar una gran variedad, desde los que se ajustan a su bolsillo hasta nuestra seleccion premium. Apuntamos a una clientela regular que sera premiada con ofertas y regalos siempre y cuenado este registrada.
