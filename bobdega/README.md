@@ -2,13 +2,7 @@
 Grupo 1 del trabajo integrador, Digital House
 
 Nombres:
-<<<<<<< HEAD
 -Pedro Martin Flores: Tengo 24 Años, mi pasatiempo es jugar con mis amigos de manera online, la programación es mas que una profeción, es una manera de vivir.
-=======
-
--Pedro Martin Flores:
->>>>>>> 166c4ab66ab5c5f2bd432e5f41a9943552397313
-
 
 -Alejo Aliberti: 22 años, me gusta tocar la guitarra y jugar videojuegos.  
 
