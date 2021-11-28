@@ -3,14 +3,14 @@ Grupo 1 del trabajo integrador, Digital House
 
 Nombres:
 -Pedro Martin Flores
--Alejo Aliberti
+-Alejo Aliberti 
 -Juan Daniel Cabona
 -Leandro Bock
 
 Somos una empresa dedicada a la venta de vinos, en nuestras bodegas podras encontrar una gran variedad, desde los que se ajustan a su bolsillo hasta nuestra seleccion premium.
 
 
-Bocetos:
+Bocetos:  
 
 -Home: https://wireframe.cc/pro/pp/ec7501d7b496227
 -Sign in: https://wireframe.cc/pro/pp/0e4e37c59496264
