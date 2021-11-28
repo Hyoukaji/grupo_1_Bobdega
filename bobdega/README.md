@@ -8,7 +8,7 @@ Nombres:
 
 -Alejo Aliberti: 22 años, me gusta tocar la guitarra y jugar videojuegos.  
 
--Juan Daniel Cabona: 
+-Juan Daniel Cabona: 42 años, me gusta viajar y ver deportes.
 
 -Leandro Bock:
 
