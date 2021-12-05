@@ -4,4 +4,26 @@
 
 * {
     box-sizing: border-box;
+    overflow-y: scroll;
 }
+header {background-color: lime;
+display: flex;
+flex-wrap: wrap;
+}
+
+.barraDeBusqueda{ 
+
+
+ }
+
+ article{background-color: lightskyblue;}
+
+ footer {
+     background-color: magenta;
+ }
+
+ main {
+     background-color: lightseagreen;
+     overflow-x: auto;
+ }
+
