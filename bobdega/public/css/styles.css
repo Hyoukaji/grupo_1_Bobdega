@@ -4,11 +4,13 @@
 
 * {
     box-sizing: border-box;
-    overflow-y: scroll;
+    
 }
 header {background-color: lime;
-display: flex;
+/* display: flex;
 flex-wrap: wrap;
+justify-content: space-around;
+flex-direction: row; */
 }
 
 .barraDeBusqueda{ 
@@ -27,3 +29,87 @@ flex-wrap: wrap;
      overflow-x: auto;
  }
 
+ ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+        
+  }
+
+  .categorias {
+      display: flex;
+      flex-direction: row;
+      margin: 5px;
+      padding: 5px;
+  }
+.lista {
+    margin: 5px;
+}
+.elementosHeader {
+    width: 33vw;
+    height: 15vh;
+    ;
+ 
+}
+.logoBob{
+    
+        display: flex;
+        flex-wrap: wrap;
+         align-items: center;
+        justify-content: space-between;
+
+    }
+
+.divjr {
+    background-color: red;
+    width: 33vw;
+    height: 15vh;
+}
+
+.general {
+    display: flex;
+
+}
+
+.interes {display: flex;
+    flex-wrap: wrap;
+
+}
+
+.productos img {
+    height: 100%;
+    width: 100%;
+    
+
+    max-width:100%;
+max-height:100%;
+    
+    
+}
+
+.productos{ 
+    display: flex;
+    align-self: stretch;
+    flex-direction: row;
+
+    
+
+}
+
+.articulosProductos {
+    width: 20vw;
+    margin: 5px;
+}
+
+.tour {
+    display: flex;
+    
+    flex-direction: row;
+}
+
+.fotoBodega, .descripcionBodega {
+    margin: 5px; 
+    border: yellow;
+    border-style: double;
+    flex-wrap: wrap;
+}
