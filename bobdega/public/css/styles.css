@@ -2,29 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
+
+
+/* HOME */
 * {
     box-sizing: border-box;
     
 }
 header {background-color: lime;
-/* display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
-flex-direction: row; */
+height: 150px;
 }
 
-.barraDeBusqueda{ 
 
+article{background-color: lightskyblue;}
 
- }
-
- article{background-color: lightskyblue;}
-
- footer {
+footer {
      background-color: magenta;
  }
 
- main {
+main {
      background-color: lightseagreen;
      overflow-x: auto;
  }
@@ -60,14 +56,38 @@ flex-direction: row; */
 
     }
 
-.divjr {
-    background-color: red;
+.usuario {
+    
     width: 33vw;
     height: 15vh;
+    flex-wrap: wrap;
+    
 }
+
+.barraBusqueda{
+    width: 50vw;
+    height: 15vh;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+.barraBusqueda button {
+    max-width: 60px;
+
+}
+
 
 .general {
     display: flex;
+    width: 100%;
+    background-color: red;
+
+    
+    
 
 }
 
@@ -113,3 +133,35 @@ max-height:100%;
     border-style: double;
     flex-wrap: wrap;
 }
+
+.usuario h3{
+    font-size: 5px;
+}
+.usuario a{
+    font-size: 14px;
+
+}
+.usuario i {
+    font-size: 12px;
+}
+
+.usuario{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 3px;
+}
+
+.menuCategorias{
+
+    height: 50px;
+}
+
+
+/* logIn */
+
+/* product */
+
+/* shoppingCart */
+
+/* signIn */

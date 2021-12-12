@@ -17,18 +17,27 @@
     <header>
 
         <div class="general">
-            <div class="divjr"> <img src="/images/LogoBob.jpg" alt="Bobdega" width="68vw"> </div>
-            <div class="divjr"><input type="text" placeholder="Con que queres deleitarte?"> <button type="submit">Buscar</button> </div>
-            <div class="divjr"><h3><i class="fas fa-user-circle">Usuario</i></h3>
+            <div class="imagen" > <img src="/images/final_2.png" alt="Bobdega" width="68vw"> </div>
 
-                <a href="">Crea tu cuenta </a><i class="far fa-id-card"></i>
-                <a href="">Ingresa a tu cuenta </a><i class="far fa-id-card"></i>
+          
+            <div class="barraBusqueda">
+                <form action="/busqueda" method="get">
+                    <input type="text" placeholder="Con que queres deleitarte?" style="max-width: 178px;">
+                    <button type="submit">Buscar</button>
+                </form>     
+            </div>
+
+
+            <div class="usuario"><h3><i class="fas fa-user-circle" style="font-size: 18px;" >Usuario</i></h3>
+
+                <a href="/signin">Sign in</a><i class="far fa-id-card"></i>
+                <a href="/login">Log in</a><i class="far fa-id-card"></i>
             
-                <i class="fas fa-cart-plus"></i>
+                <a href="/shoppingCart"><i class="fas fa-cart-plus"></i></a>
                 </div>
         </div>
 
-        <div>
+        <nav class="menuCategorias">
             <ul class="categorias">
             <li class="lista">Espumantes</li>
             <li class="lista">Tintos</li>
@@ -36,7 +45,8 @@
             <li class="lista">Ahumados</li>
             <li class="lista">Regalos</li>
             </ul>
-    </div>
+
+        </nav>
 
        
 
