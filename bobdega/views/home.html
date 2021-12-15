@@ -21,20 +21,29 @@
 
           
             <div class="barraBusqueda">
-                <form action="/busqueda" method="get">
-                    <input type="text" placeholder="Con que queres deleitarte?" style="max-width: 178px;">
-                    <button type="submit">Buscar</button>
-                </form>     
+                <form action="">
+                    <input name="buscar" type="text" placeholder="Buscar productos">
+                    <button type="submit" name="buscar"><i class="fas fa-search"></i></button>
+                </form>    
             </div>
 
+              <section class="cuentacarrito">
+                <div class="usuario">
+                    <h3><i class="fas fa-user-circle" style="font-size: 18px;" ></i></h3>
+                </div> 
 
-            <div class="usuario"><h3><i class="fas fa-user-circle" style="font-size: 18px;" >Usuario</i></h3>
+                  <div class="signlog">
+                      
+                      <article><a href="/signin" ><i class="fas fa-sign-in-alt"></i></a></article>
+                      <article class="right"><a href="/login"><i class="far fa-id-card"></i></a></article>
+                    
+                    
+                  </div>
 
-                <a href="/signin">Sign in</a><i class="far fa-id-card"></i>
-                <a href="/login">Log in</a><i class="far fa-id-card"></i>
-            
-                <a href="/shoppingCart"><i class="fas fa-cart-plus"></i></a>
-                </div>
+                  <div class="carrito">
+                   <a href="/shoppingCart"><i class="fas fa-cart-plus"></i></a>
+                  </div>
+              </section>
         </div>
 
         <nav class="menuCategorias">
