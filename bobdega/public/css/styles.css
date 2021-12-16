@@ -15,9 +15,11 @@ min-height: 170px;
 }
 footer {
      background-color: #9b2639;
+     min-height: 300px;
  }
 
 main {
+     height: 100%;
      background-color: #9b263986;
      overflow-x: auto;
      padding: 10px;
@@ -145,10 +147,6 @@ main {
 
 }
 
-.articulosProductos {
-    width: 20vw;
-    margin: 5px;
-}
 
 .tour {
     display: flex;
@@ -227,12 +225,33 @@ main form input{
 }
 
 
-/* logIn */
+/* logIn-signIn  */
 
 .signlog article {
     position: relative;
     left: 10px;
 }
+
+
+.sign-in{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    height: 100%;
+}
+
+.formulario-s{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.articulosProductos {
+    width: 40%;
+    margin: 5px;
+}
+
 
 /* product */
 
