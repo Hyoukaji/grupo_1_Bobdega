@@ -8,16 +8,11 @@
     <link href="/css/styles.css" rel="stylesheet">
 </head>
 <body>
-   <header>
-
-
-
-
-
     <header>
-
         <div class="general">
-            <div class="imagen" > <img src="/images/final_2.png" alt="Bobdega" width="68vw"> </div>
+            <div class="imagen" > 
+                <img src="/images/final_2.png" alt="Bobdega" width="80"> 
+            </div>
 
           
             <div class="barraBusqueda">
@@ -27,9 +22,9 @@
                 </form>    
             </div>
 
-              <section class="cuentacarrito">
+              <!-- <section class="cuentacarrito">
                 <div class="usuario">
-                    <h3><i class="fas fa-user-circle" style="font-size: 18px;" ></i></h3>
+                    <i class="fas fa-user-circle" style="font-size: 18px;" ></i>
                 </div> 
 
                   <div class="signlog">
@@ -43,22 +38,29 @@
                   <div class="carrito">
                    <a href="/shoppingCart"><i class="fas fa-cart-plus"></i></a>
                   </div>
-              </section>
+              </section> -->
+            
+                <ul class="cuentacarrito">
+                <li ><i class="fas fa-user-circle" style="font-size: 18px;" ></i></li>
+                <li ><a href="/signin" ><i class="fas fa-sign-in-alt"></i></a></li>
+                <li ><a href="/login"><i class="far fa-id-card"></i></a></li>
+                <li><a href="/shoppingCart"><i class="fas fa-cart-plus"></i></a></li>
+                </ul>
+    
+            
         </div>
+        <div class="cate-div">
+            <nav class="menuCategorias">
+                <ul class="categorias">
+                <li >Espumantes</li>
+                <li >Tintos</li>
+                <li >Blancos</li>
+                <li >Ahumados</li>
+                <li >Regalos</li>
+                </ul>
 
-        <nav class="menuCategorias">
-            <ul class="categorias">
-            <li class="lista">Espumantes</li>
-            <li class="lista">Tintos</li>
-            <li class="lista">Blancos</li>
-            <li class="lista">Ahumados</li>
-            <li class="lista">Regalos</li>
-            </ul>
-
-        </nav>
-
-       
-
+            </nav>
+        </div>
    </header>
 
 
@@ -74,33 +76,30 @@
        </section>
 
        <section class="interes">
-
         <div>
         <h2 class="title">¡Quizas esto te interese!</h2>
         </div>
-
-
-
            <div class="productos">
-           <article class="articulosProductos"><img src="/images/producto1.jpg" alt=""></article>
-
-
-           <article class="articulosProductos"><img src="/images/producto2.jpg" alt="" width="90%" ></article>
-
-
-
-           <article class="articulosProductos"><img src="/images/producto3.jpg" alt=""  ></article>
-
-
-
-           <article class="articulosProductos"><img src="/images/producto4.jpg" alt="" ></article>
-        </div>
+                <article class="articulosProductos">
+                    <a href="/product"><img src="/images/producto1.jpg" alt=""></a>
+                    </article>
+                <article class="articulosProductos">
+                    <a href="/product"><img src="/images/producto2.jpg" alt="" width="90%" ></a>
+                    </article>
+                <article class="articulosProductos">
+                    <a href="/product"><img src="/images/producto3.jpg" alt=""  ></a>
+                    </article>
+                <article class="articulosProductos">
+                    <a href="/product"><img src="/images/producto4.jpg" alt="" ></a>
+                    </article>
+            </div>
        </section>
 
 
        <section>
-        <article>
-            <h2>Tour por nuestros Viñedos</h2>
+        <h2>Tour por nuestros Viñedos</h2>
+        <article class="tour">
+            
 
           <div class="tour">
             <div class="fotoBodega">
