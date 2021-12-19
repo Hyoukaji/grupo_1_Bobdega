@@ -26,6 +26,7 @@ main {
      display: flex;
      flex-direction: column;
      align-items: center;
+     text-align: center;
      
  }
 
@@ -78,8 +79,8 @@ main {
     justify-content: space-around;
 }
 .imagen img{
-    width: 40%;
-    height: 100%;
+    /* width: 60%; */
+    /* height: 100%; */
 }
 
 .general {
@@ -94,8 +95,21 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: space-around;
     width: 10%;
 }
+
+.cuentacarrito li a:visited {
+    text-decoration: none;
+    color:black;
+
+}
+    
+        
+     
+
+
+
 
 .cate-div{
     width: 100%;
@@ -126,22 +140,24 @@ main {
 }
 
 .productos img {
-    height: 100%;
-    width: 100%;
     
+    width: 70%;
 
-    max-width:100%;
-    max-height:100%;
-    
     
 }
 
 .productos{ 
-    display: flex;
+    /* display: flex;
+    flex-wrap: wrap;
     align-self: stretch;
     flex-direction: row;
     justify-content: space-around;
-    width: 100%;
+    width: 100vw; */
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
 
     
 
@@ -248,9 +264,10 @@ main form input{
 }
 
 .articulosProductos {
-    width: 40%;
-    margin: 5px;
+    width: 38vw;
+    margin: 2px;
 }
+
 
 
 /* product */
@@ -325,6 +342,31 @@ footer {
     
     }
 
+    .productos{ 
+        display: flex;
+        align-self: stretch;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+
+
+
+    .productos img {
+    
+        height: 100%;
+        width: 100%;
+    
+    
+        max-width:300px;
+        /* max-height:100%; */
+    
+        
+    }
+
+    }
+
     .cuentacarrito{
         flex-direction: row;
         justify-content: space-around;
@@ -335,6 +377,11 @@ footer {
         padding: 15px;
         font-size: 20px;
         padding-top: 35px;
+    }
+
+    .articulosProductos {
+        width: 40%;
+        margin: 5px;
     }
 
     .barraBusqueda{
