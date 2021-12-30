@@ -2,6 +2,7 @@ const express = require("express");
 const path = require('path');
 const app = express();
 app.use(express.static("public"));
+app.set('view engine', 'ejs');
 
 app.listen(3000,()=>
     console.log("Levantando un servidor con Express en 3000")
