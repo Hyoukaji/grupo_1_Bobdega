@@ -40,3 +40,6 @@ https://www.trapiche.com.ar/comin/bodega/
 https://frappe.com.ar/
 
 https://www.espaciovino.com.ar/bodegas/Trapiche
+
+
+link de trello : https://trello.com/b/8T2r7jo1/grupo1bobdega#
