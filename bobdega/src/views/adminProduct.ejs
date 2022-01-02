@@ -1,0 +1,45 @@
+<%- include('./partials/header') %> 
+   <main>
+       <h1>Administrador</h1>
+    
+    
+    <form action="/">
+       
+        <div>
+            <span>Editar Producto</span>
+            <input type="text" name="usuario"><button type="submit" name="submit">Buscar</button>
+        </div>
+
+        <div>
+            <span>Nombre del producto</span>
+            <input type="text" name="usuario" required>
+        </div>
+
+        <div>
+            <span>Descripcion</span>
+            <input type="text" name="usuario" required>
+        </div>
+
+        <div>
+            <span>Categoria</span>
+            <input type="text" name="usuario" required>
+        </div>
+
+        <div>
+            <span>Precio</span>
+            <input type="text" name="usuario" required>
+        </div>
+
+        <div>
+            <label for="Product">Selecciona la imagen del producto</label>
+            <input type="file" name="Product" accept=".jpg" required>
+         </div>
+       
+
+ 
+                <button type="reset" name=" reset">Eliminar</button>
+                <button type="submit" name="submit">Agregar</button>
+         </form>
+
+   </main>
+<%- include('./partials/footer') %> 

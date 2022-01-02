@@ -29,3 +29,7 @@ app.get('/Product', (req, res) => {
     res.render(path.join(__dirname,"/views/product"))
 });
 
+app.get('/adminProduct', (req, res) => {
+    res.render(path.join(__dirname,"/views/adminProduct"))
+});
+
