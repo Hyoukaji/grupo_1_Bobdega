@@ -4,39 +4,61 @@
 
 
 
-/* HOME */
+
 * {
     box-sizing: border-box;
     
 }
-header {
-background-color: #9b2639 ;
-min-height: 170px;
-}
-footer {
-     background-color: #9b2639;
-     min-height: 300px;
- }
 
-main {
-     height: 100%;
-     background-color: #9b263986;
-     overflow-x: auto;
-     padding: 10px;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     text-align: center;
-     
- }
-
- ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
         
   }
-  
+
+  .signlog {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+main form input{
+    border-radius: 8px;
+}
+
+
+
+
+.signlog article {
+    position: relative;
+    left: 10px;
+    width: 30%;
+}
+
+
+/* HEADER */
+
+header {
+background-color: #9b2639 ;
+min-height: 170px;
+}
+
+.general {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+.imagen{
+    width: 30%;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
 
 .barraBusqueda{
     width: 50%;
@@ -46,6 +68,7 @@ main {
     display: flex;
     align-items: center;
 }
+
 
 .barraBusqueda form input{
     width: 100%;
@@ -72,24 +95,6 @@ main {
     color: (0,0,0,0.5);
 }
 
-.imagen{
-    width: 30%;
-    display: flex;
-    align-content: center;
-    justify-content: space-around;
-}
-.imagen img{
-    /* width: 60%; */
-    /* height: 100%; */
-}
-
-.general {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    padding: 5px;
-}
-
 
 .cuentacarrito{
     display: flex;
@@ -104,12 +109,6 @@ main {
     color:black;
 
 }
-    
-        
-     
-
-
-
 
 .cate-div{
     width: 100%;
@@ -118,14 +117,13 @@ main {
     align-items: flex-end;
 }
 
-
 .menuCategorias{
 
-  height: 50px;
-  width: 100%;
-}
+    height: 50px;
+    width: 100%;
+  }
 
-.categorias {
+  .categorias {
     display: flex;
     flex-direction: row;
     align-self: center;
@@ -134,37 +132,56 @@ main {
     padding: 5px;
 }
 
-.interes {display: flex;
-    flex-wrap: wrap;
+/* fin Header */ 
 
-}
 
-.productos img {
-    
-    width: 70%;
 
-    
-}
+/* FOOTER */
 
-.productos{ 
-    /* display: flex;
-    flex-wrap: wrap;
-    align-self: stretch;
+footer {
+     background-color: #9b2639;
+     min-height: 300px;
+     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 100vw; */
+    flex-wrap: wrap;
+}
 
+footer {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
-    flex-direction: row;
-
-    
-
 }
 
 
-.tour {
+footer div{
+    padding: 5px;
+    margin: 2px;
+}
+
+
+
+ .linksn{
+    display: flex;
+    flex-direction: column;
+}
+
+/* fin Footer */
+   
+/* HOME */ 
+
+
+main {
+     height: 100%;
+     background-color: #9b263986;
+     overflow-x: auto;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     
+ }
+
+ .tour {
     display: flex;
     
     flex-direction: row;
@@ -176,14 +193,21 @@ main {
     flex-wrap: wrap;
 }
 
+.tour{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* fin  Home */
+
+/* Log In */
+
 .usuario h3{
     font-size: 5px;
 }
-/* .usuario a{
-    font-size: 14px;
-    position: relative;
-    left: 15px;
-} */
+
+
 .usuario i {
     font-size: 12px;
     position: relative;
@@ -194,60 +218,11 @@ main {
     height: 20%;
 }
 
-.signlog {
-    display: flex;
-    flex-direction: row;
 
-}
-
-.signlog article{
-    width: 30%;
-}
+/* Fin  Log In */
 
 
-/* .cuentacarrito div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    
-    
-    margin-top: 5px;
-    
-} */
-
-
-
-
-
-
-.linksn{
-    display: flex;
-    flex-direction: column;
-}
-
-footer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-footer div{
-    padding: 5px;
-    margin: 2px;
-}
-
-main form input{
-    border-radius: 8px;
-}
-
-
-/* logIn-signIn  */
-
-.signlog article {
-    position: relative;
-    left: 10px;
-}
-
+/* Sign In */
 
 .sign-in{
     display: flex;
@@ -263,31 +238,9 @@ main form input{
     justify-content: space-around;
 }
 
-.articulosProductos {
-    width: 38vw;
-    margin: 2px;
-}
+/* fin Sign In */
 
 
-
-/* product */
-
-.botones{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.button{
-    display: flex;
-    flex-direction: column;
-}
-
-.desplegables{
-    display: flex;
-    flex-direction: column;
-    max-width: 150px;
-}
 
 /* shoppingCart */
 
@@ -323,16 +276,75 @@ main form input{
     align-items: center;
 }
 
-footer {
+/* fin Shopping Cart*/
+
+
+/* Products y Quizas Te Interese */
+
+.productos img {
+    
+    width: 70%;
+
+    
+}
+
+.productos{ 
+    
+
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+
+    
+
+}
+
+.articulosProductos {
+    width: 38vw;
+    margin: 2px;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
 }
 
-.tour{
+.button{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
+
+.desplegables{
+    display: flex;
+    flex-direction: column;
+    max-width: 150px;
+}
+
+.interes {display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+ /* Fin  Products y Quizas Te Interese*/
+
+
+ /* Admin Products */
+
+
+ /* fin Admin Products */
+
+
+
+
+
+
+
+
+
+/* media queris */
 
 @media (min-width:768px) {
     .right {
@@ -360,7 +372,7 @@ footer {
     
     
         max-width:300px;
-        /* max-height:100%; */
+    
     
         
     }
