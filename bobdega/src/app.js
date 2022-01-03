@@ -1,35 +1,32 @@
 const express = require("express");
-const path = require('path');
 const app = express();
 app.use(express.static("../public"));
-app.set('view engine', 'ejs');
+app.set('view engine','ejs')
 
-app.listen(3000,()=>
+app.listen(process.env.PORT || 3000,()=>
     console.log("Levantando un servidor con Express en 3000")
     )
+const homeRoutes = require ('./routes/homeRoutes')
 
+app.use('/',homeRoutes)
 
-app.get('/', (req, res) => {
-    res.render(path.join(__dirname,"/views/home"))
-});
+const loginRoutes = require ('./routes/loginRoutes')
 
-app.get('/signin', (req, res) => {
-    res.render(path.join(__dirname,"/views/signin"))
-});
+app.use('/login',loginRoutes)
 
-app.get('/login', (req, res) => {
-    res.render(path.join(__dirname,"/views/login"))
-});
+const signinRoutes = require ('./routes/signinRoutes')
 
-app.get('/shoppingCart', (req, res) => {
-    res.render(path.join(__dirname,"/views/shoppingCart"))
-});
+app.use('/signin',signinRoutes)
 
-app.get('/Product', (req, res) => {
-    res.render(path.join(__dirname,"/views/product"))
-});
+const productRoutes = require ('./routes/productRoutes')
 
-app.get('/adminProduct', (req, res) => {
-    res.render(path.join(__dirname,"/views/adminProduct"))
-});
+app.use('/product',productRoutes)
+
+const shoppingCartRoutes = require ('./routes/shoppingCartRoutes')
+
+app.use('/shoppingCart',shoppingCartRoutes)
+
+const adminProductRoutes = require ('./routes/adminProductRoutes')
+
+app.use('/adminProduct',adminProductRoutes)
 
