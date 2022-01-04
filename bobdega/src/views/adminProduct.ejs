@@ -1,36 +1,36 @@
-<%- include('./partials/header') %> 
+<%- include('./partials/header', {pageTitle : 'Editar productos'}) %> 
    <main>
        <h1>Administrador</h1>
     
     
     <form action="/">
        
-        <div>
+        <div class="formAdmin">
             <span>Editar Producto</span>
             <input type="text" name="usuario"><button type="submit" name="submit">Buscar</button>
         </div>
 
-        <div>
+        <div class="formAdmin">
             <span>Nombre del producto</span>
             <input type="text" name="usuario" required>
         </div>
 
-        <div>
+        <div class="formAdmin">
             <span>Descripcion</span>
             <input type="text" name="usuario" required>
         </div>
-
-        <div>
+        
+        <div class="formAdmin">
             <span>Categoria</span>
             <input type="text" name="usuario" required>
         </div>
 
-        <div>
+        <div class="formAdmin">
             <span>Precio</span>
             <input type="text" name="usuario" required>
         </div>
 
-        <div>
+        <div class="formAdmin">
             <label for="Product">Selecciona la imagen del producto</label>
             <input type="file" name="Product" accept=".jpg" required>
          </div>
