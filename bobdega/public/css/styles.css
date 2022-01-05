@@ -282,22 +282,14 @@ main {
 /* Products y Quizas Te Interese */
 
 .productos img {
-    
     width: 70%;
-
-    
 }
 
 .productos{ 
-    
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: row;
-
-    
-
 }
 
 .articulosProductos {

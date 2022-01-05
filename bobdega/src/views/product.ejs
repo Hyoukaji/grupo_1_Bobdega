@@ -1,47 +1,43 @@
 <%- include('./partials/header', {pageTitle : 'Productos'}) %> 
    <main>
         <section class="">
-            <h2>Catena - Nicola Catena Bonarda - Celler</h2>
-            <img src="/images/producto1.jpg" alt="" style="max-width: 200px;">
+            <h2><%= producto.nombre %></h2>
+            <img src="/images/<%=producto.img%>" alt="" style="max-width: 200px;">
             <div>
-                <h3>USD $4000</h3>
+                <h3><%= producto.precio %></h3>
                 <p>FICHA TÉCNICA</p>
-                <p>Este vino proviene de una pequeña parcela en un viñedo de más de 80 años de antigüedad cuyos rendimientos en kilos de uva por planta son sumamente bajos, lográndose por ello una concentración y complejidad excepcionales. 
-                    Aromas intensos de regaliz, especias verdes como orégano y tomillo y boca con gran volumen y persistencia.
-                    Catena Zapata</p>
+                <p><%= producto.ficha %></p>
                     
                     <p>PRODUCTOR</p>
-                    <p>Catena Zapata</p>
+                    <p><%= producto.productor %></p>
                     
                     <p>TIPO</p>
-                    <p>Tinto</p>
+                    <p><%= producto.tipo %></p>
                     
                     <p>VARIEDAD</p>
-                    <p>Bonarda</p>
+                    <p><%= producto.variedad %></p>
                     
                     <p>CORTE</p>
-                    <p>100% Bonarda</p>
+                    <p><%= producto.corte %></p>
                     
                     <p>ALCOHOL</p>
-                    <p>13,50%</p>
+                    <p><%= producto.alcohol %></p>
                     
                     <p>LUGAR DE ELABORACIÓN</p>
-                    <p>La Vendimia, El Mirador, Mendoza.
-                    ALTURA (S.N.M.)
-                    750</p>
+                    <p><%= producto.lugar %></p>
                     
                     <p>CRIANZA / BARRICADO</p>
-                    <p>18 meses en barricas de roble francés.</p>
+                    <p><%= producto.barricado %></p>
                     
                     
                     <p>ELABORACIÓN</p>
-                    <p>Fermentación: Levaduras nativas. Maceración fría en barricas durante 4 días. debajo de 10º. Temp. Ferm. entre 25 y 30º C durante 15 días.</p>
+                    <p><%= producto.elaboracion %></p>
                     
                     <p>ENÓLOGO</p>
-                    <p>Alejandro Vigil</p>
+                    <p><%= producto.enologo %></p>
 
                     <p>PAÍS</p>
-                    <p>Argentina</p>
+                    <p><%= producto.pais %></p>
             </div>
             <article class="botones">
                 <div class="button">
