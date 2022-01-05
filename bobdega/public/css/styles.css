@@ -333,6 +333,20 @@ main {
 
  /* Admin Products */
 
+ .formA {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+
+
+ .formAdmin {
+     display: flex;
+     flex-wrap: wrap;
+     align-self: center;
+     width: 30%;
+ }
+
 
  /* fin Admin Products */
 
