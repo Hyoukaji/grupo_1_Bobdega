@@ -4,6 +4,18 @@ const controller = {
             'home'
         )
         
+    },
+    login : (req,res)=>{
+        return res.render(
+            'login'
+        )
+        
+    },
+    signin : (req,res)=>{
+        return res.render(
+            'signin'
+        )
+        
     }
 }
 

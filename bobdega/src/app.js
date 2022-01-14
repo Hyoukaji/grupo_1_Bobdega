@@ -10,13 +10,9 @@ const homeRoutes = require ('./routes/homeRoutes')
 
 app.use('/',homeRoutes)
 
-const loginRoutes = require ('./routes/loginRoutes')
+app.use('/login',homeRoutes);
 
-app.use('/login',loginRoutes)
-
-const signinRoutes = require ('./routes/signinRoutes')
-
-app.use('/signin',signinRoutes)
+app.use('/signin',homeRoutes);
 
 const productRoutes = require ('./routes/productRoutes')
 
