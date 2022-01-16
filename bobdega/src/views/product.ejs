@@ -1,0 +1,20 @@
+<%- include('./partials/header', {pageTitle : 'Bobdega'}) %> 
+
+   <main>
+       <h2>Productos:</h2>
+       
+	<ul class="product">
+		<% for( let i = 0; i < products.length; i++ ) { %>
+		<li> 
+			<img src="/uploads/<%= products[i].image %>" alt=""> <br>
+			<strong><%= products[i].name %> </strong> <br>
+			<em>Tipo:</em> <%= products[i].type %> 
+			<a href="/product/detail/<%= products[i].id %>">ver detalle</a>
+            <a href="/product/shoppingCart">Comprar</a>
+		</li>
+		<% } %>
+	</ul>
+       
+
+    </main>
+    <%- include('./partials/footer') %> 

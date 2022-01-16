@@ -6,7 +6,7 @@ const controller = require('../controllers/productController');
 
 const multerDiskStorage = multer.diskStorage({
 	destination: function (req, file, cb) {
-		cb(null, path.resolve(__dirname, '../public/uploads'));
+		cb(null, path.resolve(__dirname, '../../public/uploads'));
 	},
 	filename: (req, file, cb) => { const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9) 
     cb(null, uniqueSuffix + file.fieldname + path.extname(file.originalname)) 
@@ -16,7 +16,7 @@ const multerDiskStorage = multer.diskStorage({
 	}
 });
 
-const upload = multer ({multerDiskStorage}) 
+const upload = multer ({storage: multerDiskStorage}) 
 
 
 router.get('/', controller.product) // muestra todos los productos
@@ -30,7 +30,7 @@ router.get('/create', controller.create); // muestra el formulario de creación
 router.post('/', upload.single('imageProduct'), controller.store); // almacena la información en la DB
 
 // GET ONE PRODUCT / 
-router.get('/detail/:id/', controller.detail); // muestra el detalle de un producto
+router.get('/detail/:id', controller.detail); // muestra el detalle de un producto
 
 // EDIT ONE PRODUCT / 
 //router.get('/edit/:id', controller.edit); 
