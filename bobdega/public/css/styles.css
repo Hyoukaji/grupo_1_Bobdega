@@ -295,6 +295,7 @@ main {
 .articulosProductos {
     width: 38vw;
     margin: 2px;
+    
 }
 
 .botones{
@@ -344,7 +345,38 @@ main {
 
 
 
+/* catalogo de productos */
 
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product li img {
+    width: 20%;
+}
+
+.product li a {
+        text-decoration: none;
+        color: #fff;
+        display: inline-block;
+        background-color: #222;
+        padding: 1em;
+        border-radius: 0.5em;
+    
+}
+
+.product li strong {
+   font-size: 20px;
+   
+}
+
+.product li em {
+    font-size: 30px;
+}
+
+/*fin catalogo de productos */
 
 
 
