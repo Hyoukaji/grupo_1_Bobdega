@@ -1,0 +1,32 @@
+[
+ {
+  "id": 0,
+  "first_name": "Rosetta",
+  "last_name": "Gepson",
+  "username": "rgepson0",
+  "email": "rgepson0@squarespace.com",
+  "password": "pFeOHVwh",
+  "category": "Electrical",
+  "image": "LeoOdioCondimentum.mp3"
+ },
+ {
+  "id": 1,
+  "first_name": "Jose",
+  "last_name": "Chatruc",
+  "username": "josechatruc",
+  "email": "josechatruc@racing.com",
+  "password": "123",
+  "category": "User",
+  "image": "1642537206699-559207952image.jpg"
+ },
+ {
+  "id": 2,
+  "first_name": "Juan",
+  "last_name": "Cabona",
+  "username": "juancabona",
+  "email": "jdcabona@gmail.com",
+  "password": "123",
+  "category": "User",
+  "image": "1642537389734-606277068image.jpg"
+ }
+]

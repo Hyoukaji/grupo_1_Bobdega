@@ -4,6 +4,7 @@ const methodOverride = require('method-override');
 const app = express();
 const productRoutes = require ('./routes/productRoutes');
 const homeRoutes = require ('./routes/homeRoutes');
+const siginRoutes = require ('./routes/signinRoutes');
 
 app.use(express.static("../public"));
 app.set('view engine','ejs');
@@ -21,5 +22,7 @@ app.listen(process.env.PORT || 3000,()=>
 app.use('/',homeRoutes)
 
 app.use('/product',productRoutes)
+
+app.use('/signin', siginRoutes);
 
 
