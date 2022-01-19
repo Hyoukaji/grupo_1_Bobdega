@@ -326,6 +326,14 @@ main {
 
  /* Admin Products */
 
+ .cardCreate{
+    max-width: 35%;
+    display: flex;
+    flex-direction: column;
+    background: #9b2639ba;
+    box-shadow: 0px 2px 4px black;
+ }
+
  .formA {
      display: flex;
      flex-direction: column;
@@ -340,7 +348,13 @@ main {
      width: 30%;
  }
 
-
+.buttonsContainer{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
  /* fin Admin Products */
 
 
