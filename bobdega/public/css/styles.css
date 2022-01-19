@@ -393,7 +393,21 @@ main {
 /*fin catalogo de productos */
 
 
-
+/* UserDetails */
+.userDetail {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 3px;
+    justify-content: space-around;
+    border: dotted black 1px;
+ 
+}
+.userDetail div {
+        text-align: left;
+        margin: auto;
+}
+/* UserDetails */
 
 
 /* media queris */
