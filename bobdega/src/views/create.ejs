@@ -1,50 +1,53 @@
 <%- include('./partials/header', {pageTitle : 'Editar productos'}) %> 
    <main>
-       <h1>Administrador</h1>
-    
-    
-    <form action="/product" class="formA" method="post" enctype="multipart/form-data">
-
-        <div class="formAdmin">
-            <span>Nombre del producto</span>
-            <input type="text" name="name" required>
-        </div>
+        <div class="cardCreate">   
+        <h1 class="formAdmin">Administrador</h1>
         
-        <div class="formAdmin">
+        
+        <form action="/product" class="formA" method="post" enctype="multipart/form-data">
+
+            <div class="formAdmin">
+                <span>Nombre del producto</span>
+                <input type="text" name="name" required>
+            </div>
             
-                <label>Tipo</label> <br>
-                <select name="type">
-                    <option value="">Elegí una opción</option>
-                    <option value="tinto">Tinto</option>
-                    <option value="espumante">Espumante</option>
-                    <option value="blanco">Blanco </option>
-                    <option value="ahumado">Ahumado</option>
-                </select>
-            
-        </div>
+            <div class="formAdmin">
+                
+                    <label>Tipo</label> <br>
+                    <select name="type">
+                        <option value="">Elegí una opción</option>
+                        <option value="tinto">Tinto</option>
+                        <option value="espumante">Espumante</option>
+                        <option value="blanco">Blanco </option>
+                        <option value="ahumado">Ahumado</option>
+                    </select>
+                
+            </div>
 
-        <div class="formAdmin">
-            <span>Precio</span>
-            <input type="text" name="price" required>
-        </div>
+            <div class="formAdmin">
+                <span>Precio</span>
+                <input type="text" name="price" required>
+            </div>
 
-        <div class="formAdmin">
-            <span>Alcohol</span>
-            <input type="text" name="alcohol" required>
-        </div>
+            <div class="formAdmin">
+                <span>Alcohol</span>
+                <input type="text" name="alcohol" required>
+            </div>
 
-        <div class="formAdmin">
-            <span>Descripcion</span>
-            <textarea name="description" required></textarea>
-        </div>
+            <div class="formAdmin">
+                <span>Descripcion</span>
+                <textarea name="description" required></textarea>
+            </div>
 
-        <div class="formAdmin">
-            <label for="Product">Selecciona la imagen del producto</label>
-            <input type="file" name="imageProduct" accept=".jpg" required>
-         </div>
-                <button type="reset" name=" reset">Borrar</button>
-                <button type="submit" name="submit">Agregar</button>
-         </form>
-
+            <div class="formAdmin">
+                <label for="Product">Selecciona la imagen del producto</label>
+                <input type="file" name="imageProduct" accept=".jpg" required>
+            </div>
+                    <div class="buttonsContainer">
+                        <button type="reset" name=" reset">Borrar</button>
+                        <button type="submit" name="submit">Agregar</button>
+                    </div>
+            </form>
+        </div>     
    </main>
 <%- include('./partials/footer') %> 
