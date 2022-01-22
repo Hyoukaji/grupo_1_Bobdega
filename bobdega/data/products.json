@@ -1,3 +1,45 @@
 [
- {"id":1}
+ {
+  "id": 1
+ },
+ {
+  "id": 2,
+  "name": "vino 1",
+  "type": "tinto",
+  "price": "325",
+  "alcohol": "10",
+  "description": ".....",
+  "submit": "",
+  "image": "1642876930079-906399873imageProduct.jpg"
+ },
+ {
+  "id": 3,
+  "name": "vino 202",
+  "type": "",
+  "price": "200",
+  "alcohol": "46899987987",
+  "description": "prueba nueva otra vez...",
+  "submit": "",
+  "image": "1642876967476-817216299imageProduct.jpg"
+ },
+ {
+  "id": 4,
+  "name": "vino 3",
+  "type": "espumante",
+  "price": "sdfds",
+  "alcohol": "sdfsd",
+  "description": "sdfsdf",
+  "submit": "",
+  "image": "1642877007179-996140930imageProduct.jpg"
+ },
+ {
+  "id": 5,
+  "name": "vino 4404",
+  "type": "",
+  "price": "654654654",
+  "alcohol": "sdfsfsdf",
+  "description": "sdfsfsdf",
+  "submit": "",
+  "image": "1642884870457-879816279image.jpg"
+ }
 ]
