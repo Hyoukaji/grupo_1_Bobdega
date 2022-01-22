@@ -1,6 +1,14 @@
 <%- include('./partials/header', {pageTitle : 'Bobdega'}) %> 
 
    <main>
+
+      <section>
+         <a href="/product"><h2 class="title">Ver Todos los Productos</h2></a>
+      </section>
+
+      <section>
+         <a href="/product/create"><h2 class="title">Crear Producto</h2></a>
+      </section>
     
         <section>
           <h2 class="title">Ofertas de esta temporada</h2>       
@@ -12,7 +20,7 @@
             <img src="/images/fondo-2.jpg" alt="" width="250">
         </section>
     
-        <%- include('./partials/quizasTeInterese') %> 
+        <%- include('./partials/quizasTeInterese',products) %> 
        
        <section>
         <h2>Tour por nuestros Viñedos</h2>

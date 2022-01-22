@@ -32,11 +32,15 @@ router.post('/', upload.single('imageProduct'), controller.store); // almacena l
 // GET ONE PRODUCT / 
 router.get('/detail/:id', controller.detail); // muestra el detalle de un producto
 
+
+
 // EDIT ONE PRODUCT / 
-//router.get('/edit/:id', controller.edit); 
-//router.put('/:id', controller.update); 
+router.get('/edit/:id', controller.edit); 
+router.put("/:id", upload.single("image"), controller.update); 
+
+
 
 // DELETE ONE PRODUCT/ 
-//router.delete('/:id', controller.destroy);
+router.delete('/:id', controller.delete);
 
 module.exports = router

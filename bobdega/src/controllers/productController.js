@@ -30,7 +30,9 @@ const controller = {
     },
     shoppingCart : (req,res)=>{
         return res.render(
-            'shoppingCart'
+            'shoppingCart',{
+				products
+			}
         )
         
     },
@@ -51,13 +53,7 @@ const controller = {
 			return lastID + 1;
 		}
 
-		// Inserto el nuevo producto en la DB
-		// productsDB.push({
-		// 	name: req.body.name,
-		// 	description: req.body.description,
-		// 	price: req.body.price,
-		// 	category: req.body.category,
-		// })
+		
 		products.push({
 			id: generateID(),
 			...req.body,
@@ -72,6 +68,7 @@ const controller = {
 	},
     delete: (req, res) => {
 		// Filtro el array de productos original
+		console.log("")
 		const finalPdts = products.filter(oneProduct => oneProduct.id !== Number(req.params.id));
 
 		// Reescribo el archivo JSON
@@ -85,29 +82,35 @@ const controller = {
 
 		const theProduct = products.find(product => product.id === productID);
 
-		return res.render("products-edit", { theProduct });
+		return res.render("edit", { theProduct });
 	},
 	update: (req, res) => {
-		const productID = Number(req.params.id);
-
-		// Mapeo el array de productos original para editar el producto
-		const finalPdts = products.map(oneProduct => {
-			if (oneProduct.id === Number(req.params.id)) {
-				return { 
-					...oneProduct,
-					...req.body,
-					image: req.file ? req.file.filename : oneProduct.image
+		// Obtenemos el ID que vino como parámetro en la ruta (los parámetros viene en formato String)
+		const id = Number(req.params.id); // Number() nos dá el el valor en formato Number
+		
+		// Acá nos interesa retornar TODOS los productos pero editando el que necesitamos, por eso hacemos un map
+		const productsArrayEdited = products.map(oneProduct => {
+			if (oneProduct.id === id) { // si los ID's coinciden, editamos ese producto (objeto)
+				return {
+					...oneProduct, // El spread operator nos permite mantener las propiedades del producto que no queremos cambiar (ID & IMAGE)
+					name: req.body.name, // lo mismo que hicimos cuando almacenamos un producto nuevo
+					price: req.body.price,
+					description: req.body.description,
+					type: req.body.type,
+					alcohol: req.body.alcohol,
+					image: req.file ? req.file.filename : oneProduct.image,
 				}
 			}
-			return oneProduct;
+			return oneProduct; // si los ID's no coinciden retornamos ese producto tal cual está almacenado
 		});
 
-		// Reescribo el archivo JSON
-		fs.writeFileSync(filePath, JSON.stringify(finalPdts, null, " "));
-
-		// Redirección
-		return res.redirect(`/products/${productID}`);
-	}
+		// Sobreescribimos de nuevo el archivo JSON
+		fs.writeFileSync(filePath, JSON.stringify(productsArrayEdited, null, ' '));
+		
+		// finalmente redireccionamos a los productos
+		return res.redirect('/product'); 
+	},
+	
 }
 
 module.exports = controller

@@ -2,40 +2,20 @@
    <main>
         <section class="">
             <h2><%= producto.name %></h2>
-            <img src="/images/<%=producto.img%>" alt="" style="max-width: 200px;">
+            <img src="/uploads/<%=producto.image%>" alt="" style="max-width: 200px;">
             <div>
-                <h3><%= producto.precio %></h3>
-                <p>FICHA TÉCNICA</p>
-                <p><%= producto.ficha %></p>
-                    
-                    <p>PRODUCTOR</p>
-                    
-                    
+                    <p>PRECIO</p>
+                    <h3><%= producto.price %></h3>
+
                     <p>TIPO</p>
-                    <p><%= producto.tipe %></p>
-                    
-                    <p>VARIEDAD</p>
-                    
-                    
-                    <p>CORTE</p>
-                    
+                    <p><%= producto.type %></p>
                     
                     <p>ALCOHOL</p>
                     <p><%= producto.alcohol %></p>
-                    
-                    <p>LUGAR DE ELABORACIÓN</p>
-                    
-                    
-                    <p>CRIANZA / BARRICADO</p>
-                    
-                    
-                    
-                    <p>ELABORACIÓN</p>
-                    
-                    
-                    <p>ENÓLOGO</p>
-                    
 
+                    <p>DESCRIPCIÓN</p>
+                    <p><%= producto.description %></p>
+                    
                     <p>PAÍS</p>
                     <p>Argentina</p>
             </div>
@@ -57,15 +37,15 @@
                     <option value="3">Retiro en correo y otros puntos</option>
                 </select>
                 </div>
+
+                <form action="/product/<%=producto.id%>?_method=DELETE" method="post">
+                    <a href="/product/edit/<%=producto.id%>"> Editar </a>
+                    <button type="submit">Borrar producto</button>
+                </form>
             </article>
             
             
         </section>
-
-
-        <section>
-            <%- include('./partials/quizasTeInterese') %> 
-       </section>
 
 
    </main>

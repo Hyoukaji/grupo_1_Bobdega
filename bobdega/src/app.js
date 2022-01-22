@@ -6,8 +6,8 @@ const productRoutes = require ('./routes/productRoutes');
 const homeRoutes = require ('./routes/homeRoutes');
 const siginRoutes = require ('./routes/signinRoutes');
 
-app.use(express.static("../public"));
-app.set('view engine','ejs');
+app.use(express.static(path.resolve(__dirname, '../public')));
+app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

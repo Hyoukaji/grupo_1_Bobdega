@@ -1,0 +1,43 @@
+<%- include('./partials/header', {pageTitle : 'Crear productos'}) %> 
+   <main>
+    <h2>Estas editando el producto: <%= theProduct.name %></h2>
+	<img src="/uploads/<%= theProduct.image %>" width="200">
+	<form action="/product/<%= theProduct.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+		<div>
+			<label>Nombre:</label> <br>
+			<input type="text" name="name" value="<%= theProduct.name %>">
+		</div>
+		<div>
+			<label>Precio:</label> <br>
+			<input type="text" name="price" value="<%= theProduct.price %>">
+		</div>
+		<div>
+			<label>Alcohol:</label> <br>
+			<input type="text" name="alcohol" value="<%= theProduct.alcohol %>">
+		</div>
+		<div>
+			<label>Elegí una imagen a reemplazar:</label> <br>
+			<input type="file" name="image">
+		</div>
+		<div>
+			<label>Tipo</label> <br>
+                    <select name="type">
+                        <option value="">Elegí una opción</option>
+                        <option value="tinto">Tinto</option>
+                        <option value="espumante">Espumante</option>
+                        <option value="blanco">Blanco </option>
+                        <option value="ahumado">Ahumado</option>
+                    </select>
+		</div>
+		<div>
+			<label>Descripción:</label> <br>
+			<textarea name="description" cols="30" rows="10"><%= theProduct.description %></textarea>
+		</div>
+
+		<button type="submit">Guardar</button>
+	</form>
+    <form action="/product/<%=theProduct.id%>?_method=DELETE" method="post">
+        <button type="submit">Borrar producto</button>
+    </form>  
+   </main>
+<%- include('./partials/footer') %> 
