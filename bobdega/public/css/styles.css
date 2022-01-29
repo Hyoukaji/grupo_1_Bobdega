@@ -4,33 +4,24 @@
 
 
 
-
 * {
-    box-sizing: border-box;
-    
+    box-sizing: border-box; 
 }
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-        
-  }
-
-  .signlog {
-    display: flex;
-    flex-direction: row;
-
 }
 
-
+.signlog {
+    display: flex;
+    flex-direction: row;
+}
 
 main form input{
     border-radius: 8px;
 }
-
-
-
 
 .signlog article {
     position: relative;
@@ -38,11 +29,10 @@ main form input{
     width: 30%;
 }
 
-
 /* HEADER */
 
 header {
-    background-color: white
+    background-color: white ;
 }
 
 .general {
@@ -53,7 +43,7 @@ header {
 }
 
 .imagen{
-    width: 30%;
+    width: 15%;
     display: flex;
     align-content: center;
     justify-content: space-around;
@@ -68,13 +58,12 @@ header {
     align-items: center;
 }
 
-
 .barraBusqueda form input{
     width: 70%;
     border-radius: 10%;
     height: 30px;
     position: relative;
-    top:40px;
+    top: 40px;
     left: 10px;
     border-color: #6f1c48;
 }
@@ -86,15 +75,13 @@ header {
     background-color: transparent;
     color: (0,0,0,0.5);
     border-color: transparent;
-    top: 35px;
-    
+    top: 35px;    
 }
 
 .barraBusqueda form i{
     background-color: transparent;
     color: (0,0,0,0.5);
 }
-
 
 .cuentacarrito{
     display: flex;
@@ -103,14 +90,15 @@ header {
     justify-content: space-around;
     width: 10%;
 }
+
 li:hover{
     color: black!important;
     background-color:white;
-} 
+}
+
 .cuentacarrito li a:visited {
     text-decoration: none;
     color:black;
-
 }
 
 .cate-div{
@@ -130,70 +118,100 @@ li:hover{
     font-weight: 500;
 }
 
-  .categorias {
+.categorias {
     display: flex;
     flex-direction: row;
     align-self: center;
     justify-content: space-around;
-    padding: 10px;
-    
+    padding: 10px;  
 }
+
 /* fin Header */ 
-
-
 
 /* FOOTER */
 
 footer {
-    flex-direction: row;
-    flex-wrap: wrap;
-    color:black;
-    background-color: brown;
-}
-
-footer {
-    display: flex;
-    justify-content: space-around;
-}
-
-
-footer div{
-    padding: 5px;
-    margin: 2px;
-}
-
-
-
- .linksn{
+    background-color: black ;
+    min-height: 30%;
     display: flex;
     flex-direction: column;
+    color: white;
+    text-transform:none;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.linksnEncabezado{
+    margin: 20px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-family: 'ClassGarmnd BT',sans-serif;
+    color:#C59D5D ;
+    font-size: 40px;   
+}
+
+.linksnSecundario{
+    color:white;
+    text-transform:uppercase;
+    font-size: 13px;
+    text-align: center;  
+}
+
+.linksnEncabezado2{
+    border-bottom: 1px solid #C59D5D;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.redesSociales{
+    display: flex; 
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.sociales{
+   padding-right: 60px;
+   padding-left: 35px;
+   align-items: center;
+   font-size: 13px;  
+}
+
+.secFooter{
+    display: flex;
+    align-self: center;
+    margin-bottom: 17px;
+    margin-top: 15px;
+    font-size: 15px;     
+}
+
+.secFooter i{
+    padding-left: 12px;
+}
+
+.finFooter{
+    font-size: 8.5px;
 }
 
 /* fin Footer */
    
 /* HOME */ 
 
-
 main {
-     height: 100%;
-     background-color:white;
-     overflow-x: auto;
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     text-align: center;
-     
- }
-
- .tour {
+    height: 100%;
+    background-color: white;
+    overflow-x: auto;
     display: flex;
-    
+    flex-direction: column;
+    align-items: center;
+    text-align: center;    
+}
+
+.tour {
+    display: flex;
     flex-direction: row;
 }
 
 .fotoBodega, .descripcionBodega {
     margin: 5px; 
-    
     flex-wrap: wrap;
 }
 
@@ -211,7 +229,6 @@ main {
     font-size: 5px;
 }
 
-
 .usuario i {
     font-size: 12px;
     position: relative;
@@ -222,9 +239,7 @@ main {
     height: 20%;
 }
 
-
 /* Fin  Log In */
-
 
 /* Sign In */
 
@@ -243,8 +258,6 @@ main {
 }
 
 /* fin Sign In */
-
-
 
 /* shoppingCart */
 
@@ -268,7 +281,6 @@ main {
     font-size: 12px;
     justify-content: space-around;
     flex-wrap: wrap;
-
 }
 
 .info-p p{
@@ -281,7 +293,6 @@ main {
 }
 
 /* fin Shopping Cart*/
-
 
 /* detail y Quizas Te Interese */
 
@@ -319,38 +330,36 @@ main {
     max-width: 150px;
 }
 
-.interes {display: flex;
+.interes {
+    display: flex;
     flex-wrap: wrap;
-
 }
 
+/* Fin  Products y Quizas Te Interese*/
 
- /* Fin  Products y Quizas Te Interese*/
+/* Admin Products */
 
-
- /* Admin Products */
-
- .cardCreate{
+.cardCreate{
     max-width: 35%;
     display: flex;
     flex-direction: column;
     background: #9b2639ba;
     box-shadow: 0px 2px 4px black;
- }
+}
 
- .formA {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
- }
+.formA {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
- .formAdmin {
-     display: flex;
-     flex-wrap: wrap;
-     align-self: center;
-     width: 30%;
- }
+.formAdmin {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    width: 30%;
+}
 
 .buttonsContainer{
     display: flex;
@@ -359,9 +368,8 @@ main {
     margin-top: 20px;
     margin-bottom: 10px;
 }
- /* fin Admin Products */
-
-
+ 
+/* fin Admin Products */
 
 /* catalogo de productos */
 
@@ -376,18 +384,16 @@ main {
 }
 
 .product li a {
-        text-decoration: none;
-        color: #fff;
-        display: inline-block;
-        background-color: #222;
-        padding: 1em;
-        border-radius: 0.5em;
-    
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    background-color: #222;
+    padding: 1em;
+    border-radius: 0.5em;  
 }
 
 .product li strong {
-   font-size: 20px;
-   
+   font-size: 20px; 
 }
 
 .product li em {
@@ -396,8 +402,8 @@ main {
 
 /*fin catalogo de productos */
 
-
 /* UserDetails */
+
 .userDetail {
     display:flex;
     flex-wrap: wrap;
@@ -405,14 +411,14 @@ main {
     padding: 3px;
     justify-content: space-around;
     border: dotted black 1px;
- 
 }
-.userDetail div {
-        text-align: left;
-        margin: auto;
-}
-/* UserDetails */
 
+.userDetail div {
+    text-align: left;
+    margin: auto;
+}
+
+/* UserDetails */
 
 /* media queris */
 
@@ -433,26 +439,17 @@ main {
         flex-wrap: nowrap;
     }
 
-
-
     .productos img {
-    
         height: 100%;
         width: 100%;
-    
-    
-        max-width:300px;
-    
-    
-        
+        max-width:300px; 
     }
-
-    
 
     .cuentacarrito{
         flex-direction: row;
         justify-content: space-around;
         padding: 5px;
+        margin-top: 50px;
     }
 
     .cuentacarrito li{
@@ -475,30 +472,69 @@ main {
     }
 
     .imagen img{
-        width: 30%;
-        position: relative;
-        left: 80px;
+        width: 55%;
     }
+
     .menuCategorias{
        font-size: 14px;
-       
     }
+
     .barraBusqueda form input{
         top: 70px;
-        left: -40px;
+        left: 10px;
         height: 40px;
     }
     
     .barraBusqueda form button{
-        left: -40px;
-        top: 65px;
-           
+        right: -10px;
+        top: 65px;      
     }
+
     .cuentacarrito li{
         position:relative;
-        top: 7px;
+        top: -12px;
         right: 90px;
         padding: 20px;
     }
-     
+
+    footer {
+        color:white;
+        background-color:black;
+        flex-direction: row;  
+        justify-content: space-around;
+    }
+
+    .finFooter {
+        align-self:flex-end;
+        font-size: 11px;
+    }
+
+    .redesSociales{
+        align-self: center;
+        width: 450px;
+    }
+ 
+    .sociales{
+        font-size: 18px;
+        padding: 0%;
+        margin-right: 15px;
+        align-items: center;
+    }
+
+    .secFooter{
+        flex-direction: column;
+        margin-left: 120px;
+        font-size: 20px;
+        padding-right: 130px;
+    }
+
+    .secFooter i:hover {
+        color: black!important;
+        background-color:white;
+    }        
+
+    .footerLogo{
+        margin-bottom: 10px;
+        margin-left: 15px;
+    } 
 }
