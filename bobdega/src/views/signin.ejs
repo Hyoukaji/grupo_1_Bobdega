@@ -4,15 +4,99 @@
         <i class="fas fa-user-circle" style="font-size: 18px;" ></i>
 
         <h3>Crea tu cuenta</h3>
-        <form action="/signin/create" method="post" class="formulario-s" enctype="multipart/form-data">
-            <input type="text" name="firstName" placeholder="Nombre" required>
-            <input type="text" name="lastName" placeholder="Apellido" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="text" name="username" placeholder="Nombre de usuario" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <input type="password" name="password2" placeholder="Repetir Contraseña" required>
-            <input type="file" name="image" placeholder="Imagen" required>
+        <form action="/user/create" method="post" class="formulario-s" enctype="multipart/form-data">
+
+
+          <div>  
+            <input type="text"
+                   name="firstName"
+                    placeholder="Nombre"
+                    class="form-control <%= locals.errors && errors.firstName ? 'is-invalid': null %>"
+                    value="<%= locals.oldData ? oldData.firstName : null %>">
+
+                <% if (locals.errors && errors.lastName) { %>
+                   <div class= "text-danger">
+                       <%= errors.firstName.msg  %> 
+                   </div>
+               <% } %> 
+
+                </div>
+
+            <div>
+
+                <input type="text" name="lastName" placeholder="Apellido" class="form-control <%= locals.errors && errors.lastName ? 'is-invalid': null %>"
+                value="<%= locals.oldData ? oldData.lastName : null %>">
+
+            <% if (locals.errors && errors.lastName) { %>
+               <div class= "text-danger">
+                   <%= errors.lastName.msg  %> 
+               </div>
+           <% } %>  
+
+            </div>
+
+            <div>
+            <input type="email" name="email" placeholder="Email" class="form-control <%= locals.errors && errors.email ? 'is-invalid': null %>"
+            value="<%= locals.oldData ? oldData.email : null %>">
+
+        <% if (locals.errors && errors.email) { %>
+           <div class= "text-danger">
+               <%= errors.email.msg  %> 
+           </div>
+       <% } %>  
+             
+        </div>
+
+        <div>
+            <input type="text" name="username" placeholder="Nombre de Usuario" class="form-control <%= locals.errors && errors.username ? 'is-invalid': null %>"
+            value="<%= locals.oldData ? oldData.username : null %> " >
+
+        <% if (locals.errors && errors.username) { %>
+           <div class= "text-danger">
+               <%= errors.username.msg  %> 
+           </div>
+       <% } %>  
+        
+        </div>    
+
+        <div>
+            <input type="password" name="password" placeholder="Contraseña" class="form-control <%= locals.errors && errors.password ? 'is-invalid': null %>" >
+
+        <% if (locals.errors && errors.password) { %>
+           <div class= "text-danger">
+               <%= errors.password.msg  %> 
+           </div>
+       <% } %>  
+      
+        </div>
+
+        <div>
+            <input type="password" name="password2" placeholder="Repetir Contraseña" class="form-control <%= locals.errors && errors.password2 ? 'is-invalid': null %>">
+
+        <% if (locals.errors && errors.password2) { %>
+           <div class= "text-danger">
+               <%= errors.password2.msg  %> 
+           </div>
+       <% } %>  
+        </div>
+
+            
+
+        <div>
+             <input type="file" name="image" placeholder="Imagen" class="form-control <%= locals.errors && errors.image ? 'is-invalid': null  %>" >
+             <% if (locals.errors && errors.image) { %>
+                <div class="text-danger">
+                    <%= errors.image.msg %>
+                </div> 
+             <% } %>    
+        </div>
+
+           
+
+        <div>
             <button type="submit">Ingresar</button>
+        </div>
+            
         </form>
             <p>Ingresar con:</p>
             <i class="fab fa-google"></i>

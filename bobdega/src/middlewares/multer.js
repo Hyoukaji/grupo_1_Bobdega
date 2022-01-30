@@ -1,9 +1,5 @@
-const express = require ('express')
-const router = express.Router()
-const multer = require ('multer');
-const path = require('path');
-
-const controller = require('../controllers/signinController');
+const path = require('path')
+const multer = require('multer')
 
 const multerDiskStorage = multer.diskStorage({
 	destination: function (req, file, cb) {
@@ -19,7 +15,4 @@ const multerDiskStorage = multer.diskStorage({
 
 const upload = multer ({storage: multerDiskStorage}); 
 
-router.get('/', controller.signin);
-router.post('/create',upload.single('image'), controller.add);
-router.get('/signinUserDetail/:id', controller.userDetail);
-module.exports = router
+module.exports = upload 

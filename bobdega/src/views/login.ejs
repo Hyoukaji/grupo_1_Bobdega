@@ -3,15 +3,35 @@
     <i class="fas fa-user-circle" style="font-size: 18px;" ></i>
 
     <h3>Ingresa tu cuenta</h3>
-    <form action="/">
+    <form action="/user/login" method="post" enctype="multipart/form-data">
         <div>
-            <input type="text" name="usuario" placeholder="Nombre de usuario" required>
-            <span>usuario incorrecto</span>
+            <input type="text" name="email" placeholder="Nombre de usuario - Email" class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
+            value="<%= locals.oldData ? oldData.email: null  %> " >
+            
+				<% if (locals.errors && errors.email) { %>
+				<div class="text-danger">
+					<%= errors.email.msg %>
+				</div>
+			<% } %>
         </div>
         <div>
-            <input type="password" name="usuario" placeholder="Contraseña" required>
-            <span>usuario incorrecto</span>
+            <input 
+            type="password" 
+            name="password" 
+            placeholder="Contraseña"
+            class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+        >
+        <% if (locals.errors && errors.password) { %>
+            <div class="text-danger">
+                <%= errors.password.msg %>
+            </div>
+        <% } %>
         </div>
+        <label>
+            <input type="checkbox" class="" name="reUser">Recordar mi usuario
+
+        </label>
+                    
         <div>
             <button type="submit">Ingresar</button>
         </div>

@@ -4,9 +4,11 @@ const fs = require('fs');
 
 // Ubicación del archivo JSON
 const filePath = path.join(__dirname, '../../data/products.json');
+const filePathB = path.join(__dirname, '../../data/users.json');
 
-// Lectura del archivo JSON y parseado a array - IMPORTANTE - DB
+// Lectura del archivo JSON y parseado a array - IMPORTANTE - 
 const products = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+const users = JSON.parse(fs.readFileSync(filePathB, 'utf-8'));
 
 
 
@@ -21,18 +23,6 @@ const controller = {
         )
         
     },
-    login : (req,res)=>{
-        return res.render(
-            'login'
-        )
-        
-    },
-    signin : (req,res)=>{
-        return res.render(
-            'signin'
-        )
-        
-    }
 }
 
 module.exports = controller

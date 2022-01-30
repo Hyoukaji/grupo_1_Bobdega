@@ -38,5 +38,15 @@
   "password": "123",
   "category": "User",
   "image": "1642600197267-746806058image.jpg"
+ },
+ {
+  "id": 6,
+  "first_name": "",
+  "last_name": "",
+  "username": " ",
+  "email": "",
+  "password": "$2a$10$vOwV1z1VJHkTNopc97nngO0KGnU/n91/QzKViy3AEbWBHPgSCI4TS",
+  "category": "User",
+  "image": "1643502288700-318325529image.jpg"
  }
 ]

@@ -5,8 +5,6 @@ const controller = require('../controllers/homeController')
 
 router.get('/', controller.home);
 
-router.get('/login', controller.login);
-    
 
 
 module.exports = router
