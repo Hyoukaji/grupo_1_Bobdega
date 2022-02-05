@@ -3,6 +3,8 @@ const path = require('path');
 const bcrypt = require('bcryptjs')
 const { validationResult, body } = require("express-validator");
 const validationRegister = require('../middlewares/validationSignIn');
+const validationSignIn = require('../middlewares/validationSignIn');
+const validations = require('../middlewares/validationSignIn');
 
 // Ubicación del archivo JSON
 const filePath = path.resolve(__dirname, '../../data/users.json');
@@ -13,19 +15,36 @@ let arrayDatos= usersArray;
 let lastId=arrayDatos[arrayDatos.length-1].id;
 
 const controller = {
+    
     signin : (req,res)=>{
         return res.render(
             'signin'
         )
         
     },
+
+    
+    
     add: (req, res) => {
+
+        const resultValidation = validationResult(req); // validaciones de formulario de signIn
+
+		if (resultValidation.errors.length > 0) {
+			return res.render("signin", {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
+
+
+        
 		// Calculo el id del nuevo usuario 
 		// let newId=lastId+1;
         lastId=lastId+1;
         // Inserto el nuevo producto al array de productos existen
         let password = req.body.password
         let encrypt = bcrypt.hashSync(password,10)
+
         arrayDatos.push({
 			id: lastId,
 			first_name: req.body.firstName,
@@ -36,14 +55,16 @@ const controller = {
             category: 'User',
             image: req.file.filename           
         });
-
+        
         
         
 
 		// Sobreescribo todo el archivo JSON con el nuevo producto    
 		fs.writeFileSync(filePath, JSON.stringify(arrayDatos, null, ' '));
 
-        res.redirect('signinUserDetail/'+ Number(lastId))              
+        res.redirect('signinUserDetail/'+ Number(lastId))  
+        
+        
     },
     userDetail : (req,res)=>{
         const userId = Number(req.params.id);

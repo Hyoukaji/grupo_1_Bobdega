@@ -48,5 +48,35 @@
   "password": "$2a$10$vOwV1z1VJHkTNopc97nngO0KGnU/n91/QzKViy3AEbWBHPgSCI4TS",
   "category": "User",
   "image": "1643502288700-318325529image.jpg"
+ },
+ {
+  "id": 8,
+  "first_name": "",
+  "last_name": "",
+  "username": " ",
+  "email": "",
+  "password": "$2a$10$cTRGNc7IzGM.9YvE6ajJruUxWLSxxZbg/5ml5eTwZtKlmTSFSPxQO",
+  "category": "User",
+  "image": "1643563585452-415681949image.jpg"
+ },
+ {
+  "id": 10,
+  "first_name": "",
+  "last_name": "",
+  "username": " ",
+  "email": "",
+  "password": "$2a$10$G.0fXhUQiPo.HweQ1EHVhuUbM3dTVN7UQGG5hawmwRGOS7SO0DhTC",
+  "category": "User",
+  "image": "1643566183252-276389804image.jpg"
+ },
+ {
+  "id": 11,
+  "first_name": "",
+  "last_name": "",
+  "username": " ",
+  "email": "",
+  "password": "$2a$10$syKjF17lrC7/34ofKW1ABeUCPpJPa3mmGI4eteDjYHSsjkFLmpvNy",
+  "category": "User",
+  "image": "1643578160853-866530296image.jpg"
  }
 ]

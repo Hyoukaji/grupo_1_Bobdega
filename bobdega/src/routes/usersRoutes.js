@@ -6,14 +6,12 @@ const router = express.Router()
 const controller = require('../controllers/usersController');
 const validationsLogin = require('../middlewares/validationLogin');
 const upload = require('../middlewares/multer');
-const validationSignIn = require('../middlewares/validationSignIn');
+const signInValidations = require('../middlewares/validationSignIn');
 
 router.get('/signin', controller.signin);
 
+router.post('/signin', upload.single('image'), signInValidations ,  controller.add);
 
-
-
-router.post('/create',upload.single('image'),  controller.add);
 router.get('/signinUserDetail/:id', controller.userDetail);
 
 
