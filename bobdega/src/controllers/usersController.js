@@ -27,14 +27,14 @@ const controller = {
     
     add: (req, res) => {
 
-        const resultValidation = validationResult(req); // validaciones de formulario de signIn
+        // const resultValidation = validationResult(req); // validaciones de formulario de signIn
 
-		if (resultValidation.errors.length > 0) {
-			return res.render("signin", {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
-		}
+		// if (resultValidation.errors.length > 0) {
+		// 	return res.render("signin", {
+		// 		errors: resultValidation.mapped(),
+		// 		oldData: req.body
+		// 	});
+		// }
 
 
         
@@ -114,7 +114,7 @@ const controller = {
 				}
 	
 				// 4. Finalmente redireccionamos a user/profile
-				return res.redirect("/user/profile");
+				return res.redirect("/");
 			}
 		}
 	},
