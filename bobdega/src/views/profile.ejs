@@ -1,0 +1,27 @@
+<%- include('./partials/header',  {pageTitle : 'MI Perfil'}) %> 
+
+
+   <main>
+    <section class="Sign-in">
+        <i class="fas fa-user-circle" style="font-size: 18px;" ></i>
+
+        <h3>usuario logueado:</h3>
+        <section class="userDetail">
+            <div>
+                <div>Nombre:  <%=user.first_name %></div>
+                <div>Apellido:  <%=user.last_name%></div>
+                <div>Usuario:  <%=user.username%></div>
+                <div>Email:  <%=user.email%></div>
+            </div>
+            <div>
+                <img src="/userImageUploads/<%= user.image %>" alt="">
+            </div>
+        </section>
+            <p>Ingresar con:</p>
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook"></i>
+        
+    </section>
+    </main>
+
+<%- include('./partials/footer') %> 

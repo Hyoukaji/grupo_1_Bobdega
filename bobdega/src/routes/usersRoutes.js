@@ -17,4 +17,7 @@ router.get('/signinUserDetail/:id', controller.userDetail);
 
 router.get('/login', controller.login);
 router.post('/login', controller.loginProcess)
+
+router.get('/profile', controller.profile)
+
 module.exports = router

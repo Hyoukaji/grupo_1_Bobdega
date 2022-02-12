@@ -78,5 +78,15 @@
   "password": "$2a$10$syKjF17lrC7/34ofKW1ABeUCPpJPa3mmGI4eteDjYHSsjkFLmpvNy",
   "category": "User",
   "image": "1643578160853-866530296image.jpg"
+ },
+ {
+  "id": 12,
+  "first_name": "anibal",
+  "last_name": "anibal12",
+  "username": "anibal32",
+  "email": "anibal@email.com",
+  "password": "$2a$10$oxcfb7Q7wdl0FM5FiRUI4uPWiqUJzZ82XEQDK/FnpINz/5UL793Wy",
+  "category": "User",
+  "image": "1644686425409-837076935image.jpg"
  }
 ]

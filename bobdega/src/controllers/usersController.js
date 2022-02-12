@@ -103,26 +103,30 @@ const controller = {
 		if (userToLogin) {
 			// 2. Comparamos las contraseñas
 			const isPasswordCorrect = bcrypt.compareSync(req.body.password, userToLogin.password);
-
+               
 			if (isPasswordCorrect) {
 				// 3. Guardar al usuario logeado en Session
 				delete userToLogin.password; // Borramos el password del usuario que estamos almacenando en sesion
 				req.session.userLogged = userToLogin;
 
-				if(req.body.remember_user) {
-					res.cookie("userEmail", userToLogin.email, { maxAge: (1000 * 60) * 10 });
-				}
+				// if(req.body.remember_user) {
+				// 	res.cookie("userEmail", userToLogin.email, { maxAge: (1000 * 60) * 10 });
+				// }
 	
 				// 4. Finalmente redireccionamos a user/profile
-				return res.redirect("/");
+				return res.redirect("/user/profile");
 			}
+
+            
 		}
 	},
 
-    
-
-        
-
+    profile: (req, res) => {
+        console.log(req.session.userLogged)
+        return res.render('profile', {
+            user: req.session.userLogged
+        });
+    }
     
         
 }
