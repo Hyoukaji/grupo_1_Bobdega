@@ -84,22 +84,24 @@ const controller = {
         
     },
     loginProcess: (req, res) => {
-        const resultValidation = validationResult(req);
+        // const resultValidation = validationResult(req);
 
-		if (resultValidation.errors.length > 0) {
-			return res.render("login", {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
-		}
+		// if (resultValidation.errors.length > 0) {
+		// 	return res.render("login", {
+		// 		errors: resultValidation.mapped(),
+		// 		oldData: req.body
+		// 	});
+		// }
 
-        const bodyData = req.body;  
+        
+        // bodyData = req.body;  
         
 
-
+        console.log(req.body.email);
 		// 1. Buscamos a la persona
-		const userToLogin = usersArray.find(oneUser => oneUser.email === req.body.email);
-
+		const userToLogin = usersArray.find(user => user.email === req.body.email);
+        
+        console.log(userToLogin);
 		if (userToLogin) {
 			// 2. Comparamos las contraseñas
 			const isPasswordCorrect = bcrypt.compareSync(req.body.password, userToLogin.password);
@@ -114,7 +116,8 @@ const controller = {
 				// }
 	
 				// 4. Finalmente redireccionamos a user/profile
-				return res.redirect("/user/profile");
+                console.log("password ok")
+                return res.redirect("/user/profile");
 			}
 
             

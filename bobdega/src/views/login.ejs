@@ -3,7 +3,7 @@
     <i class="fas fa-user-circle" style="font-size: 18px;" ></i>
 
     <h3>Ingresa tu cuenta</h3>
-    <form action="/user/login" method="post" enctype="multipart/form-data">
+    <form method="post" action="/user/login">
         <div>
             <input type="text" name="email" placeholder="Nombre de usuario - Email" class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
             value="<%= locals.oldData ? oldData.email: null  %> " >
