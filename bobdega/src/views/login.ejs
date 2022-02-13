@@ -6,7 +6,7 @@
     <form method="post" action="/user/login">
         <div>
             <input type="text" name="email" placeholder="Nombre de usuario - Email" class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
-            value="<%= locals.oldData ? oldData.email: null  %> " >
+            value="<%= locals.oldData ? oldData.email: null  %>" >
             
 				<% if (locals.errors && errors.email) { %>
 				<div class="text-danger">
@@ -24,6 +24,11 @@
         <% if (locals.errors && errors.password) { %>
             <div class="text-danger">
                 <%= errors.password.msg %>
+            </div>
+        <% } %>
+        <% if (locals.error) { %>
+            <div class="text-danger">
+                <%= locals.msg %>
             </div>
         <% } %>
         </div>

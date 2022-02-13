@@ -88,5 +88,25 @@
   "password": "$2a$10$oxcfb7Q7wdl0FM5FiRUI4uPWiqUJzZ82XEQDK/FnpINz/5UL793Wy",
   "category": "User",
   "image": "1644686425409-837076935image.jpg"
+ },
+ {
+  "id": 13,
+  "first_name": "Pedro",
+  "last_name": "Flores",
+  "username": "Drope",
+  "email": "florespedromartin@gmail.com",
+  "password": "$2a$10$OSohFj8mNs5dIYJkst8MAOiXvtR3RAXA8s1yZY5D.pDs2hIEFHNB2",
+  "category": "User",
+  "image": "1644778629796-731195785image.jpg"
+ },
+ {
+  "id": 14,
+  "first_name": "Rebeca",
+  "last_name": "Iparraguirre",
+  "username": "BEck",
+  "email": "rebeca.iparraguirre@hotmail.com",
+  "password": "$2a$10$Bx4bjyJpec6rrE03e7GoC.GhobXWqBsUS08p8rYSD0CSEg51dsdEi",
+  "category": "User",
+  "image": "1644778856641-730567337image.jpg"
  }
 ]

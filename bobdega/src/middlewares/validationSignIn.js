@@ -16,7 +16,7 @@ validationSignIn =  [
 
 
 
-    body('userName')
+    body('username')
         .notEmpty().withMessage('Completar ususario').bail(),
 
     
@@ -50,6 +50,7 @@ validationSignIn =  [
         }
         return true 
     })
+
 	
 ]
 

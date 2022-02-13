@@ -10,7 +10,7 @@ let validationResult = [
 
 	check('password')
 		.notEmpty().withMessage('Tienes que escribir una contraseña'),
-	
+			
 ]
 
 module.exports = validationResult

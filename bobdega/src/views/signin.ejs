@@ -49,7 +49,7 @@
 
         <div>
             <input type="text" name="username" placeholder="Nombre de Usuario" class="form-control <%= locals.errors && errors.username ? 'is-invalid': null %>"
-            value="<%= locals.oldData ? oldData.username : null %> " >
+            value="<%= locals.oldData ? oldData.username : null %>" >
 
         <% if (locals.errors && errors.username) { %>
            <div class= "text-danger">

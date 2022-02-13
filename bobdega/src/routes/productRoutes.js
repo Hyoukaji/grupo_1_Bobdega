@@ -4,6 +4,8 @@ const multer = require ('multer');
 const path = require('path');
 const controller = require('../controllers/productController');
 
+const userMiddleware = require("../middlewares/authMiddleware")
+
 const multerDiskStorage = multer.diskStorage({
 	destination: function (req, file, cb) {
 		cb(null, path.resolve(__dirname, '../../public/uploads'));
@@ -12,29 +14,28 @@ const multerDiskStorage = multer.diskStorage({
     cb(null, uniqueSuffix + file.fieldname + path.extname(file.originalname)) 
 	},
 	fileFilter: (req, file, cb) => {
-		// Acá va la lógica para validar los tipos de archivo
+		
 	}
 });
 
 const upload = multer ({storage: multerDiskStorage}) 
 
 
-router.get('/', controller.product) // muestra todos los productos
+router.get('/',userMiddleware, controller.product) 
 
-router.get('/shoppingCart', controller.shoppingCart)
-// GET ALL PRODUCTS / 
-//router.get('/', controller.index); 
-
-// CREATE ONE PRODUCT / 
-router.get('/create', controller.create); // muestra el formulario de creación
-router.post('/', upload.single('imageProduct'), controller.store); // almacena la información en la DB
-
-// GET ONE PRODUCT / 
-router.get('/detail/:id', controller.detail); // muestra el detalle de un producto
+router.get('/shoppingCart',userMiddleware, controller.shoppingCart)
 
 
 
-// EDIT ONE PRODUCT / 
+router.get('/create',userMiddleware, controller.create); 
+router.post('/', upload.single('imageProduct'), controller.store); 
+
+
+router.get('/detail/:id', controller.detail); 
+
+
+
+
 router.get('/edit/:id', controller.edit); 
 router.put("/:id", upload.single("image"), controller.update); 
 

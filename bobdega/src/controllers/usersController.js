@@ -26,25 +26,24 @@ const controller = {
     
     
     add: (req, res) => {
+         const resultValidation = validationResult(req); // validaciones de formulario de signIn
 
-        // const resultValidation = validationResult(req); // validaciones de formulario de signIn
-
-		// if (resultValidation.errors.length > 0) {
-		// 	return res.render("signin", {
-		// 		errors: resultValidation.mapped(),
-		// 		oldData: req.body
-		// 	});
-		// }
-
-
+		 if (resultValidation.errors.length > 0) {
+            console.log("entro al if")
+            console.log(resultValidation.errors.length)
+            console.log(resultValidation.mapped())
+            console.log(req.body)
+		 	return res.render("signin", {
+		 		errors: resultValidation.mapped(),
+		 		oldData: req.body
+		 	});
+		 }
         
 		// Calculo el id del nuevo usuario 
-		// let newId=lastId+1;
         lastId=lastId+1;
         // Inserto el nuevo producto al array de productos existen
         let password = req.body.password
         let encrypt = bcrypt.hashSync(password,10)
-
         arrayDatos.push({
 			id: lastId,
 			first_name: req.body.firstName,
@@ -56,12 +55,11 @@ const controller = {
             image: req.file.filename           
         });
         
-        
+        console.log("se hizo el push")
         
 
 		// Sobreescribo todo el archivo JSON con el nuevo producto    
 		fs.writeFileSync(filePath, JSON.stringify(arrayDatos, null, ' '));
-
         res.redirect('signinUserDetail/'+ Number(lastId))  
         
         
@@ -84,17 +82,17 @@ const controller = {
         
     },
     loginProcess: (req, res) => {
-        // const resultValidation = validationResult(req);
+         const resultValidation = validationResult(req);
 
-		// if (resultValidation.errors.length > 0) {
-		// 	return res.render("login", {
-		// 		errors: resultValidation.mapped(),
-		// 		oldData: req.body
-		// 	});
-		// }
+		    if (resultValidation.errors.length > 0) {
+		 	return res.render("login", {
+		 		errors: resultValidation.mapped(),
+		 		oldData: req.body
+		 	});
+		 }
 
         
-        // bodyData = req.body;  
+         bodyData = req.body;  
         
 
         console.log(req.body.email);
@@ -104,21 +102,31 @@ const controller = {
         console.log(userToLogin);
 		if (userToLogin) {
 			// 2. Comparamos las contraseñas
+
+            console.log(req.body.password);
 			const isPasswordCorrect = bcrypt.compareSync(req.body.password, userToLogin.password);
+
                
 			if (isPasswordCorrect) {
 				// 3. Guardar al usuario logeado en Session
 				delete userToLogin.password; // Borramos el password del usuario que estamos almacenando en sesion
 				req.session.userLogged = userToLogin;
-
-				// if(req.body.remember_user) {
-				// 	res.cookie("userEmail", userToLogin.email, { maxAge: (1000 * 60) * 10 });
-				// }
-	
+                
+				 if(req.body.reUser) {
+				 	res.cookie("userEmail", userToLogin.email, { maxAge: (1000 * 60) * 10 });
+				 }
+            
 				// 4. Finalmente redireccionamos a user/profile
                 console.log("password ok")
                 return res.redirect("/user/profile");
-			}
+			}else{
+                res.render("login", {
+                    error: true,
+                    msg: "Contraseña incorrecta",
+                    oldData: req.body
+                })
+            }
+            
 
             
 		}
@@ -129,8 +137,13 @@ const controller = {
         return res.render('profile', {
             user: req.session.userLogged
         });
-    }
-    
+    },
+
+    logout: (req, res) => {
+		res.clearCookie("userEmail");
+		req.session.destroy();
+		return res.redirect("/");
+	}
         
 }
 
