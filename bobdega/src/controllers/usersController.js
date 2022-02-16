@@ -82,6 +82,7 @@ const controller = {
         
     },
     loginProcess: (req, res) => {
+        console.log(req.body)
          const resultValidation = validationResult(req);
 
 		    if (resultValidation.errors.length > 0) {
@@ -91,22 +92,15 @@ const controller = {
 		 	});
 		 }
 
-        
-         bodyData = req.body;  
-        
-
-        console.log(req.body.email);
+                
 		// 1. Buscamos a la persona
 		const userToLogin = usersArray.find(user => user.email === req.body.email);
         
-        console.log(userToLogin);
+        console.log(req.body);
 		if (userToLogin) {
 			// 2. Comparamos las contraseñas
-
-            console.log(req.body.password);
 			const isPasswordCorrect = bcrypt.compareSync(req.body.password, userToLogin.password);
 
-               
 			if (isPasswordCorrect) {
 				// 3. Guardar al usuario logeado en Session
 				delete userToLogin.password; // Borramos el password del usuario que estamos almacenando en sesion
@@ -117,10 +111,9 @@ const controller = {
 				 }
             
 				// 4. Finalmente redireccionamos a user/profile
-                console.log("password ok")
                 return res.redirect("/user/profile");
 			}else{
-                res.render("login", {
+                return res.render("login", {
                     error: true,
                     msg: "Contraseña incorrecta",
                     oldData: req.body

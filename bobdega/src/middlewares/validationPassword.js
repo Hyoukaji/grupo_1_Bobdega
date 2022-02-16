@@ -13,7 +13,7 @@ function validationPassword (req, res, next) {
         if (check) {
             next()
         }else{
-            res.redirect("login")
+            return res.redirect("/user/login")
         }
     }
     
