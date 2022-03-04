@@ -8,6 +8,7 @@ const userRoutes = require ('./routes/usersRoutes');
 const cookie = require('cookie-parser');
 const session = require('express-session')
 
+
 app.use(express.static(path.resolve(__dirname, '../public')));
 app.set('view engine', 'ejs');
 
