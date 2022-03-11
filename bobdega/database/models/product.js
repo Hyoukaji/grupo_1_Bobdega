@@ -7,7 +7,13 @@ module.exports = (sequelize, DataTypes) => {
         alcohol: DataTypes.INTEGER,
 		description: DataTypes.STRING,
         image: DataTypes.STRING,
-	});
+	}, 
+	{
+        tableName: 'products',
+
+        timestamps: false,
+
+        });
 
 	 Product.associate = function (models) {
 	 	

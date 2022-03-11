@@ -40,30 +40,51 @@ const controller = {
 		 }
         
 		// Calculo el id del nuevo usuario 
-        lastId=lastId+1;
+        // lastId=lastId+1;
         // Inserto el nuevo producto al array de productos existen
+
         let password = req.body.password
         let encrypt = bcrypt.hashSync(password,10)
-        arrayDatos.push({
-			id: lastId,
-			first_name: req.body.firstName,
-            last_name: req.body.lastName,
-            username: req.body.username,
-            email: req.body.email,
-            password: encrypt,
-            category: 'User',
-            image: req.file.filename           
-        });
+    },
+
+        store: async (req, res) => {
+            const createUser = await User.create({ 
+                     
+                
+                firstName: req.body.lastName,
+                lastName: req.body.username,
+                email: req.body.email,
+                password: encrypt,
+                category: 'User',
+                image: req.file.filename  });
+
+
+            
+            return res.send("usuario");
+        },
+
+        // arrayDatos.push({
+		// 	id: lastId,
+		// 	first_name: req.body.firstName,
+        //     last_name: req.body.lastName,
+        //     username: req.body.username,
+        //     email: req.body.email,
+        //     password: encrypt,
+        //     category: 'User',
+        //     image: req.file.filename           
+        // });
         
-        console.log("se hizo el push")
+        // console.log("se hizo el push")
         
 
-		// Sobreescribo todo el archivo JSON con el nuevo producto    
-		fs.writeFileSync(filePath, JSON.stringify(arrayDatos, null, ' '));
-        res.redirect('signinUserDetail/'+ Number(lastId))  
+		// // Sobreescribo todo el archivo JSON con el nuevo producto    
+		// fs.writeFileSync(filePath, JSON.stringify(arrayDatos, null, ' '));
+        // res.redirect('signinUserDetail/'+ Number(lastId))  
+
+
         
         
-    },
+    
     userDetail : (req,res)=>{
         const userId = Number(req.params.id);
         let posicion=0;
