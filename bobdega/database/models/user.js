@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 	
-	const user = sequelize.define('user', {
+	const User = sequelize.define('user', {
 		firstName: DataTypes.STRING,
         lastName: DataTypes.STRING,
 		email: DataTypes.STRING,
@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
 
 	
 
-    user.associate = function (models) {
+    User.associate = function (models) {
             
-            user.hasMany(models.cart, {
+            User.hasMany(models.Cart, {
                 as: "cart",
                 foreignKey: "userId"
             });
@@ -21,5 +21,5 @@ module.exports = (sequelize, DataTypes) => {
 
 };
 
-	return user;
+	return User;
 };

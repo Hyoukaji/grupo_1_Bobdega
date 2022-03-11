@@ -1,11 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
 	
-	const productCart = sequelize.define('productCart', {
+	const ProductCart = sequelize.define('ProductCart', {
 		productId: DataTypes.INTEGER,
         cartId: DataTypes.INTEGER,
 		productPrice: DataTypes.DECIMAL(10,2),
 		quantity: DataTypes.INTEGER,
 	});
 
-	return productCart;
+	return ProductCart;
 };

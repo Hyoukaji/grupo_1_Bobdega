@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 	
-	const product = sequelize.define('product', {
+	const Product = sequelize.define('Product', {
 		name: DataTypes.STRING,
         typeId: DataTypes.INTEGER,
         price: DataTypes.DECIMAL(10,2),
@@ -9,14 +9,14 @@ module.exports = (sequelize, DataTypes) => {
         image: DataTypes.STRING,
 	});
 
-	 product.associate = function (models) {
+	 Product.associate = function (models) {
 	 	
-	 	Product.belongsTo(models.type, {
+	 	Product.belongsTo(models.Type, {
 	 		as: "types",
 	 		foreignKey: "typeId"
 	 	});
 
-	 	product.belongsToMany(models.cart, {
+	 	Product.belongsToMany(models.Cart, {
 	 		as: "cart",
 	 		through: "productCart",
 	 		foreignKey: "productId",
@@ -26,5 +26,5 @@ module.exports = (sequelize, DataTypes) => {
 
 	 };
 
-	return product;
+	return Product;
 };

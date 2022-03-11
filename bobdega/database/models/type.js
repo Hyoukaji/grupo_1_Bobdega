@@ -1,17 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
 	
-	const type = sequelize.define('type', {
+	const Type = sequelize.define('Type', {
 		name: DataTypes.STRING,
 	});
 
-	 type.associate = function (models) {
+	 	Type.associate = function (models) {
 	 	
-	 	type.hasMany(models.product, {
+	 	Type.hasMany(models.product, {
 	 		as: "products",
 	 		foreignKey: "typeId"
 	 	});
 
 	 };
 
-	return type;
+	return Type;
 };

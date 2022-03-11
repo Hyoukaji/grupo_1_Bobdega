@@ -21,13 +21,12 @@
 		</div>
 		<div>
 			<label>Tipo</label> <br>
-                    <select name="type">
-                        <option value="">Elegí una opción</option>
-                        <option value="tinto">Tinto</option>
-                        <option value="espumante">Espumante</option>
-                        <option value="blanco">Blanco </option>
-                        <option value="ahumado">Ahumado</option>
-                    </select>
+				<select name="type">
+					<option value="">Elegí una opción</option>
+					<% type.forEach(oneType => { %>
+						<option value="<%= oneType.id %>"><%= oneType.name %></option>
+					<% }) %>
+				</select>
 		</div>
 		<div>
 			<label>Descripción:</label> <br>
