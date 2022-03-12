@@ -5,6 +5,7 @@ const { validationResult, body } = require("express-validator");
 const validationRegister = require('../middlewares/validationSignIn');
 const validationSignIn = require('../middlewares/validationSignIn');
 const validations = require('../middlewares/validationSignIn');
+const { User } = require("../../database/models");
 
 // Ubicación del archivo JSON
 const filePath = path.resolve(__dirname, '../../data/users.json');
@@ -25,7 +26,7 @@ const controller = {
 
     
     
-    add: (req, res) => {
+    add: async  (req, res) => {
          const resultValidation = validationResult(req); // validaciones de formulario de signIn
 
 		 if (resultValidation.errors.length > 0) {
@@ -45,9 +46,8 @@ const controller = {
 
         let password = req.body.password
         let encrypt = bcrypt.hashSync(password,10)
-    },
-
-        store: async (req, res) => {
+        
+        
             const createUser = await User.create({ 
                      
                 
@@ -59,8 +59,8 @@ const controller = {
                 image: req.file.filename  });
 
 
-            
-            return res.send("usuario");
+            console.log("ya creo el registro");
+            return res.redirect("signinUserDetail/");
         },
 
         // arrayDatos.push({
