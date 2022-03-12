@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const { Products , Types } = require("../../database/models");
+const { Product , Type } = require("../../database/models");
 
 
 // Ubicación del archivo JSON
@@ -17,24 +17,29 @@ const controller = {
 		const x = await Product.bulkCreate(mockData);
 		console.log(x)
 		return res.json(mockData);
+	
 	},
-	// show: function (req, res) {
-	// 	Product
-	// 		.findAll({
-	// 			include: ["brand"]
-	// 		})
-	// 		.then((products) => {
-	// 			return res.render("index", { products });
-	// 		})
-	// 		.catch((err) => { console.log(err) });
-	// },
+
+	show: function (req, res) {
+	 	Product
+	 		.findAll({
+	 			include: ["types"]
+	 		})
+	 		.then((products) => {
+	 			return res.render("product", { products });
+	 		})
+	 		.catch((err) => { console.log(err) });
+	 },
+
 	product: async (req, res) => {
-		const products = await Products.findAll({include:["types"]});
+		const products = await Product.findAll({include:["types"]});
 		return res.render("product", { products });
 	},
 	create: async (req, res) => {
 		try {
-			const type = await Types.findAll({});
+			console.log("intentando tomar los types")
+			const type = await Type.findAll();
+			console.log(type)
 			return res.render("create", {
 				type
 			});
@@ -42,43 +47,59 @@ const controller = {
 			console.log("No se pudo crear el producto", error);
 		}
 
-		return res.render(
-            'create'
+		return res.redirect(
+            '/product'
         )
 	},
 
 	store: async (req, res) => {
-		const productStored = await Products.create(req.body);
-		productStored.addCategories(req.body.categories);
-		return res.redirect("/products");
+
+		const createProduct = await Product.create({ 
+			name: req.body.name,
+			typeId: req.body.type,
+			price: req.body.price,
+			alcohol: req.body.alcohol,
+			description: req.body.description,
+			image: req.file.filename  });
+
+
+		return res.redirect("/product");
 	},
 	
 	destroy: async (req, res) => {
 		const productID = req.params.id;
-		Products.destroy({ where: { id: productID }});
+		Product.destroy({ where: { id: productID }});
 		return res.redirect("/products");
 	},
 	
 	detail: async (req, res) => {
 		const productID = req.params.id;
-		const producto = await products.findByPk(productID, { include: ["types"] });
+		const producto = await Product.findByPk(productID, { include: ["types"] });
 		return res.render("detail", { producto });
 	},
 
 	edit: async (req, res) => {
 		const productID = req.params.id;
-		const theProduct = await Products.findByPk(productID, { include: ["type"] });
-		const type = await Types.findAll({});
+		const theProduct = await Product.findByPk(productID, { include: ["types"] });
+		const type = await Type.findAll({});
 		return res.render("edit", { theProduct, type });
 	},
 
-	update: async (req, res) => {
-		return res.send(req.params.id);
-		/// COMPLETAR EL PATCH
+	update: async (req, res) => { 
+		 const productID = req.params.id;
+		 const producto = await Product.findByPk(productID, { include: ["types"] });
+		 producto.update({
+			name:req.body.name,
+			price:req.body.price,
+			description:req.body.description,
+			alcohol:req.body.alcohol},
+			{where:{id:productID}})
+		const productoShow = await Product.findByPk(productID, { include: ["types"] });
+		return res.render("detail", {productoShow});
 	},
 
 	shoppingCart: async (req,res) => {
-		/// COMPLETAR EL SHOPPING CART
+		res.render("shoppingCart")
 	}
 }
 

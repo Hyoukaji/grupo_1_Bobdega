@@ -1,48 +1,53 @@
-<%- include('./partials/header', {pageTitle : 'Bobdega'}) %> 
+<%- include('./partials/header', {pageTitle : 'Bobdega' }) %>
 
    <main>
 
-      <section>   
+      <section>
          <img src="/images/bannerBobdega.jpg" alt="" width="100%">
       </section>
 
       <section>
-         <a href="/product"><h2 class="title">Ver Todos los Productos</h2></a>
+         <a href="/product">
+            <h2 class="title">Ver Todos los Productos</h2>
+         </a>
       </section>
 
       <section>
-         <a href="/product/create"><h2 class="title">Crear Producto</h2></a>
+         <a href="/product/create">
+            <h2 class="title">Crear Producto</h2>
+         </a>
       </section>
-    
-        <section>
-          <h2 class="title">Ofertas de esta temporada</h2>       
-          <img src="/images/fondo.jpg" alt="" width="250">
-         </section>
-    
+
+      <section>
+         <h2 class="title">Ofertas de esta temporada</h2>
+         <img src="/images/fondo.jpg" alt="" width="250">
+      </section>
+
+      <section>
+         <h2>Nuestra Seleccion Premium</h2>
+         <img src="/images/fondo-2.jpg" alt="" width="250">
+      </section>
+
+      <%- include('./partials/quizasTeInterese',products) %>
+
          <section>
-            <h2>Nuestra Seleccion Premium</h2>
-            <img src="/images/fondo-2.jpg" alt="" width="250">
-        </section>
-    
-        <%- include('./partials/quizasTeInterese',products) %> 
-       
-       <section>
-        <h2>Tour por nuestros Viñedos</h2>
-        <article class="tour">
-            
+            <h2>Tour por nuestros Viñedos</h2>
+            <article class="tour">
 
-          <div class="tour">
-            <div class="fotoBodega">
-               <img src="/images/Bodega.jpg" alt="" width="250">
-            </div>
 
-            <div>
-               <p class="descripcionBodega"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse autem sit, architecto sed fugiat temporibus tempora quod perferendis. Id aut sunt beatae quibusdam et qui, eius eligendi quis rerum! Sed! </p>
-            </div>
-        </div>
-        </article>
-    </section>
+               <div class="tour">
+                  <div class="fotoBodega">
+                     <img src="/images/Bodega.jpg" alt="" width="250">
+                  </div>
 
-    </main>
-    <%- include('./partials/footer') %> 
+                  <div>
+                     <p class="descripcionBodega"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse autem
+                        sit, architecto sed fugiat temporibus tempora quod perferendis. Id aut sunt beatae quibusdam et
+                        qui, eius eligendi quis rerum! Sed! </p>
+                  </div>
+               </div>
+            </article>
+         </section>
 
+   </main>
+   <%- include('./partials/footer') %>

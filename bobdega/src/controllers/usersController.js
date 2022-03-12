@@ -7,14 +7,6 @@ const validationSignIn = require('../middlewares/validationSignIn');
 const validations = require('../middlewares/validationSignIn');
 const { User } = require("../../database/models");
 
-// Ubicación del archivo JSON
-const filePath = path.resolve(__dirname, '../../data/users.json');
-
-// Lectura del archivo JSON y parseado a array 
-const usersArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-let arrayDatos= usersArray;
-let lastId=arrayDatos[arrayDatos.length-1].id;
-
 const controller = {
     
     signin : (req,res)=>{
@@ -24,8 +16,6 @@ const controller = {
         
     },
 
-    
-    
     add: async  (req, res) => {
          const resultValidation = validationResult(req); // validaciones de formulario de signIn
 
@@ -39,18 +29,12 @@ const controller = {
 		 		oldData: req.body
 		 	});
 		 }
-        
-		// Calculo el id del nuevo usuario 
-        // lastId=lastId+1;
-        // Inserto el nuevo producto al array de productos existen
 
         let password = req.body.password
         let encrypt = bcrypt.hashSync(password,10)
         
         
             const createUser = await User.create({ 
-                     
-                
                 firstName: req.body.lastName,
                 lastName: req.body.username,
                 email: req.body.email,
@@ -58,42 +42,25 @@ const controller = {
                 category: 'User',
                 image: req.file.filename  });
 
-
             console.log("ya creo el registro");
-            return res.redirect("signinUserDetail/");
+
+            let user = { 
+                firstName: req.body.lastName,
+                lastName: req.body.username,
+                email: req.body.email,
+                password: encrypt,
+                category: 'User',
+                image: req.file.filename  }
+
+            console.log(user)
+
+            return res.render("signinUserDetail",{user});
         },
-
-        // arrayDatos.push({
-		// 	id: lastId,
-		// 	first_name: req.body.firstName,
-        //     last_name: req.body.lastName,
-        //     username: req.body.username,
-        //     email: req.body.email,
-        //     password: encrypt,
-        //     category: 'User',
-        //     image: req.file.filename           
-        // });
-        
-        // console.log("se hizo el push")
-        
-
-		// // Sobreescribo todo el archivo JSON con el nuevo producto    
-		// fs.writeFileSync(filePath, JSON.stringify(arrayDatos, null, ' '));
-        // res.redirect('signinUserDetail/'+ Number(lastId))  
-
-
-        
-        
-    
     userDetail : (req,res)=>{
-        const userId = Number(req.params.id);
-        let posicion=0;
-        for (let i=0;i<arrayDatos.length;i++){
-            if(arrayDatos[i].id==userId){
-                posicion=i;
-            }
-        }
-        const user = arrayDatos[posicion];
+        let user = {}
+        User.findByPk(req.params.id).then((resultado) => {
+            user = resultado.dataValues 
+        })
         return res.render('signinUserDetail', { user });
     },
     login : (req,res)=>{
@@ -102,7 +69,7 @@ const controller = {
         )
         
     },
-    loginProcess: (req, res) => {
+    loginProcess: async (req, res) => {
         console.log(req.body)
          const resultValidation = validationResult(req);
 
@@ -113,36 +80,35 @@ const controller = {
 		 	});
 		 }
 
-                
-		// 1. Buscamos a la persona
-		const userToLogin = usersArray.find(user => user.email === req.body.email);
-        
-        console.log(req.body);
-		if (userToLogin) {
-			// 2. Comparamos las contraseñas
-			const isPasswordCorrect = bcrypt.compareSync(req.body.password, userToLogin.password);
+         // 1. Buscamos a la persona
+         let userToLogin = await User.findOne({where :{email : req.body.email}})
 
-			if (isPasswordCorrect) {
+         console.log("aca va el usuario")
+         userToLogin = userToLogin.dataValues
+        console.log(userToLogin)
+
+		 if (userToLogin) {
+		 	// 2. Comparamos las contraseñas
+            const isPasswordCorrect = bcrypt.compareSync(req.body.password , userToLogin.password );
+               
+		 	if (isPasswordCorrect) {
 				// 3. Guardar al usuario logeado en Session
-				delete userToLogin.password; // Borramos el password del usuario que estamos almacenando en sesion
-				req.session.userLogged = userToLogin;
+		 		delete userToLogin.password; // Borramos el password del usuario que estamos almacenando en sesion
+		 		req.session.userLogged = userToLogin;
                 
-				 if(req.body.reUser) {
-				 	res.cookie("userEmail", userToLogin.email, { maxAge: (1000 * 60) * 10 });
-				 }
+		 		 if(req.body.reUser) {
+		 		 	res.cookie("userEmail", userToLogin.email, { maxAge: (1000 * 60) * 10 });
+		 		 }
             
-				// 4. Finalmente redireccionamos a user/profile
-                return res.redirect("/user/profile");
-			}else{
-                return res.render("login", {
-                    error: true,
-                    msg: "Contraseña incorrecta",
-                    oldData: req.body
+		 		// 4. Finalmente redireccionamos a user/profile
+                 return res.redirect("/user/profile");
+		 	}else{
+                 return res.render("login", {
+                     error: true,
+                     msg: "Contraseña incorrecta",
+                     oldData: req.body
                 })
-            }
-            
-
-            
+             }
 		}
 	},
 
@@ -158,7 +124,7 @@ const controller = {
 		req.session.destroy();
 		return res.redirect("/");
 	}
-        
+    
 }
 
 module.exports = controller
