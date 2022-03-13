@@ -69,7 +69,15 @@ const controller = {
 	destroy: async (req, res) => {
 		const productID = req.params.id;
 		Product.destroy({ where: { id: productID }});
-		return res.redirect("/products");
+		Product
+	 		.findAll({
+	 			include: ["types"]
+	 		})
+	 		.then((products) => {
+	 			return res.render("product", { products });
+	 		})
+	 		.catch((err) => { console.log(err) });
+	 
 	},
 	
 	detail: async (req, res) => {
@@ -87,19 +95,26 @@ const controller = {
 
 	update: async (req, res) => { 
 		 const productID = req.params.id;
-		 const producto = await Product.findByPk(productID, { include: ["types"] });
-		 producto.update({
+		 const productoE = await Product.findByPk(productID, { include: ["types"] });
+		 productoE.update({
 			name:req.body.name,
 			price:req.body.price,
 			description:req.body.description,
-			alcohol:req.body.alcohol},
+			alcohol:req.body.alcohol,
+			image: req.file.filename},
 			{where:{id:productID}})
-		const productoShow = await Product.findByPk(productID, { include: ["types"] });
-		return res.render("detail", {productoShow});
+		const producto = await Product.findByPk(productID, { include: ["types"] });
+		return res.render("detail", {producto});
 	},
 
 	shoppingCart: async (req,res) => {
-		res.render("shoppingCart")
+		const productsGo = await Product.findAll()
+        let products = []
+        for (let i = 0; i < productsGo.length; i++){
+            console.log("entrando al for")
+            products.push(productsGo[i].dataValues)
+        }
+		res.render("shoppingCart",{products})
 	}
 }
 
