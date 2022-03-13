@@ -375,12 +375,14 @@ main {
 
 .product {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .product li img {
-    width: 20%;
+    width: 50%;
 }
 
 .product li a {
@@ -388,7 +390,7 @@ main {
     color: #fff;
     display: inline-block;
     background-color: #222;
-    padding: 1em;
+    padding: 3px;
     border-radius: 0.5em;  
 }
 
@@ -398,6 +400,13 @@ main {
 
 .product li em {
     font-size: 30px;
+}
+
+.product li {
+    max-width: 300px;
+    margin: 50px;
+   
+
 }
 
 /*fin catalogo de productos */
@@ -413,10 +422,16 @@ main {
     border: dotted black 1px;
 }
 
+.userImage {
+    max-width: 300px;
+} 
+
 .userDetail div {
     text-align: left;
     margin: auto;
 }
+
+ 
 
 /* UserDetails */
 
@@ -439,8 +454,12 @@ main {
         flex-wrap: nowrap;
     }
 
+    .productImage {
+        max-width: 250;
+    }
+
     .productos img {
-        height: 100%;
+        height: 100%; 
         width: 100%;
         max-width:300px; 
     }

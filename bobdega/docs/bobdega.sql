@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-02-2022 a las 23:15:37
+-- Tiempo de generación: 14-03-2022 a las 00:04:08
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.1.2
 
@@ -23,7 +23,6 @@ SET time_zone = "+00:00";
 DROP DATABASE IF EXISTS bobdega;
 CREATE DATABASE bobdega;
 USE bobdega;
-
 -- --------------------------------------------------------
 
 --
@@ -65,6 +64,18 @@ CREATE TABLE `products` (
   `image` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `typeId`, `price`, `alcohol`, `description`, `image`) VALUES
+(1, 'Nicola Catena Bonarda', 2, '5000.00', 17, 'Origen: Argentina\r\nRegiones: Mendoza\r\nUsos recomendados: Bebidas\r\nEs orgánico: No\r\nTiempo en barrica: 18 meses\r\nMaterial del estuche: Cartón\r\nGraduación alcohólica: 17 %\r\nTemperatura ideal de consumo: 14 °C', '1647209560574-288622609imageProduct.jpg'),
+(2, 'Rutini Antologia Xxxviii (38) 750cc', 2, '5496.00', 13, 'Origen: Argentina\r\nRegiones: Mendoza\r\nAroma: Frutales y florales\r\nEs orgánico: No\r\nTiempo en barrica: 12 meses\r\nGraduación alcohólica: 13.2 %\r\nTemperatura ideal de consumo: 14 °C', '1647209820782-768001581image.jpg'),
+(3, 'Barda Patagonia 750ml', 2, '6.69', 14, 'Origen: Argentina\r\nRegiones: Rio Negro\r\nUsos recomendados: Asado,Carnes Rojas,Quesos\r\nAroma: Frutos rojos\r\nEs orgánico: No\r\nTiempo en barrica: 11 meses\r\nGraduación alcohólica: 14 %\r\nTemperatura ideal de consumo: 14 °C', '1647209950737-223414215imageProduct.jpg'),
+(4, 'Achaval Ferrer', 2, '18.63', 14, 'Origen: Argentina\r\nRegiones: Mendoza\r\nAroma: Flores Frescas y Ciruela\r\nEs orgánico: No\r\nTiempo en barrica: 15 meses\r\nGraduación alcohólica: 14 %\r\nTemperatura ideal de consumo: 16 °C', '1647210066954-554644160imageProduct.jpg'),
+(5, 'Novecento bodega D. Robino 750 ml', 2, '330.00', 12, 'alto vino ', '1647211444231-22904448image.jpg'),
+(6, 'Torrontés Capriccio Dolcezza', 3, '750.00', 16, 'Bodega: Dante Robino\r\nTipo de producto: Vino espumante\r\nAño: 2019\r\nVariedad de espumante: Dulce\r\nGraduación alcohólica: 16 %\r\nVolumen de la unidad: 750 mL\r\nFormato de venta: Pack\r\nUnidades por pack: 6\r\nIncluye estuche: No\r\nRegión de origen: Luján de Cuyo\r\nPaís de origen: Argentina\r\nTiempo en barrica: 36 meses\r\nUsos recomendados: postres,dulces\r\nEs orgánico: No\r\nTemperatura ideal de consumo: 16 °C\r\nProhibida su venta a menores de 18 años: Si', '1647210607249-598732110imageProduct');
+
 -- --------------------------------------------------------
 
 --
@@ -75,6 +86,17 @@ CREATE TABLE `types` (
   `id` int(10) NOT NULL,
   `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `types`
+--
+
+INSERT INTO `types` (`id`, `name`) VALUES
+(1, 'Espumantes'),
+(2, 'Tintos'),
+(3, 'Blancos'),
+(4, 'Rosados'),
+(5, 'Regalos');
 
 -- --------------------------------------------------------
 
@@ -150,13 +172,13 @@ ALTER TABLE `productcart`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `types`
 --
 ALTER TABLE `types`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
