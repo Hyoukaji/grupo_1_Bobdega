@@ -23,7 +23,8 @@ const upload = multer ({storage: multerDiskStorage})
 
 router.get('/',userMiddleware, controller.show) 
 router.get('/shoppingCart',userMiddleware, controller.shoppingCart)
-router.get('/create',userMiddleware, controller.create); 
+router.get('/create',userMiddleware, controller.create);
+router.post('/search',userMiddleware, controller.search);
 router.post('/', upload.single('imageProduct'), controller.store); 
 router.get('/detail/:id', controller.detail); 
 router.get('/edit/:id', controller.edit); 
