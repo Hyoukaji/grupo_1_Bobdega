@@ -4,7 +4,7 @@ function userLoggedMiddleware (req, res, next) {
 	if (req.session.userLogged !== undefined) {
 		res.locals.isAnUserLogged = true;
 		res.locals.userData = {
-			name: req.session.userLogged.first_name,			
+			name: req.session.userLogged.firstName,			
 		}
 	}
 
