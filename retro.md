@@ -13,3 +13,9 @@ sprint 5 entrega el dia 16/02/2022:
 en este sprint nos econtramos con varias trabas, vimos la necesidad de realizar mas sesiones de trabajo en equipo para poder solucionarlo y seguir avanzando, gracias a liveshare pudimos hacer las reuniones mas dinamicas, lo que nos ayudo a ver al mismo tiempo distinto errores, nos quedan muchos detalles esteticos que agregar pero en lo que respecta con la funcionalidad, llegamos al objetivo solicitado. 
 
 nota para javi y ro: al momento de desloguearte e intentar loguearte de nuevo, hay que bajar y levantar el servidor. 
+
+
+Sprint 6 entrega el dia 23/03/2022:
+
+En este sprint mantuvimos el trabajo en equipo, repartimos mejor las tareas, corregimos la distribucion de los commits, a diferencia del sprint anterior no nos encontramos con grandes dificultades. tambien logramos corregir temas esteticos que quedaron pendientes de sprints anteriores.
+
