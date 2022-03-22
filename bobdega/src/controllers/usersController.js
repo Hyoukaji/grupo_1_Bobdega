@@ -35,8 +35,8 @@ const controller = {
         
         
             const createUser = await User.create({ 
-                firstName: req.body.lastName,
-                lastName: req.body.username,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
                 email: req.body.email,
                 password: encrypt,
                 category: 'User',
@@ -45,8 +45,8 @@ const controller = {
             console.log("ya creo el registro");
 
             let user = { 
-                firstName: req.body.lastName,
-                lastName: req.body.username,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
                 email: req.body.email,
                 password: encrypt,
                 category: 'User',
