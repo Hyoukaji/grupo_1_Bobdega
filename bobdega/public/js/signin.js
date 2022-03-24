@@ -13,7 +13,7 @@ const validateField = (e) => {
     const spanError = field.nextElementSibling;
     if (field.value.trim() === "") {
     field.style.borderColor = "red";
-    spanError.innerText = `El campo ${field.name} es obligatorio`;
+    spanError.innerText = `El campo ${field.placeholder} es obligatorio`;
     } else {
         field.style.borderColor = "black";
         spanError.innerText = "";

@@ -1,10 +1,10 @@
 <%- include('./partials/header', {pageTitle : 'Ingresar'}) %> 
-   <main>
-    <i class="fas fa-user-circle" style="font-size: 18px;" ></i>
+   <main class="logInMain">
+    <i class="fas fa-user-circle" style="font-size: 50px;" ></i>
 
     <h3>Ingresa tu cuenta</h3>
     <form method="post" action="/user/login">
-        <div>
+        <div class="loginDiv">
             <input type="text" name="email" placeholder="Nombre de usuario - Email" class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
             value="<%= locals.oldData ? oldData.email: null  %>" >
             
@@ -14,11 +14,8 @@
 				</div>
 			<% } %>
         </div>
-        <div>
-            <input 
-            type="password" 
-            name="password" 
-            placeholder="Contraseña"
+        <div class="loginDiv">
+            <input type="password" name="password" placeholder="Contraseña"
             class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
         >
         <% if (locals.errors && errors.password) { %>
@@ -37,16 +34,19 @@
 
         </label>
                     
-        <div>
+        <div class="loginDiv">
             <button type="submit">Ingresar</button>
         </div>
        
 
     </form>
-    <p>Ingresar con:</p>
-    <i class="fab fa-google"></i>
-    <i class="fab fa-facebook"></i>
 
+    
+    <p>Ingresar con:</p>
+    <div class="logos" >
+    <i class="fab fa-google" style="font-size: 50px;"></i>
+    <i class="fab fa-facebook" style="font-size: 50px"></i>
+    </div>
     <div>
         <a href="">¿Olvidaste tu contraseña?</a>
         <a href="">¿Olvidaste tu usuario?</a>

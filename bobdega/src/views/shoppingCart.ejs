@@ -3,24 +3,26 @@
        <section class="section-p">
             
             <div class="info-p">
-                <article><p>Producto</p>
-                    
-                        <img src="/images/producto1.jpg" alt="" style="max-width: 50px;">
-                </article>    
-                <article><p>Precio</p><br>
-                    <p>USD $4000</p>
-                </article>
-                <article><p>Cantidad</p><br>
-                    <p>10</p>
-                </article>
-                <article><p>Subtotal</p><br>
-                    <p>USD $40000</p>
-                </article>
-                <article><br><br>
-                    
-                    <i class="far fa-trash-alt" style="font-size: 21px;"></i>
+                <% for( let i = 0; i < products.length; i++ ) { %>
+                    <article><p>Producto</p>
+                        
+                            <img src="/uploads/<%=products[i].image%>" alt="" style="max-width: 50px;">
+                    </article>    
+                    <article><p>Precio</p><br>
+                        <p><%= products[i].price %></p>
+                    </article>
+                    <article><p>Cantidad</p><br>
+                        <p>10</p>
+                    </article>
+                    <article><p>Subtotal</p><br>
+                        <p>USD $40000</p>
+                    </article>
+                    <article><br><br>
+                        
+                        <i class="far fa-trash-alt" style="font-size: 21px;"></i>
 
-                </article>
+                    </article>
+                    <% } %>
             </div>
             <div>
 

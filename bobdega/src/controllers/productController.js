@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
-
+const db = require("../../database/models")
+const Op = db.Sequelize.Op; 
 const { Product , Type } = require("../../database/models");
 
 
@@ -81,19 +82,32 @@ const controller = {
 	},
 
 	search: async (req, res) => {
-		console.log("entrando al search")
 		const productID = req.body.search;
-		console.log(productID)
-		const producto = await Product.findByPk(productID, { include: ["types"] });
-		console.log(producto)
-		console.log("entrando al detail")
-		return res.render("detail", { producto });
+		const productsGo = await Product.findAll({
+			where: { 
+				name: {
+				[Op.like]: "%" + productID + "%"
+			}
+			}
+		});
+
+		let products = []
+        for (let i = 0; i < productsGo.length; i++){
+            products.push(productsGo[i].dataValues)
+        }
+
+		
+
+		return res.render("product", { products });
 	},
 	
 	detail: async (req, res) => {
 		const productID = req.params.id;
 		const producto = await Product.findByPk(productID, { include: ["types"] });
-		return res.render("detail", { producto });
+		const typeGo = await Type.findAll()
+		let typeNumber = producto.typeId - 1
+		let type = typeGo[typeNumber].dataValues
+		return res.render("detail", { producto , type });
 	},
 
 	edit: async (req, res) => {
