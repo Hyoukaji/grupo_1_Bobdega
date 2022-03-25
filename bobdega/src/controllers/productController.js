@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const db = require("../../database/models")
 const Op = db.Sequelize.Op; 
-const { Product , Type } = require("../../database/models");
+const { Product , Type , ProductCart , Cart } = require("../../database/models");
 
 
 // Ubicación del archivo JSON
@@ -40,9 +40,7 @@ const controller = {
 	},
 	create: async (req, res) => {
 		try {
-			console.log("intentando tomar los types")
 			const type = await Type.findAll();
-			console.log(type)
 			return res.render("create", {
 				type
 			});
@@ -120,21 +118,18 @@ const controller = {
             products.push(productsGo[i].dataValues)
         }
 
-		let categoria=productType;
-		let titulo = "";
-		if (categoria == 1){
-			titulo = "Espumantes";
-		}else if(categoria == 2){
-			titulo = "Tintos";
-		}else if (categoria == 3){
-			titulo = "Blancos";
-		}else if(categoria == 4){
-			titulo = "Rosados";
-		}else{
-			titulo = "Regalos";
-		}
-	
+		const typeGo = await Type.findAll()
+		let types = []
+        for (let i = 0; i < typeGo.length; i++){
+            types.push(typeGo[i].dataValues)
+        }
 
+		let titulo = ""
+		if (types[productType] != undefined){
+			titulo = types[productType - 1].name
+		}else{
+			titulo = "Regalos"
+		}
 		return res.render("product", { products, titulo });
 	},
 
@@ -174,10 +169,50 @@ const controller = {
 		const productsGo = await Product.findAll()
         let products = []
         for (let i = 0; i < productsGo.length; i++){
-            console.log("entrando al for")
             products.push(productsGo[i].dataValues)
         }
 		res.render("shoppingCart",{products})
+	},
+
+	buyProduct: async (req,res) => {
+		console.log("entrando a comprar")
+		let user = req.session.userLogged
+		let uId = user.id
+		let carts = []
+		const cartGo = await Cart.findAll()
+		for (let i = 0; i < cartGo.length; i++){
+			carts.push(cartGo[i].dataValues)
+		}
+		console.log("verifico el cartGo")
+		if (carts != undefined){
+			
+			const myCart = carts.find(function(element) {
+				return element.userId = uId;
+			  });
+			if (myCart){
+				cId = myCart.id
+			}else{
+				let cId = carts.length + 1
+				const createCart = await Cart.create({ 
+					userId : uId });
+			}
+		}else{
+			let cId = 1
+			const createCart = await Cart.create({ 
+				userId : uId });
+		}
+		console.log("salgo de verificar")
+		const producto = await Product.findByPk(req.params.id, { include: ["types"] });
+		const createProductInCart = await ProductCart.create({ 
+			productId: producto.id,
+			cartId: cId,
+			productPrice: producto.price,
+			quantity: 2 });
+
+		console.log("voy a redirijir")
+
+		return res.redirect("/product");
+
 	}
 }
 
