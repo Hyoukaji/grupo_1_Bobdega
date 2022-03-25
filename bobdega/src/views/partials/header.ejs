@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=pageTitle%></title>
-    <link href="/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <header>
@@ -25,7 +26,7 @@
             
             <% if (locals.isAnUserLogged){ %>
                 <h2><%= locals.userData.name %></h2>
-                <form action="/user/logout" method="post">
+                <form action="/user/logout" method="post" class="buttonForm">
                     <button class="btn btn-warning">Salir</button>
                 </form>
                 <a href="/product/shoppingCart"><i class="fas fa-cart-plus"></i></a>

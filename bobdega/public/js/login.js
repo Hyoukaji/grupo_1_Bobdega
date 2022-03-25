@@ -1,11 +1,7 @@
-const formCreate = document.querySelector('#formCreate');
-const firstName = document.querySelector('input[name=firstName]');
-const lastName = document.querySelector('input[name=lastName]');
 const email = document.querySelector('input[name=email]');
-const username = document.querySelector('input[name=username]');
 const password = document.querySelector('input[name=password]');
-const password2 = document.querySelector('input[name=password2]');
-
+const formLogin = document.querySelector("#formLogin")
+console.log(formLogin)
 
 const validateField = (e) => {
     const field = e.target;
@@ -22,12 +18,11 @@ const validateField = (e) => {
     }
 }
 
-firstName.addEventListener('blur', validateField);
-lastName.addEventListener('blur', validateField);
+
+
 email.addEventListener('blur', validateField);
-username.addEventListener('blur', validateField);
 password.addEventListener('blur', validateField);
-password2.addEventListener('blur', validateField);
+
 
 formCreate.addEventListener("submit", (e) => {
     let errorCount = 0;

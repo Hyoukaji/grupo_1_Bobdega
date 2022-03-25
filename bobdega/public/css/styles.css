@@ -68,7 +68,12 @@ header {
     border-color: #6f1c48;
 }
 
-
+.buttonForm button {
+    color: white;
+    background-color: #6f1c48;
+    border-color: #6f1c48;
+    border-radius: 10px;
+}
 
 .barraBusqueda form button{
     position: relative;
@@ -275,14 +280,24 @@ main {
 
 /* Sign In */
 
-.sign-in{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 70%;
-    height: 100%;
+.Sign-in{
+    margin-top: 15px;
 }
 
+.signInDiv {
+    margin-top: 10px;
+     
+}
+
+.signInDiv input {
+    border-radius: 18px;
+}
+
+.signInDiv button {
+    border-radius: 18px;
+    color: white;
+    background-color: #6f1c48;
+}
 
 .formulario-s{
     display: flex;
@@ -485,11 +500,12 @@ main {
     flex-direction: row;
     padding: 3px;
     justify-content: space-around;
-    border: dotted black 1px;
+    
 }
 
 .userImage {
     max-width: 300px;
+    margin-left: 10px;
 } 
 
 .userDetail div {
@@ -497,7 +513,17 @@ main {
     margin: auto;
 }
 
- 
+.profile button {
+       background-color: #6f1c48;
+       color: white;
+       border-color: #6f1c48;  
+       border-radius: 10px;     
+}
+
+ .profile {
+     margin-top: 20px;
+     margin-bottom: 20px;
+ }
 
 /* UserDetails */
 
