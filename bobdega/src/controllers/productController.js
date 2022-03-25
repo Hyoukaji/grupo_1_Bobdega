@@ -27,14 +27,16 @@ const controller = {
 	 			include: ["types"]
 	 		})
 	 		.then((products) => {
-	 			return res.render("product", { products });
+				let titulo = "Todos los productos"
+	 			return res.render("product", { products,titulo });
 	 		})
 	 		.catch((err) => { console.log(err) });
 	 },
 
 	product: async (req, res) => {
 		const products = await Product.findAll({include:["types"]});
-		return res.render("product", { products });
+		let titulo = "Todos los productos"
+		return res.render("product", { products,titulo });
 	},
 	create: async (req, res) => {
 		try {
@@ -96,10 +98,47 @@ const controller = {
             products.push(productsGo[i].dataValues)
         }
 
-		
+		let titulo = "Resultados de busqueda"
 
-		return res.render("product", { products });
+		return res.render("product", { products,titulo });
 	},
+
+	productByCategory: async (req, res) => {
+		const productType = req.params.id;
+		const productsGo = await Product.findAll({
+			where: { 
+				typeId: {
+					 [Op.eq]: productType
+					
+				}
+				
+			}
+		});
+
+		let products = []
+        for (let i = 0; i < productsGo.length; i++){
+            products.push(productsGo[i].dataValues)
+        }
+
+		let categoria=productType;
+		let titulo = "";
+		if (categoria == 1){
+			titulo = "Espumantes";
+		}else if(categoria == 2){
+			titulo = "Tintos";
+		}else if (categoria == 3){
+			titulo = "Blancos";
+		}else if(categoria == 4){
+			titulo = "Rosados";
+		}else{
+			titulo = "Regalos";
+		}
+	
+
+		return res.render("product", { products, titulo });
+	},
+
+
 	
 	detail: async (req, res) => {
 		const productID = req.params.id;

@@ -133,6 +133,20 @@ li:hover{
     padding: 10px;  
 }
 
+.categorias li a {
+    text-decoration: none;
+    color: white;
+}
+
+.categorias li a:hover {
+    color: black;
+}
+.categorias li a :visited {
+    text-decoration: none;
+}
+
+
+
 /* fin Header */ 
 
 /* FOOTER */
