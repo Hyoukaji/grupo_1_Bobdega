@@ -341,7 +341,6 @@ main {
     display: flex;
     flex-direction: row;
     font-size: 12px;
-    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -350,10 +349,57 @@ main {
     align-self: center;
 }
 
-.info-p article{
-    align-items: center;
+.articulos {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    justify-content: space-around;
+   
+    border: 1px dotted gray;
+
 }
 
+
+
+.articulos p {
+    text-align:center; 
+        vertical-align: middle;
+        display: table-cell;
+        width: 50px; 
+   
+}
+
+.articulos article{
+    
+    vertical-align: middle;
+    
+}
+
+.columnaProducto {
+    position: relative;
+    left: -10
+    px;
+}
+
+.columnaPrecio {
+    position: relative;
+    left: 10px;
+}
+
+.columnaCantidad {
+    position: relative;
+    left: 20px;
+}
+
+.columnaSubtotal {
+    position: relative;
+    left: 20px;
+}
+
+.columnaRemover {
+    position: relative;
+    left: 10px;
+}
 /* fin Shopping Cart*/
 
 /* detail y Quizas Te Interese */
@@ -577,6 +623,61 @@ main {
         margin-top: 50px;
     }
 
+    .columnaProducto {
+        position: relative;
+        left: -15px;
+    }
+    
+    .columnaPrecio {
+        position: relative;
+        left: -10px;
+    }
+    
+    .columnaCantidad {
+        position: relative;
+        left: 20px;
+    }
+    
+    .columnaSubtotal {
+        position: relative;
+        left: 50px;
+    }
+    
+    .columnaRemover {
+        position: relative;
+        left: 30px;
+    }
+    
+    .titulosColumnas {
+        font-size: 15px;
+    }
+    
+    .iconoRemover {
+        position: relative;
+        top: -19px;
+    }
+
+    .info-p{
+        
+        justify-content: space-around;
+       
+    }
+
+    .articulos {
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .articulos p {
+        text-align:center; 
+            vertical-align: middle;
+            display: table-cell;
+            width: 100px; 
+       
+    }
+
     .cuentacarrito li{
         padding: 15px;
         font-size: 20px;
@@ -656,8 +757,9 @@ main {
     .secFooter i:hover {
         color: black!important;
         background-color:white;
-    }        
-
+    }     
+    
+    
     .footerLogo{
         margin-bottom: 10px;
         margin-left: 15px;

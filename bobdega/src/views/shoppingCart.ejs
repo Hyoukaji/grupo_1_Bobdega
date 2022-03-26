@@ -3,25 +3,39 @@
        <section class="section-p">
             
             <div class="info-p">
-                <% for( let i = 0; i < products.length; i++ ) { %>
-                    <article><p>Producto</p>
-                        
-                            <img src="/uploads/<%=products[i].image%>" alt="" style="max-width: 50px;">
-                    </article>    
-                    <article><p>Precio</p><br>
-                        <p><%= products[i].price %></p>
-                    </article>
-                    <article><p>Cantidad</p><br>
-                        <p>10</p>
-                    </article>
-                    <article><p>Subtotal</p><br>
-                        <p>USD $40000</p>
-                    </article>
-                    <article><br><br>
-                        
-                        <i class="far fa-trash-alt" style="font-size: 21px;"></i>
 
-                    </article>
+                <div class="articulos titulosColumnas">
+                            
+                    <article class="columnaProducto">Producto</article>
+                    <article  class="columnaPrecio" >Precio</article>
+                    <article class="columnaCantidad" >Cantidad</article>
+                    <article class="columnaSubtotal" >Subtotal</article>
+                    <article class="columnaRemover" >Remover</article>
+            </div>
+
+                <% for( let i = 0; i < products.length; i++ ) { %>
+                    <div class="articulos">
+                            
+                            <article>
+                                    
+                                    <img src="/uploads/<%=products[i].image%>" alt="" style="max-width: 50px;">
+                            </article>    
+                            <article><br>
+                                <p><%= products[i].price %></p>
+                            </article>
+                            <article><br>
+                                <p>10</p>
+                            </article>
+                            <article><br>
+                                <p>USD $40000</p>
+                            </article>
+                            <article><br><br>
+                                
+                                <i class="far fa-trash-alt iconoRemover" style="font-size: 21px;"></i>
+
+                            </article>
+                    </div>
+                    
                     <% } %>
             </div>
             <div>
