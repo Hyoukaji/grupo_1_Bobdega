@@ -20,10 +20,10 @@ const controller = {
          const resultValidation = validationResult(req); // validaciones de formulario de signIn
 
 		 if (resultValidation.errors.length > 0) {
-            console.log("entro al if")
-            console.log(resultValidation.errors.length)
-            console.log(resultValidation.mapped())
-            console.log(req.body)
+            //console.log("entro al if")
+            //console.log(resultValidation.errors.length)
+            //console.log(resultValidation.mapped())
+            //console.log(req.body)
 		 	return res.render("signin", {
 		 		errors: resultValidation.mapped(),
 		 		oldData: req.body
@@ -42,7 +42,6 @@ const controller = {
                 category: 'User',
                 image: req.file.filename  });
 
-            console.log("ya creo el registro");
 
             let user = { 
                 firstName: req.body.firstName,
@@ -52,7 +51,6 @@ const controller = {
                 category: 'User',
                 image: req.file.filename  }
 
-            console.log(user)
 
             return res.render("signinUserDetail",{user});
         },
@@ -70,7 +68,6 @@ const controller = {
         
     },
     loginProcess: async (req, res) => {
-        console.log(req.body)
          const resultValidation = validationResult(req);
 
 		    if (resultValidation.errors.length > 0) {
@@ -83,9 +80,7 @@ const controller = {
          // 1. Buscamos a la persona
          let userToLogin = await User.findOne({where :{email : req.body.email}})
 
-         console.log("aca va el usuario")
          userToLogin = userToLogin.dataValues
-        console.log(userToLogin)
 
 		 if (userToLogin) {
 		 	// 2. Comparamos las contraseñas
@@ -113,7 +108,6 @@ const controller = {
 	},
 
     profile: (req, res) => {
-        console.log(req.session.userLogged)
         return res.render('profile', {
             user: req.session.userLogged
         });

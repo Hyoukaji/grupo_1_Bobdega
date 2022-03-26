@@ -23,7 +23,9 @@
                 <div class="button">
                 <button type="submit">¡Comprar Ahora!</button>
                 
-                <button type="submit">Agregar al carrito <i class="fas fa-cart-plus"></i></button>
+                <form action="/product/buyProduct/<%=producto.id%>" method="post">
+                    <button type="submit">Agregar al carrito <i class="fas fa-cart-plus"></i></button>
+                </form>
                 </div>
                 <div class="desplegables">
                 <select name="cantidad" id="cant">
