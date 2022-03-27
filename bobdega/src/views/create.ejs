@@ -1,20 +1,20 @@
 <%- include('./partials/header', {pageTitle : 'Crear productos'}) %> 
    <main>
         <div class="cardCreate">   
-        <h1 class="formAdmin">Administrador</h1>
+        <h1>Administrador</h1>
         
         
-        <form action="/product" class="formA" method="post" enctype="multipart/form-data">
+        <form action="/product" class="formulario-s" method="post" enctype="multipart/form-data">
 
             <div class="formAdmin">
                 <span>Nombre del producto</span>
-                <input type="text" name="name" required>
+                <input type="text" name="name" class="form-control" required>
             </div>
             
             <div class="formAdmin">
             
                     <label>Tipo</label> <br>
-                    <select name="type">
+                    <select name="type" class="form-select" >
                         <option value="">Elegí una opción</option>
                         <% type.forEach(oneType => { %>
                             <option value="<%= oneType.id %>"><%= oneType.name %></option>
@@ -25,26 +25,26 @@
 
             <div class="formAdmin">
                 <span>Precio</span>
-                <input type="text" name="price" required>
+                <input type="text" name="price" class="form-control" required>
             </div>
 
             <div class="formAdmin">
                 <span>Alcohol</span>
-                <input type="text" name="alcohol" required>
+                <input type="text" name="alcohol" class="form-control" required>
             </div>
 
             <div class="formAdmin">
                 <span>Descripcion</span>
-                <textarea name="description" required></textarea>
+                <textarea name="description" class="form-control" required></textarea>
             </div>
 
             <div class="formAdmin">
                 <label for="Product">Selecciona la imagen del producto</label>
-                <input type="file" name="imageProduct" accept=".jpg" required>
+                <input type="file" name="imageProduct" accept=".jpg" class="form-control" required>
             </div>
                     <div class="buttonsContainer">
-                        <button type="reset" name=" reset">Borrar</button>
-                        <button type="submit" name="submit">Agregar</button>
+                        <button type="reset" name=" reset" class="form-control">Borrar</button>
+                        <button type="submit" name="submit"class= "form-control">Agregar</button>
                     </div>
             </form>
         </div>     
