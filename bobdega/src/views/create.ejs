@@ -8,39 +8,75 @@
 
             <div class="formAdmin">
                 <span>Nombre del producto</span>
-                <input type="text" name="name" class="form-control" required>
+                <input type="text" name="name" class="form-control" <%= locals.errors && errors.name ? 'is-invalid': null  %>" >
+                <span></span>
+    
+                 <% if (locals.errors && errors.name) { %>
+                    <div class="text-danger">
+                        <%= errors.name.msg %>
+                    </div> 
+                 <% } %> 
+            
             </div>
             
             <div class="formAdmin">
             
-                    <label>Tipo</label> <br>
-                    <select name="type" class="form-select" >
-                        <option value="">Elegí una opción</option>
-                        <% type.forEach(oneType => { %>
-                            <option value="<%= oneType.id %>"><%= oneType.name %></option>
-                        <% }) %>
-                    </select>
+                <label>Tipo</label> <br>
+                <select name="type" class="form-select"> 
+                    <option value="">Elegí una opción</option>
+                    <% typeId.forEach(oneType => { %>
+                        <option value="<%= oneType.id %>"><%= oneType.name %></option>
+                    <% }) %>
+                </select>
                 
             </div>
 
             <div class="formAdmin">
                 <span>Precio</span>
-                <input type="text" name="price" class="form-control" required>
+                <input type="text" name="price" class="form-control" <%= locals.errors && errors.price ? 'is-invalid': null  %>" >
+                <span></span>
+    
+                 <% if (locals.errors && errors.price) { %>
+                    <div class="text-danger">
+                        <%= errors.price.msg %>
+                    </div> 
+                 <% } %> 
             </div>
 
             <div class="formAdmin">
                 <span>Alcohol</span>
-                <input type="text" name="alcohol" class="form-control" required>
+                <input type="text" name="alcohol" class="form-control" <%= locals.errors && errors.alcohol ? 'is-invalid': null  %>" >
+                <span></span>
+    
+                 <% if (locals.errors && errors.alcohol) { %>
+                    <div class="text-danger">
+                        <%= errors.alcohol.msg %>
+                    </div> 
+                 <% } %> 
             </div>
 
             <div class="formAdmin">
                 <span>Descripcion</span>
-                <textarea name="description" class="form-control" required></textarea>
+                <textarea name="description" class="form-control" <%= locals.errors && errors.description? 'is-invalid': null  %>" >
+                    
+        
+                     <% if (locals.errors && errors.description) { %>
+                        <div class="text-danger">
+                            <%= errors.description.msg %>
+                        </div> 
+                     <% } %></textarea>
             </div>
 
             <div class="formAdmin">
                 <label for="Product">Selecciona la imagen del producto</label>
-                <input type="file" name="imageProduct" accept=".jpg" class="form-control" required>
+                <input type="file" name="imageProduct" accept=".jpg" class="form-control" <%= locals.errors && errors.image ? 'is-invalid': null  %>" >
+                <span></span>
+    
+                 <% if (locals.errors && errors.image) { %>
+                    <div class="text-danger">
+                        <%= errors.image.msg %>
+                    </div> 
+                 <% } %>
             </div>
                     <div class="buttonsContainer">
                         <button type="reset" name=" reset" class="form-control">Borrar</button>

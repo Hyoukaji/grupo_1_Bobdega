@@ -2,9 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs')
 const { validationResult, body } = require("express-validator");
-const validationRegister = require('../middlewares/validationSignIn');
-const validationSignIn = require('../middlewares/validationSignIn');
-const validations = require('../middlewares/validationSignIn');
+
 const { User } = require("../../database/models");
 
 const controller = {

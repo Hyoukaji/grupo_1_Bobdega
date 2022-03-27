@@ -12,7 +12,8 @@
             <input type="text"
                    name="firstName"
                     placeholder="Nombre"
-                    class="form-control <%= locals.errors && errors.firstName ? 'is-invalid': null %>"
+                    class="form-control 
+                    <%= locals.errors && errors.firstName ? 'is-invalid': null %>"
                     value="<%= locals.oldData ? oldData.firstName : null %>">
                     <span></span>
                 <% if (locals.errors && errors.lastName) { %>

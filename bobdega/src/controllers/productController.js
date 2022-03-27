@@ -3,6 +3,8 @@ const fs = require('fs');
 const db = require("../../database/models")
 const Op = db.Sequelize.Op; 
 const { Product , Type , ProductCart , Cart } = require("../../database/models");
+const { validationResult, body } = require("express-validator");
+
 
 
 // Ubicación del archivo JSON
@@ -54,6 +56,15 @@ const controller = {
 	},
 
 	store: async (req, res) => {
+		let resultValidation = validationResult(req);
+		
+        if (resultValidation.errors.length > 0) {
+            console.log("validando los productos")
+		 	return res.render("create", {
+		 		errors: resultValidation.mapped(),
+		 		oldData: req.body
+		 	});
+		 }  
 
 		const createProduct = await Product.create({ 
 			name: req.body.name,
@@ -62,6 +73,8 @@ const controller = {
 			alcohol: req.body.alcohol,
 			description: req.body.description,
 			image: req.file.filename  });
+
+			
 
 
 		return res.redirect("/product");
