@@ -37,7 +37,7 @@ validationSignIn =  [
 
     body('image').custom((value, {req}) => {
         let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.gif']
+        let acceptedExtensions = ['.jpg','.jpeg', '.png', '.gif']
 
         if (!file) {
             throw new Error ('Seleccione una imagen de perfil')

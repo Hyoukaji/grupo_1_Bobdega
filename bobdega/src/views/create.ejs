@@ -8,7 +8,15 @@
 
             <div class="formAdmin">
                 <span>Nombre del producto</span>
-                <input type="text" name="name" class="form-control" required>
+                <input type="text" name="name" class="form-control" class="form-control <%= locals.errors && errors.name ? 'is-invalid': null %>"
+                value="<%= locals.oldData ? oldData.name : null %>" >
+                <span></span>
+
+                <% if (locals.errors && errors.name) { %>
+                    <div class= "text-danger">
+                        <%= errors.name.msg  %> 
+                    </div>
+                <% } %>
             </div>
             
             <div class="formAdmin">
@@ -25,22 +33,54 @@
 
             <div class="formAdmin">
                 <span>Precio</span>
-                <input type="text" name="price" class="form-control" required>
+                <input type="text" name="price" class="form-control" class="form-control <%= locals.errors && errors.price ? 'is-invalid': null %>"
+                value="<%= locals.oldData ? oldData.price : null %>">
+                <span></span>
+
+                <% if (locals.errors && errors.price) { %>
+                    <div class= "text-danger">
+                        <%= errors.price.msg  %> 
+                    </div>
+                <% } %>
             </div>
 
             <div class="formAdmin">
                 <span>Alcohol</span>
-                <input type="text" name="alcohol" class="form-control" required>
+                <input type="text" name="alcohol" class="form-control" class="form-control <%= locals.errors && errors.alcohol ? 'is-invalid': null %>"
+                value="<%= locals.oldData ? oldData.alcohol : null %>">
+                <span></span>
+
+                <% if (locals.errors && errors.alcohol) { %>
+                    <div class= "text-danger">
+                        <%= errors.alcohol.msg  %> 
+                    </div>
+                <% } %>
             </div>
 
             <div class="formAdmin">
                 <span>Descripcion</span>
-                <textarea name="description" class="form-control" required></textarea>
+                <textarea name="description" class="form-control" class="form-control <%= locals.errors && errors.description ? 'is-invalid': null %>"
+                    value="<%= locals.oldData ? oldData.description : null %>"></textarea>
+                    <span></span>
+
+                    <% if (locals.errors && errors.description) { %>
+                        <div class= "text-danger">
+                            <%= errors.description.msg  %> 
+                        </div>
+                    <% } %>
             </div>
 
             <div class="formAdmin">
                 <label for="Product">Selecciona la imagen del producto</label>
-                <input type="file" name="imageProduct" accept=".jpg" class="form-control" required>
+                <input type="file" name="imageProduct" accept=".jpg" class="form-control" class="form-control <%= locals.errors && errors.imageProduct ? 'is-invalid': null %>"
+                value="<%= locals.oldData ? oldData.imageProduct : null %>">
+                <span></span>
+
+                <% if (locals.errors && errors.imageProduct) { %>
+                    <div class= "text-danger">
+                        <%= errors.imageProduct.msg  %> 
+                    </div>
+                <% } %>
             </div>
                     <div class="buttonsContainer">
                         <button type="reset" name=" reset" class="form-control">Borrar</button>

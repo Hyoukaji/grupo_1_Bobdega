@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const db = require("../../database/models")
+const { validationResult, body } = require("express-validator");
 const Op = db.Sequelize.Op; 
 const { Product , Type , ProductCart , Cart } = require("../../database/models");
 
@@ -39,8 +40,15 @@ const controller = {
 		return res.render("product", { products,titulo });
 	},
 	create: async (req, res) => {
+		console.log("entre a create")
 		try {
-			const type = await Type.findAll();
+			const typeGo = await Type.findAll();
+			console.log("te muestro el type")
+			let type = []
+       		for (let i = 0; i < typeGo.length; i++){
+            	type.push(typeGo[i].dataValues)
+        }
+			console.log(type)
 			return res.render("create", {
 				type
 			});
@@ -54,6 +62,22 @@ const controller = {
 	},
 
 	store: async (req, res) => {
+
+		const resultValidation = validationResult(req); // validaciones de formulario de create
+
+		if (resultValidation.errors.length > 0) {
+			const typeGo = await Type.findAll();
+			console.log("te muestro el type")
+			let type = []
+       		for (let i = 0; i < typeGo.length; i++){
+            	type.push(typeGo[i].dataValues)
+			   }
+		 	return res.render("create", {
+		 		errors: resultValidation.mapped(),
+		 		oldData: req.body,
+				type
+		 	});
+		 }
 
 		const createProduct = await Product.create({ 
 			name: req.body.name,
@@ -190,7 +214,7 @@ const controller = {
 				return element.userId = uId;
 			  });
 			if (myCart){
-				cId = myCart.id
+				let cId = myCart.id
 			}else{
 				let cId = carts.length + 1
 				const createCart = await Cart.create({ 
@@ -207,7 +231,7 @@ const controller = {
 			productId: producto.id,
 			cartId: cId,
 			productPrice: producto.price,
-			quantity: 2 });
+			quantity: 1 });
 
 		console.log("voy a redirijir")
 

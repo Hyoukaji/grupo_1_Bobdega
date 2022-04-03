@@ -17,13 +17,9 @@ const controller = {
     },
 
     add: async  (req, res) => {
-         const resultValidation = validationResult(req); // validaciones de formulario de signIn
+        const resultValidation = validationResult(req); // validaciones de formulario de signIn
 
-		 if (resultValidation.errors.length > 0) {
-            //console.log("entro al if")
-            //console.log(resultValidation.errors.length)
-            //console.log(resultValidation.mapped())
-            //console.log(req.body)
+		if (resultValidation.errors.length > 0) {
 		 	return res.render("signin", {
 		 		errors: resultValidation.mapped(),
 		 		oldData: req.body
@@ -33,7 +29,6 @@ const controller = {
         let password = req.body.password
         let encrypt = bcrypt.hashSync(password,10)
         
-        
             const createUser = await User.create({ 
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
@@ -42,7 +37,6 @@ const controller = {
                 category: 'User',
                 image: req.file.filename  });
 
-
             let user = { 
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
@@ -50,7 +44,6 @@ const controller = {
                 password: encrypt,
                 category: 'User',
                 image: req.file.filename  }
-
 
             return res.render("signinUserDetail",{user});
         },

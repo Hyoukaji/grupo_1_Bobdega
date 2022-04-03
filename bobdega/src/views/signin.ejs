@@ -88,7 +88,7 @@
             
 
         <div class="signInDiv">
-             <input type="file" name="image" placeholder="Imagen" class="form-control <%= locals.errors && errors.image ? 'is-invalid': null  %>" >
+             <input type="file" id="uploadImages"  accept="image/gif,image/jpeg,image/jpg,image/png" name="image" placeholder="Imagen" class="form-control <%= locals.errors && errors.image ? 'is-invalid': null  %>" >
             <span></span>
 
              <% if (locals.errors && errors.image) { %>
