@@ -26,6 +26,7 @@ const controller = {
 		 	});
 		 }
 
+        //Encriptar la contraseña
         let password = req.body.password
         let encrypt = bcrypt.hashSync(password,10)
         
