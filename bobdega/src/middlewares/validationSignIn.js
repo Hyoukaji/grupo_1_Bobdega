@@ -32,7 +32,7 @@ validationSignIn =  [
 	body('password')
 		.notEmpty().withMessage('Tienes que escribir una contraseña').bail()
         .isLength({ min:8, max:30 }).withMessage("Debe tener al menos 8 caracteres").bail()
-        .matches(/^(?=.\d)(?=.[a-z])(?=.[A-Z])[a-zA-Z\d@$.!%#?&]/,).withMessage("Tiene que tener una mayuscula, una minuscula y un caracter especial")
+        .isStrongPassword().withMessage("Debe tener al menos una minuscula, mayuscula, numero y caracter especial").bail()
 		.custom((value, { req }) => {
 			if (value !== req.body.password2) {
 				throw new Error('Las contraseñas tienen que coincidir');
