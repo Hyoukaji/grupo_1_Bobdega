@@ -30,7 +30,7 @@ password.addEventListener('blur', validateField);
 password2.addEventListener('blur', validateField);
 
 formCreate.addEventListener("submit", (e) => {
-    let errorCount = 0;
+    let errorCount = false;
 
     const formField = [...formCreate.elements];
     formField.pop();
@@ -41,6 +41,7 @@ formCreate.addEventListener("submit", (e) => {
             field.classList.add("is-invalid");
             spanError.innerText = `El campo ${field.placeholder} es obligatorio`;
             spanError.classList.add ("invalid-feedback");
+            errorCount = true;
             } else {
                 field.classList.remove("is-invalid");
                 field.classList.add("is-valid")
@@ -48,7 +49,7 @@ formCreate.addEventListener("submit", (e) => {
                 spanError.classList.remove("invalid-feedback");
             }
     })
-    if (errorCount > 0) {
+    if (errorCount) {
         e.preventDefault();
     }
 

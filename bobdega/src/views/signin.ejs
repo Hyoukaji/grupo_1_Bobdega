@@ -25,7 +25,10 @@
 
             <div class="signInDiv">
 
-                <input type="text" name="lastName" placeholder="Apellido" class="form-control <%= locals.errors && errors.lastName ? 'is-invalid': null %>"
+                <input type="text" 
+                name="lastName" 
+                placeholder="Apellido" 
+                class="form-control <%= locals.errors && errors.lastName ? 'is-invalid': null %>"
                 value="<%= locals.oldData ? oldData.lastName : null %>">
                 <span></span>
             <% if (locals.errors && errors.lastName) { %>
