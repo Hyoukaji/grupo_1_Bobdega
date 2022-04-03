@@ -48,7 +48,6 @@ formCreate.addEventListener("submit", (e) => {
                 spanError.classList.remove("invalid-feedback");
             }
     })
-
     if (errorCount > 0) {
         e.preventDefault();
     }
