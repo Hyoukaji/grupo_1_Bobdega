@@ -1,5 +1,7 @@
-<%- include('./partials/header', {pageTitle : 'Crear productos'}) %> 
+<%- include('./partials/header', {pageTitle : 'Editar productos'}) %> 
    <main>
+
+
     <h2>Estas editando el producto: <%= theProduct.name %></h2>
 	<img src="/uploads/<%= theProduct.image %>" width="200">
 	<form action="/product/<%= theProduct.id %>?_method=PUT" method="post" enctype="multipart/form-data">
