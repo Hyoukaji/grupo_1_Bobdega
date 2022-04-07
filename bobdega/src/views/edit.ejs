@@ -1,42 +1,49 @@
-<%- include('./partials/header', {pageTitle : 'Crear productos'}) %> 
+<%- include('./partials/header', {pageTitle : 'Editar productos'}) %> 
    <main>
+
+
     <h2>Estas editando el producto: <%= theProduct.name %></h2>
 	<img src="/uploads/<%= theProduct.image %>" width="200">
 	<form action="/product/<%= theProduct.id %>?_method=PUT" method="post" enctype="multipart/form-data">
-		<div>
+		<div class="formAdmin">
 			<label>Nombre:</label> <br>
-			<input type="text" name="name" value="<%= theProduct.name %>">
+			<input class="form-control" type="text" name="name"  value="<%= theProduct.name %>">
 		</div>
-		<div>
+		<div class="formAdmin">
 			<label>Precio:</label> <br>
-			<input type="text" name="price" value="<%= theProduct.price %>">
+			<input class="form-control" type="text" name="price" value="<%= theProduct.price %>">
 		</div>
-		<div>
+		<div class="formAdmin">
 			<label>Alcohol:</label> <br>
-			<input type="text" name="alcohol" value="<%= theProduct.alcohol %>">
+			<input class="form-control" type="text" name="alcohol" value="<%= theProduct.alcohol %>">
 		</div>
-		<div>
+		<div class="formAdmin">
 			<label>Elegí una imagen a reemplazar:</label> <br>
-			<input type="file" name="image">
+			<input class="form-control" type="file" name="image">
 		</div>
-		<div>
+		<div class="formAdmin">
 			<label>Tipo</label> <br>
-				<select name="type">
+				<select class="form-select" name="type">
 					<option value="">Elegí una opción</option>
 					<% type.forEach(oneType => { %>
 						<option value="<%= oneType.id %>"><%= oneType.name %></option>
 					<% }) %>
 				</select>
 		</div>
-		<div>
+		<div class="formAdmin">
 			<label>Descripción:</label> <br>
-			<textarea name="description" cols="30" rows="10"><%= theProduct.description %></textarea>
+			<textarea class="form-control" name="description" cols="30" rows="8"><%= theProduct.description %></textarea>
 		</div>
 
-		<button type="submit">Guardar</button>
+		<div class="buttonsContainer">
+		<button type="submit" class="form-control">Guardar</button>
+		<form action="/product/<%=theProduct.id%>?_method=DELETE" method="post">
+			<button type="submit" class="form-control" >Borrar producto</button>
+		</form>
+	    </div>
+
+
 	</form>
-    <form action="/product/<%=theProduct.id%>?_method=DELETE" method="post">
-        <button type="submit">Borrar producto</button>
-    </form>  
+      
    </main>
 <%- include('./partials/footer') %> 
