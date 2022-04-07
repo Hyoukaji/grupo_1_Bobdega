@@ -22,11 +22,11 @@ validationSignIn =  [
     
 	body('password')
 		.notEmpty().withMessage('Tienes que escribir una contraseña').bail()
-<<<<<<< HEAD
+
         .isLength({ min:8, max:30 }).withMessage("Debe tener al menos 8 caracteres").bail()
         .isStrongPassword().withMessage("Debe tener al menos una minuscula, mayuscula, numero y caracter especial").bail()
-=======
->>>>>>> pedro
+
+
 		.custom((value, { req }) => {
 			if (value !== req.body.password2) {
 				throw new Error('Las contraseñas tienen que coincidir');
