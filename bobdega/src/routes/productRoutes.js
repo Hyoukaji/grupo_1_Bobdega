@@ -31,7 +31,7 @@ router.post('/', upload.single('imageProduct'),createValidations, controller.sto
 router.get('/detail/:id', controller.detail); 
 router.get('/productByCategory/:id', controller.productByCategory); 
 router.get('/edit/:id', controller.edit); 
-router.put("/:id", upload.single("image"), controller.update); 
+router.put("/:id", upload.single("image"), createValidations, controller.update); 
 
 // DELETE ONE PRODUCT/ 
 router.delete('/:id', controller.destroy);

@@ -1,7 +1,8 @@
 <%- include('./partials/header', {pageTitle : 'Crear productos'}) %> 
    <main>
         <div class="cardCreate">   
-        <h1>Administrador</h1>
+        
+        <h1>Crear Producto</h1>
         
         
         <form action="/product" class="formulario-s" method="post" enctype="multipart/form-data">
@@ -59,7 +60,7 @@
 
             <div class="formAdmin">
                 <span>Descripcion</span>
-                <textarea name="description" class="form-control" class="form-control <%= locals.errors && errors.description ? 'is-invalid': null %>"
+                <textarea name="description" class="form-control" cols="30" rows="8" <%= locals.errors && errors.description ? 'is-invalid': null %>"
                     value="<%= locals.oldData ? oldData.description : null %>"></textarea>
                     <span></span>
 
@@ -72,7 +73,7 @@
 
             <div class="formAdmin">
                 <label for="Product">Selecciona la imagen del producto</label>
-                <input type="file" name="imageProduct" accept=".jpg" class="form-control" class="form-control <%= locals.errors && errors.imageProduct ? 'is-invalid': null %>"
+                <input type="file" name="imageProduct" accept=".jpg" class="form-control"  <%= locals.errors && errors.imageProduct ? 'is-invalid': null %>"
                 value="<%= locals.oldData ? oldData.imageProduct : null %>">
                 <span></span>
 
@@ -83,7 +84,7 @@
                 <% } %>
             </div>
                     <div class="buttonsContainer">
-                        <button type="reset" name=" reset" class="form-control">Borrar</button>
+                        <button type="reset" name="reset" class="form-control">Borrar</button>
                         <button type="submit" name="submit"class= "form-control">Agregar</button>
                     </div>
             </form>
