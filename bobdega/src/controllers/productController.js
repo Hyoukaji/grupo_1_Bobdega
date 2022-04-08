@@ -93,13 +93,14 @@ const controller = {
 	
 	destroy: async (req, res) => {
 		const productID = req.params.id;
+		const titulo = req.params.title;
 		Product.destroy({ where: { id: productID }});
 		Product
 	 		.findAll({
 	 			include: ["types"]
 	 		})
 	 		.then((products) => {
-	 			return res.render("product", { products });
+	 			return res.render("product", { products, titulo});
 	 		})
 	 		.catch((err) => { console.log(err) });
 	 

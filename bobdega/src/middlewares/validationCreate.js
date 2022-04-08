@@ -20,7 +20,7 @@ validationCreate =  [
 
     body('description')
         .notEmpty().withMessage('Complete la descripción').bail()
-        .isLength({ min:25, max:999 }).withMessage("La descripción tiene que ser más larga"),
+        .isLength({ min:20, max:999 }).withMessage("La descripción tiene que ser más larga"),
 
     
 
