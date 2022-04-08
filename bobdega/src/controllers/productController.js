@@ -176,18 +176,21 @@ const controller = {
 	},
 
 	update: async (req, res) => { 
-		 const productID = req.params.id;
-		 const productoE = await Product.findByPk(productID, { include: ["types"] });
-		 productoE.update({
-			name:req.body.name,
-			price:req.body.price,
-			description:req.body.description,
-			alcohol:req.body.alcohol,
-			image: req.file.filename},
-			{where:{id:productID}})
-		const producto = await Product.findByPk(productID, { include: ["types"] });
-		return res.render("detail", {producto});
-	},
+		const productID = req.params.id;
+		const productoE = await Product.findByPk(productID, { include: ["types"] });
+		productoE.update({
+		   name:req.body.name,
+		   price:req.body.price,
+		   description:req.body.description,
+		   alcohol:req.body.alcohol,
+		   image: req.file.filename},
+		   {where:{id:productID}})
+		   
+	   const producto = await Product.findByPk(productID, { include: ["types"] });
+	   const type = await Type.findAll({});
+	   return res.render("detail", {producto, type});
+   },
+
 
 	shoppingCart: async (req,res) => {
 		const productsGo = await Product.findAll()
