@@ -5,10 +5,11 @@ const { body } = require('express-validator');
 validationCreate =  [
 
     body('name')
-        .notEmpty().withMessage('Completar Nombre').bail(),
+        .notEmpty().withMessage('Completar Nombre').bail()
+        .isLength({min:5}).withMessage("El nombre debe tener al menos 5 letras"),
 
     body('type')
-        .notEmpty().withMessage('Completar Type').bail(),
+        .notEmpty().withMessage('Debe elegir un tipo de vino').bail(),
 
     body('price')
         .notEmpty().withMessage('Completar precio').bail()
@@ -19,7 +20,7 @@ validationCreate =  [
         .isInt().withMessage("Tiene que ser un número"),
 
     body('description')
-        .notEmpty().withMessage('Complete la descripción').bail()
+        .notEmpty().withMessage('La descripción debe tener al menos 20 letras').bail()
         .isLength({ min:20, max:999 }).withMessage("La descripción tiene que ser más larga"),
 
     

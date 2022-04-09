@@ -175,17 +175,43 @@ const controller = {
 		const type = await Type.findAll({});
 		return res.render("edit", { theProduct, type });
 	},
+	
 
-	update: async (req, res) => { 
-		const productID = req.params.id;
+	update: async (req, res) => {
+		
+		const resultValidation = validationResult(req); // validaciones de formulario de create
+         console.log("antes de validar")
+
+		 console.log(req.params.id)
+		 console.log(typeof req.params.id)
+		if (resultValidation.errors.length > 0) {
+			const typeGo = await Type.findAll();
+			console.log("te muestro el type")
+			let type = []
+       		for (let i = 0; i < typeGo.length; i++){
+            	type.push(typeGo[i].dataValues)
+			   }
+			let theProduct = {id: req.params.id }
+		 	return res.render("edit", {
+		 		errors: resultValidation.mapped(),
+		 		oldData: req.body,
+				theProduct, 
+				type
+		 	});
+		 }
+		 console.log("erroreeessssss 1")
+		const productID = parseInt(req.params.id);
 		const productoE = await Product.findByPk(productID, { include: ["types"] });
+        console.log("erroreeessssss 2")
+		console.log(productID)
 		productoE.update({
 		   name:req.body.name,
 		   price:req.body.price,
 		   description:req.body.description,
 		   alcohol:req.body.alcohol,
 		   image: req.file.filename},
-		   {where:{id:productID}})
+		   {where: {id:productID}});
+		   
 		   
 	   const producto = await Product.findByPk(productID, { include: ["types"] });
 	   const type = await Type.findAll({});

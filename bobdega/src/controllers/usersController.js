@@ -48,6 +48,9 @@ const controller = {
 
             return res.render("signinUserDetail",{user});
         },
+
+
+        
     userDetail : (req,res)=>{
         let user = {}
         User.findByPk(req.params.id).then((resultado) => {

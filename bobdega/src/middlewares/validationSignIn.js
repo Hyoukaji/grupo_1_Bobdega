@@ -1,18 +1,31 @@
 const path = require('path')
 const { body } = require('express-validator');
+const { User } = require("../../database/models");
 
 
 validationSignIn =  [
 
     body('firstName')
-        .notEmpty().withMessage('completar Nombre').bail(),
+        .notEmpty().withMessage('completar Nombre').bail()
+        .isLength({ min:2, max:20 }).withMessage("Minimo 2 caracteres y maximo 20"),
 
     body('email')
 		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
-		.isEmail().withMessage('Debes escribir un formato de correo válido'),
+		.isEmail().withMessage('Debes escribir un formato de correo válido').bail()
+        .custom(async (email) => {
+            const existingUser = await User.findOne({
+                where: { 
+                    email: email
+                }
+            });
+            if (existingUser) {
+                throw new Error('Email ya registrado')
+            }
+        }),
 
     body('lastName')
-        .notEmpty().withMessage('Completar Apellido').bail(),
+        .notEmpty().withMessage('Completar Apellido').bail()
+        .isLength({ min:2, max:20 }).withMessage("Minimo 2 caracteres y maximo 20"),
 
     
 	body('password')

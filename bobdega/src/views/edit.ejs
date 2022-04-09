@@ -2,37 +2,120 @@
    <main>
 
 
-    <h2>Estas editando el producto: <%= theProduct.name %></h2>
-	<img src="/uploads/<%= theProduct.image %>" width="200">
+    
+	
+	<% if (!locals.errors) { %>
+		<h2>Estas editando el producto: <%= theProduct.name %></h2>
+	<% } else {   %> 
+		<h2>Estas editando el producto: <%= oldData.name %></h2>
+	<% } %> 
+	
+	
+	<% if (!locals.errors) { %>
+		<img src="/uploads/<%= theProduct.image %>" width="200">
+	<% }   %> 
+	
+	
+	
 	<form action="/product/<%= theProduct.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+		
 		<div class="formAdmin">
-			<label>Nombre:</label> <br>
-			<input class="form-control" type="text" name="name"  value="<%= theProduct.name %>"   >
+			<span>Nombre del producto</span>
+			<input type="text" name="name" class="form-control" class="form-control <%= locals.errors && errors.name ? 'is-invalid': null %>"
+			<% if (!locals.errors) { %>
+				value="<%= theProduct.name %>"
+			<% } else {   %> 
+				value="<%= oldData.name %>"	
+			<% } %> >
+
+			
+			<span></span>
+
+			<% if (locals.errors && errors.name) { %>
+				<div class= "text-danger">
+					<%= errors.name.msg  %> 
+				</div>
+			<% } %>
 		</div>
+		
 		<div class="formAdmin">
-			<label>Precio:</label> <br>
-			<input class="form-control" type="text" name="price" value="<%= theProduct.price %>">
-		</div>
-		<div class="formAdmin">
-			<label>Alcohol:</label> <br>
-			<input class="form-control" type="text" name="alcohol" value="<%= theProduct.alcohol %>">
-		</div>
-		<div class="formAdmin">
-			<label>Elegí una imagen a reemplazar:</label> <br>
-			<input class="form-control" type="file" name="image">
-		</div>
-		<div class="formAdmin">
-			<label>Tipo</label> <br>
-				<select class="form-select" name="type">
+		
+				<label>Tipo</label> <br>
+				<select name="type" class="form-select" >
 					<option value="">Elegí una opción</option>
 					<% type.forEach(oneType => { %>
 						<option value="<%= oneType.id %>"><%= oneType.name %></option>
 					<% }) %>
 				</select>
+			
 		</div>
+
 		<div class="formAdmin">
-			<label>Descripción:</label> <br>
-			<textarea class="form-control" name="description" cols="30" rows="8"><%= theProduct.description %></textarea>
+			<span>Precio</span>
+			<input type="text" name="price" class="form-control" class="form-control <%= locals.errors && errors.price ? 'is-invalid': null %>"
+			<% if (!locals.errors) { %>
+				value="<%= theProduct.price %>"
+			<% } else {   %> 
+				value="<%= oldData.price %>"	
+			<% } %>>
+			<span></span>
+
+			<% if (locals.errors && errors.price) { %>
+				<div class= "text-danger">
+					<%= errors.price.msg  %> 
+				</div>
+			<% } %>
+		</div>
+
+		<div class="formAdmin">
+			<span>Alcohol</span>
+			<input type="text" name="alcohol" class="form-control" class="form-control <%= locals.errors && errors.alcohol ? 'is-invalid': null %>"
+			<% if (!locals.errors) { %>
+				value="<%= theProduct.alcohol %>"
+			<% } else {   %> 
+				value="<%= oldData.alcohol %>"	
+			<% } %>>
+			<span></span>
+
+			<% if (locals.errors && errors.alcohol) { %>
+				<div class= "text-danger">
+					<%= errors.alcohol.msg  %> 
+				</div>
+			<% } %>
+		</div>
+
+		<div class="formAdmin">
+			<span>Descripcion</span>
+			<textarea name="description"  cols="30" rows="8" class="form-control <%= locals.errors && errors.description ? 'is-invalid': null %>"
+				<% if (!locals.errors) { %>
+					value="<%= theProduct.description %>"
+				<% } else {   %> 
+					value="<%= oldData.description %>"	
+				<% } %> ></textarea>
+				<span></span>
+
+				<% if (locals.errors && errors.description) { %>
+					<div class= "text-danger">
+						<%= errors.description.msg  %> 
+					</div>
+				<% } %>
+		</div>
+
+		<div class="formAdmin">
+			<label for="Product">Selecciona la imagen del producto</label>
+			<input type="file" name="imageProduct" accept=".jpg" class="form-control <%= locals.errors && errors.imageProduct ? 'is-invalid': null %>"
+			<% if (!locals.errors) { %>
+				value="<%= theProduct.imageProduct %>"
+			<% } else {   %> 
+				value="<%= oldData.imageProduct %>"	
+			<% } %>>
+			<span></span>
+
+			<% if (locals.errors && errors.imageProduct) { %>
+				<div class= "text-danger">
+					<%= errors.imageProduct.msg  %> 
+				</div>
+			<% } %>
 		</div>
 
 		<div class="buttonsContainer">
@@ -44,6 +127,8 @@
 
 
 	</form>
-      
+       
    </main>
-<%- include('./partials/footer') %> 
+
+   <script src="/js/create.js"></script>
+   <%- include('./partials/footer') %> 
