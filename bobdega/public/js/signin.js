@@ -12,9 +12,9 @@ let p2 = ""
 const validateField = (e) => {
     const field = e.target;
     const spanError = field.nextElementSibling;
-    if (field.value.trim() === "") {
+    if (field.value.trim() === "" ||  field.value.length<2) {
     field.classList.add("is-invalid");
-    spanError.innerText = `El campo ${field.placeholder} es obligatorio`;
+    spanError.innerText = `El campo ${field.placeholder} es obligatorio y debe tener como minimo 2 caracteres`;
     spanError.classList.add ("invalid-feedback");
     } else {
         field.classList.remove("is-invalid");
@@ -27,82 +27,57 @@ const validateField = (e) => {
 firstName.addEventListener('blur', validateField);
 lastName.addEventListener('blur', validateField);
 
-const validatePassword = (e) => {
+
+
+password.addEventListener("blur", (e) => {
     const field = e.target;
+    const password = field.value;
     const spanError = field.nextElementSibling;
-    let cadena = field.value.trim()
-    p1 = cadena
-    ok = true
-    ok2 = true
-    if (cadena === "") {
-    field.classList.add("is-invalid");
-    spanError.innerText = `El campo ${field.placeholder} es obligatorio`;
-    spanError.classList.add ("invalid-feedback");
-    errorCount = true;
-    ok = false
-    }
-
-    if (cadena.length < 8) {
+    const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,}$/
+    console.log(password)
+    if (password.trim() === "") {
         field.classList.add("is-invalid");
-        spanError.innerText = `La contraseña debe contener al menos 8 caracteres`;
+        spanError.innerText = `El campo ${field.placeholder} es obligatorio`;
         spanError.classList.add ("invalid-feedback");
-        errorCount = true;
-        ok = false
-        }
-
-    if (ok && ok2){
-        field.classList.remove("is-invalid");
-        field.classList.add("is-valid")
-        spanError.innerText = "";
-        spanError.classList.remove("invalid-feedback");
-    }
-}
-
-const validatePassword2 = (e) => {
-    const field = e.target;
-    const spanError = field.nextElementSibling;
-    const regex = /(?=^.{8,}$)(?=.\d)(?=.[!@#$%^&]+)(?![.\n])(?=.[A-Z])(?=.[a-z]).$/;
-     
-    let cadena = field.value.trim()
-     p2 = cadena
-     ok = true
-     ok2 = true
-     ok3 = true
-    if (cadena === "") {
-    field.classList.add("is-invalid");
-    spanError.innerText = `El campo ${field.placeholder} es obligatorio`;
-    spanError.classList.add ("invalid-feedback");
-    errorCount = true;
-    ok = false
-    }
-
-    if (cadena.length < 8) {
-        field.classList.add("is-invalid");
-        spanError.innerText = `La contraseña debe contener al menos 8 caracteres`;
-        spanError.classList.add ("invalid-feedback");
-        errorCount = true;
-        ok = false
-        }
     
-    if (p1 != p2){
+        } else if (!password.match(passwordFormat)) {
+                field.classList.add("is-invalid");                   
+                spanError.innerText = `El campo debe ser un formato valido`;
+                spanError.classList.add("invalid-feedback");
+        } else {
+            field.classList.remove("is-invalid");
+            spanError.innerText = "";
+            spanError.classList.remove("invalid-feedback");
+            field.classList.add("is-valid");
+            console.log("Estaria todo ok");
+    
+        }
+})
+
+password2.addEventListener("blur", (e) => {
+    const field = e.target;
+    const password = field.value;
+    const spanError = field.nextElementSibling;
+    const passwordFormat = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,}$/
+    console.log(password)
+    if (password.trim() === "") {
         field.classList.add("is-invalid");
-        spanError.innerText = `Las contraseñas tienen que coincidir`;
+        spanError.innerText = `El campo ${field.placeholder} es obligatorio`;
         spanError.classList.add ("invalid-feedback");
-        errorCount = true;
-        ok3 = false
-    }
-
-    if (ok && ok2 && ok3){
-        field.classList.remove("is-invalid");
-        field.classList.add("is-valid")
-        spanError.innerText = "";
-        spanError.classList.remove("invalid-feedback");
-    }
-}
-
-
-password.addEventListener('blur', validatePassword);
-password2.addEventListener('blur', validatePassword2);
+    
+        } else if (!password.match(passwordFormat)) {
+                field.classList.add("is-invalid");                   
+                spanError.innerText = `El campo debe ser un formato valido`;
+                spanError.classList.add("invalid-feedback");
+        } else {
+            field.classList.remove("is-invalid");
+            spanError.innerText = "";
+            spanError.classList.remove("invalid-feedback");
+            field.classList.add("is-valid");
+            console.log("Estaria todo ok");
+    
+        }
+})
 
 
 email.addEventListener("blur", (e) => {
