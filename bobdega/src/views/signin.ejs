@@ -52,19 +52,7 @@
              
         </div>
 
-        <div class="signInDiv">
-            <input type="text" name="username" placeholder="Nombre de Usuario" class="form-control <%= locals.errors && errors.username ? 'is-invalid': null %>"
-            value="<%= locals.oldData ? oldData.username : null %>" >
-            <span></span>
-
-        <% if (locals.errors && errors.username) { %>
-           <div class= "text-danger">
-               <%= errors.username.msg  %> 
-           </div>
-       <% } %>  
         
-        </div>    
-
         <div class="signInDiv">
             <input type="password" name="password" placeholder="Contraseña" class="form-control <%= locals.errors && errors.password ? 'is-invalid': null %>" >
             <span></span>

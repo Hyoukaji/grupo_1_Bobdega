@@ -14,11 +14,6 @@ validationSignIn =  [
     body('lastName')
         .notEmpty().withMessage('Completar Apellido').bail(),
 
-
-
-    body('username')
-        .notEmpty().withMessage('Completar ususario').bail(),
-
     
 	body('password')
 		.notEmpty().withMessage('Tienes que escribir una contraseña').bail()
