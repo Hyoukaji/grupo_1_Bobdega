@@ -17,7 +17,7 @@
 	
 	
 	
-	<form action="/product/<%= theProduct.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+	<form action="/product/<%= theProduct.id %>?_method=PUT" method="post" enctype="multipart/form-data" id="formulario-s">
 		
 		<div class="formAdmin">
 			<span>Nombre del producto</span>
@@ -131,4 +131,5 @@
    </main>
 
    <script src="/js/create.js"></script>
+   
    <%- include('./partials/footer') %> 
