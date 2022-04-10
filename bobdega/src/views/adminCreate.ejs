@@ -1,0 +1,45 @@
+<%- include('./partials/header', {pageTitle : 'Ingresar'}) %> 
+   <main class="logInMain">
+    <i class="fas fa-user-circle" style="font-size: 50px;" ></i>
+
+    <h3>Ingresa la cuenta que se convertirá en Admin</h3>
+    <form action="/user/adminCreate?_method=PUT" method="post" enctype="multipart/form-data" id="formLogin">
+        <div class="loginDiv">
+            <input type="text" name="email" placeholder="Email" class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
+            value="<%= locals.oldData ? oldData.email: null  %>" >
+            <span></span>
+            
+				<% if (locals.errors && errors.email) { %>
+				<div class="text-danger">
+					<%= errors.email.msg %>
+				</div>
+			<% } %>
+        </div>
+        
+
+
+
+                          
+        <div class="buttonDiv">
+            <button type="submit" class="form-control">Ingresar</button>
+        </div>
+       
+
+    </form>
+
+    
+    <p>Ingresar con:</p>
+    <div class="logos" >
+    <i class="fab fa-google" style="font-size: 50px;"></i>
+    <i class="fab fa-facebook" style="font-size: 50px"></i>
+    </div>
+    <div>
+        <a href="">¿Olvidaste tu contraseña?</a>
+        <a href="">¿Olvidaste tu usuario?</a>
+        <a href="/user/signin" >Crear cuenta</a>
+    </div>
+
+    </main>
+
+    <script src="/js/login.js"></script>
+<%- include('./partials/footer') %> 

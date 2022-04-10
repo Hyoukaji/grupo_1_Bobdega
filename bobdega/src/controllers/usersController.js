@@ -114,7 +114,26 @@ const controller = {
 		res.clearCookie("userEmail");
 		req.session.destroy();
 		return res.redirect("/");
-	}
+	},
+
+    adminCreate: async (req,res) => {
+        console.log("entre a adminCreate")
+        let searchEmail = req.body.email
+
+        let userToAdmin = await User.findOne({where :{email : searchEmail}})
+        userToAdmin = userToAdmin.dataValues
+
+
+        userToAdmin.update({
+            category:"Admin",},
+            {where: {Email:searchEmail}});
+
+        res.redirect("/home")
+    },
+
+    rename: (req,res) => {
+        res.render("adminCreate")
+    }
     
 }
 
