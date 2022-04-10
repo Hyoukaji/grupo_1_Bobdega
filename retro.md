@@ -19,3 +19,15 @@ Sprint 6 entrega el dia 23/03/2022:
 
 En este sprint mantuvimos el trabajo en equipo, repartimos mejor las tareas, corregimos la distribucion de los commits, a diferencia del sprint anterior no nos encontramos con grandes dificultades. tambien logramos corregir temas esteticos que quedaron pendientes de sprints anteriores.
 
+
+Sprint 7 entrega el dia 11/04/2022:
+
+seguimos trabajando en equipo como en los sprints anteriores, tuvimos algunas dificultades con las validaciones por back, pero lo resolvimos rearmando los formularios. 
+Tambien añadimos muchos detalles esteticos con las clases de bootstrap, quedan mas detalles esteticos, pero lo vamos a dejar como sorpresa para la entrega final....
+detalle: al editar un producto y volver a la vista detail, hay que hacer un refresh de la pagina para que muestre los cambios hechos, despues en las clases practicas le preguntamos como resolverlo!  
+como comentario final, no tuvimos ningun conflicto a nivel grupal.
+
+
+
+
+
