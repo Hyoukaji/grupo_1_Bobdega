@@ -1,22 +1,22 @@
 //api de usuarios
 
-const db = require('../../../database/models');
-const sequelize = db.sequelize;
+const { User } = require("../../../database/models");
 
 const usersController = {
     'list': (req, res) => {
-        db.User.findAll()
+        User.findAll()
         .then(allUsers => {
             let users = [];
             allUsers.forEach(data => {
                 let user = {
                     id: data.id,
-                    name: data.name,
+                    name: data.firstName,
                     lastname: data.lastname,
                     email: data.email,
-                    detail: `/users/profile/${data.id}`
+                    detail: `api/users/detail/${data.id}`
                 };
                 users.push(user);
+               
             })
             res.status(200).json( {
                 meta: {
@@ -29,17 +29,16 @@ const usersController = {
         })
     },
     'detail': (req, res) => {
-        db.User.findByPk(req.params.id, {
-            include: ['Image']
-        })
+        User.findByPk(req.params.id)
             .then(data => {
                 let user = {
                     id: data.id,
-                    name: data.name,
-                    lastname: data.lastname,
+                    name: data.firstName,
+                    lastname: data.lastName,
                     email: data.email,
-                    image: `/img/user_photo/${data.Image[0].avatar}`//hay que ver como traer la imagen o sino descartarlo 
-                };
+                    image: data.image
+                    };
+                    
                 res.status(200).json( {
                     meta: {
                         status:200,
