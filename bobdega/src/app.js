@@ -8,6 +8,12 @@ const userRoutes = require ('./routes/usersRoutes');
 const cookie = require('cookie-parser');
 const session = require('express-session')
 
+//API
+
+const apiUsersRoutes = require('./routes/apis/apiUsersRoutes')
+const apiProductsRoutes = require('./routes/apis/apiProductsRoutes')
+
+
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 app.set('view engine', 'ejs');
@@ -37,6 +43,11 @@ app.use('/product',productRoutes)
 
 app.use('/user', userRoutes);
 
+// API
 
+app.use(apiUsersRoutes);
+app.use(apiProductsRoutes);
 
-
+app.use((req, res, next) => {
+    res.status(404).render('error404');
+});
