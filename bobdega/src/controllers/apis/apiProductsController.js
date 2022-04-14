@@ -1,11 +1,13 @@
 //api de productos 
 
 
-const { Product } = require("../../../database/models");
+const { Product, Type } = require("../../../database/models");
 
 const productsController = {
     'list': (req, res) => {
-        Product.findAll()
+        Product.findAll({
+            include: ["types"]   
+        })
         .then(allUsers => {
             let products = [];
             let countByCategory = {
@@ -19,6 +21,7 @@ const productsController = {
                 let product = {
                     id: data.id,
                     name: data.name,
+                    type: data.types.name,
                     description: data.description,
                     detail: `/api/products/${data.id}`
                     
