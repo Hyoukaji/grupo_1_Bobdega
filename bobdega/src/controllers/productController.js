@@ -163,10 +163,10 @@ const controller = {
 	detail: async (req, res) => {
 		const productID = req.params.id;
 		const producto = await Product.findByPk(productID, { include: ["types"] });
-		const typeGo = await Type.findAll()
-		let typeNumber = producto.typeId - 1
-		let type = typeGo[typeNumber].dataValues
-		return res.render("detail", { producto , type });
+		// const typeGo = await Type.findAll()
+		// let typeNumber = producto.typeId - 1
+		// let type = typeGo[typeNumber].dataValues
+		return res.render("detail", { producto });
 	},
 
 	edit: async (req, res) => {
