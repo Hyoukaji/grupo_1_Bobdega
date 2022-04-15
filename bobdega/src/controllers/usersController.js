@@ -119,16 +119,24 @@ const controller = {
     adminCreate: async (req,res) => {
         console.log("entre a adminCreate")
         let searchEmail = req.body.email
+        console.log(req.body)
+        console.log(searchEmail)
 
         let userToAdmin = await User.findOne({where :{email : searchEmail}})
-        userToAdmin = userToAdmin.dataValues
+        console.log(userToAdmin)
+        
 
+        console.log("voy a updatear")
+        if (userToAdmin){
+            let copy = userToAdmin
+            userToAdmin.update({
+                category:"Admin",},
+                {where: {email:searchEmail}});
+            console.log("update completado")
+        }
+        
 
-        userToAdmin.update({
-            category:"Admin",},
-            {where: {Email:searchEmail}});
-
-        res.redirect("/home")
+        res.redirect("/")
     },
 
     rename: (req,res) => {

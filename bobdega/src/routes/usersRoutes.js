@@ -10,6 +10,7 @@ const signInValidations = require('../middlewares/validationSignIn');
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const userLoggedAdminMiddleware = require('../middlewares/userLoggedAdminMiddleware');
 const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
+const adminMiddleware = require("../middlewares/adminMiddleware");
 
 
 router.get('/signin',guestMiddleware, controller.signin);
@@ -21,7 +22,7 @@ router.get('/signinUserDetail/:id', controller.userDetail);
 router.post('/logout', controller.logout);
 router.get('/login',guestMiddleware, controller.login);
 router.post('/login', validationsLogin, controller.loginProcess)
-router.get('/rename',userLoggedAdminMiddleware, controller.rename);
+router.get('/rename',adminMiddleware, controller.rename);
 router.put('/adminCreate', controller.adminCreate)
 
 router.get('/profile', controller.profile)
