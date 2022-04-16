@@ -42,6 +42,12 @@ header {
     padding: 5px;
 }
 
+.articulosHome {
+    margin: 40px;
+
+}
+
+
 .imagen{
     width: 15%;
     display: flex;
@@ -229,6 +235,11 @@ main {
 .tour {
     display: flex;
     flex-direction: row;
+    
+}
+
+.sectionTour {
+    border: #6f1c48 1px solid;
 }
 
 .fotoBodega, .descripcionBodega {
