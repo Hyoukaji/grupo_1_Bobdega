@@ -430,9 +430,21 @@ main {
 
 .articulosProductos {
     width: 38vw;
-    margin: 2px;   
+    margin: 10px;   
 
 }
+
+.articulosProductos h3 {
+
+    display: none;
+
+}
+.articulosProductos:hover h3 {
+
+    display: initial;
+
+}
+
 
 .articulosProductos :hover {
      box-shadow: 0px 0px 10px rgb(100, 100, 100);
