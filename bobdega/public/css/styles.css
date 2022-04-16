@@ -238,6 +238,15 @@ main {
     
 }
 
+.editProductDetail {
+    display: flex;
+    flex-direction: rows;
+}
+
+.editProductDetail div {
+    border: dotted gray 1px;
+}
+
 .sectionTour {
     border: #6f1c48 1px solid;
 }
