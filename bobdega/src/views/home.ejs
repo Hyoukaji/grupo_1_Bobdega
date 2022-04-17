@@ -5,19 +5,24 @@
       <section>
          <img src="/images/bannerBobdega.jpg" alt="" width="100%">
       </section>
+      
+
+      <div class="buttonForm1">
 
       <section>
          <% if (locals.isAnAdminLogged){ %>
+           
          <a href="/user/rename">
-            <h2 class="title">Crear Admin</h2>
+            <h2 >Crear Admin</h2>
+         </a>
          </a>
          <% } %> 
       </section>
 
-      <section class="articulosHome">
+      <section>
          <% if (locals.isAnUserLogged){ %>
          <a href="/product">
-            <h2 class="title">Ver Todos los Productos</h2>
+            <h2 >Ver Todos los Productos</h2>
          </a>
          <% } %> 
       </section>
@@ -25,15 +30,23 @@
       <section>
          <% if (locals.isAnAdminLogged){ %>
          <a href="/product/create">
-            <h2 class="title">Crear Producto</h2>
+            <h2 >Crear Producto</h2>
          </a>
          <% } %> 
       </section>
-     <div class="homeCarrousel ">
-      <section class="articulosHome">
-         <h2 class="title">Ofertas de esta temporada</h2>
-         <img src="/images/fondo.jpg" alt="" width="250">
+
+      <section>
+         <% if (locals.isAnAdminLogged){ %>
+         <a href="http://localhost:3000">
+            <h2 >DashBoard</h2>
+         </a>
+         <% } %> 
       </section>
+
+   </div>
+      
+     <div class="homeCarrousel ">
+      
 
       <section class="articulosHome" >
          <h2 class="title">Quizás te interese</h2>
@@ -66,8 +79,17 @@
             </button>
           </div>
       </section>
+
+     
    </div>
-      <%- include('./partials/quizasTeInterese',products) %>
+
+   
+      <section class="articulosHome">
+         <h2 class="title">Ofertas de esta temporada</h2>
+         <img src="/images/fondo.jpg" alt="" width="250">
+      </section>
+      
+   <%- include('./partials/quizasTeInterese',products) %>
 
       <section class="articulosHome" >
          <section class="sectionTour" >
