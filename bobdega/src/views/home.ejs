@@ -7,15 +7,19 @@
       </section>
 
       <section class="articulosHome">
+         <% if (locals.isAnUserLogged){ %>
          <a href="/product">
             <h2 class="title">Ver Todos los Productos</h2>
          </a>
+         <% } %> 
       </section>
 
       <section>
+         <% if (locals.isAnUserLogged){ %>
          <a href="/product/create">
             <h2 class="title">Crear Producto</h2>
          </a>
+         <% } %> 
       </section>
      <div class="homeCarrousel ">
       <section class="articulosHome">

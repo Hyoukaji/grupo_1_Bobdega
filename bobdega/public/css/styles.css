@@ -244,9 +244,6 @@ main {
     flex-direction: rows;
 }
 
-.editProductDetail div {
-    border: dotted gray 1px;
-}
 
 .sectionTour {
     border: #6f1c48 1px solid;
@@ -509,9 +506,32 @@ main {
     color: #fff;
 }
 
+.desplegables select option {
+    background-color: #6f1c48;
+    color: #fff;
+    border-radius: 20px;
+}
+
 .interes {
     display: flex;
     flex-wrap: wrap;
+}
+
+.editYDelete button{
+    border-radius: 10px;
+    color: #fff;
+    background-color: #6f1c48;
+}
+.imagenProducto {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.imagenProducto img {
+    border: #222 1px solid ;
+    border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 /* Fin  Products Detail y Quizas Te Interese*/
