@@ -430,7 +430,7 @@ main {
 }
 /* fin Shopping Cart*/
 
-/* detail y Quizas Te Interese */
+/* product detail y Quizas Te Interese */
 
 .productos img {
     width: 70%;
@@ -478,19 +478,35 @@ main {
 
 .botones{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    
 }
 
-.button{
+.buttons{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin-right: 25px;
+}
+
+.buttons button{
+    border-radius: 10px;
+    background-color: #6f1c48;
+    color: #fff;
 }
 
 .desplegables{
     display: flex;
     flex-direction: column;
     max-width: 150px;
+    margin-right: 25px;
+}
+
+.desplegables select {
+    border-radius: 10px;
+    background-color: #6f1c48;
+    color: #fff;
 }
 
 .interes {
@@ -498,7 +514,7 @@ main {
     flex-wrap: wrap;
 }
 
-/* Fin  Products y Quizas Te Interese*/
+/* Fin  Products Detail y Quizas Te Interese*/
 
 /* Admin Products */
 
@@ -586,24 +602,33 @@ main {
 
 /* catalogo de productos */
 
+.producImage {
+    height: 250px;
+    object-fit: cover;
+    border: #222 1px solid;
+    border-radius: 50%;
+    
+}
 .product {
     display: flex;
     flex-direction: row;
+    margin-left: 80px;
     align-items: center;
     flex-wrap: wrap;
 }
 
 .product li img {
-    width: 50%;
+    width: 48%;
 }
 
 .product li a {
     text-decoration: none;
     color: #fff;
     display: inline-block;
-    background-color: #222;
+    background-color: #6f1c48;
     padding: 3px;
-    border-radius: 0.5em;  
+    border-radius: 20px;
+    width: 125px;
 }
 
 .product li strong {
