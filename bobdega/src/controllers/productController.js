@@ -178,7 +178,7 @@ const controller = {
 	
 
 	update: async (req, res) => {
-		
+		console.log(req.body)
 		const resultValidation = validationResult(req); // validaciones de formulario de create
          console.log("antes de validar")
 

@@ -114,7 +114,34 @@ const controller = {
 		res.clearCookie("userEmail");
 		req.session.destroy();
 		return res.redirect("/");
-	}
+	},
+
+    adminCreate: async (req,res) => {
+        console.log("entre a adminCreate")
+        let searchEmail = req.body.email
+        console.log(req.body)
+        console.log(searchEmail)
+
+        let userToAdmin = await User.findOne({where :{email : searchEmail}})
+        console.log(userToAdmin)
+        
+
+        console.log("voy a updatear")
+        if (userToAdmin){
+            let copy = userToAdmin
+            userToAdmin.update({
+                category:"Admin",},
+                {where: {email:searchEmail}});
+            console.log("update completado")
+        }
+        
+
+        res.redirect("/")
+    },
+
+    rename: (req,res) => {
+        res.render("adminCreate")
+    }
     
 }
 

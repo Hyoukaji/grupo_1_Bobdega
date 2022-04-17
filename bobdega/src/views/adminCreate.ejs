@@ -1,0 +1,22 @@
+<%- include('./partials/header', {pageTitle : 'Crear Admin'}) %> 
+   <main class="logInMain">
+    <i class="fas fa-user-circle" style="font-size: 50px;" ></i>
+
+    <h3>Ingresa la cuenta que se convertirá en Admin</h3>
+    <form action="/user/adminCreate?_method=PUT" method="POST"  id="formLogin" >
+        <div class="loginDiv">
+            <input type="text" name="email" placeholder="Email" class = "form-control">
+            
+        </div>
+                      
+        <div class="buttonDiv">
+            <button type="submit" class="form-control">Cambiar</button>
+        </div>
+       
+
+    </form>
+
+    </main>
+
+    <script src="/js/login.js"></script>
+<%- include('./partials/footer') %> 
