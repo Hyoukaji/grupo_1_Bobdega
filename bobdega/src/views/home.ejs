@@ -7,11 +7,13 @@
       </section>
 
       <section>
+         <% if (locals.isAnAdminLogged){ %>
          <a href="/user/rename">
             <h2 class="title">Crear Admin</h2>
          </a>
+         <% } %> 
       </section>
-      
+
       <section class="articulosHome">
          <% if (locals.isAnUserLogged){ %>
          <a href="/product">
@@ -21,7 +23,7 @@
       </section>
 
       <section>
-         <% if (locals.isAnUserLogged){ %>
+         <% if (locals.isAnAdminLogged){ %>
          <a href="/product/create">
             <h2 class="title">Crear Producto</h2>
          </a>
