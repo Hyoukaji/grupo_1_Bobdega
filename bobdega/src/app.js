@@ -23,8 +23,8 @@ app.use(session({
 	saveUninitialized: true,
 }));
 
-// const userLoggedMD = require("./middlewares/userLoggedMiddleware");
-// app.use(userLoggedMD);  
+ const userLoggedMD = require("./middlewares/userLoggedMiddleware");
+ app.use(userLoggedMD);  
 
 
 app.listen(process.env.PORT || 3000,()=>
