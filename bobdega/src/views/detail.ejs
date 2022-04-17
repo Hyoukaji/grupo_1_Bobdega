@@ -49,7 +49,7 @@
                 <option value="3">Retiro en correo y otros puntos</option>
             </select>
             </div>
-
+            <% if (locals.isAnAdminLogged){ %>
             <form class="editYDelete"  action="/product/edit/<%=producto.id%>" method="get">
                 <button class="form-control"  href="/product/edit/<%=producto.id%>"> Editar </button>
             </form>
@@ -57,8 +57,8 @@
             <form class="editYDelete"  action="/product/<%=producto.id%>?_method=DELETE" method="post">
                 <button class="form-control" type="submit">Borrar producto</button>
             </form>
+            <% } %> 
 
-            
         </article>
 
    </main>
