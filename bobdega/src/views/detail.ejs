@@ -1,54 +1,60 @@
 <%- include('./partials/header', {pageTitle : 'Productos'}) %> 
    <main>
-        <section class="">
-            <h2><%= producto.name %></h2>
-            <img src="/uploads/<%=producto.image%>" alt="" style="max-width: 200px;">
+        <section class="editProductDetail">
+            <div class="imagenProducto">
+                <h2><%= producto.name %></h2>
+                <img src="/uploads/<%=producto.image%>" alt="" style="max-width: 200px;">
+            </div>
+            <div >
+           
             <div>
-                    <p>PRECIO</p>
-                    <h3><%= producto.price %></h3>
 
-                    <p>TIPO</p>
-                    <p><%= producto.types.name %></p>
                     
-                    <p>ALCOHOL</p>
-                    <p><%= producto.alcohol %></p>
+                    <h3>Precio:   <%= producto.price %></h3>
 
-                    <p>DESCRIPCIÓN</p>
-                    <p><%= producto.description %></p>
+                    
+                    <p>Tipo:  <%= producto.types.name %></p>
+                    
+                    
+                    <p>Alcohol: <%= producto.alcohol %></p>
+
+                    
+                    <p>Descripcion:<%= producto.description %></p>
                     
                     <p>PAÍS</p>
                     <p>Argentina</p>
             </div>
-            <article class="botones">
-                <div class="button">
-                <button type="submit">¡Comprar Ahora!</button>
-                
-                <form action="/product/buyProduct/<%=producto.id%>" method="post">
-                    <button type="submit">Agregar al carrito <i class="fas fa-cart-plus"></i></button>
-                </form>
-                </div>
-                <div class="desplegables">
-                <select name="cantidad" id="cant">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-                <select name="met-en" id="met">
-                    <option value="1">Envio a domicilio</option>
-                    <option value="2">Retiro por sucursal</option>
-                    <option value="3">Retiro en correo y otros puntos</option>
-                </select>
-                </div>
-
-                <form action="/product/<%=producto.id%>?_method=DELETE" method="post">
-                    <a href="/product/edit/<%=producto.id%>"> Editar </a>
-                    <button type="submit">Borrar producto</button>
-                </form>
-            </article>
+            
+            </div>
             
             
         </section>
+        <article class="botones">
+            <div class="buttons">
+            <button class="form-control" type="submit">¡Comprar Ahora!</button>
+            
+            <form action="/product/buyProduct/<%=producto.id%>" method="post">
+                <button class="form-control" type="submit">Agregar al carrito <i class="fas fa-cart-plus"></i></button>
+            </form>
+            </div>
+            <div class="desplegables">
+            <select class="form-control" name="cantidad" id="cant">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <select class="form-control" name="met-en" id="met">
+                <option value="1">Envio a domicilio</option>
+                <option value="2">Retiro por sucursal</option>
+                <option value="3">Retiro en correo y otros puntos</option>
+            </select>
+            </div>
 
+            <form class="editYDelete"  action="/product/<%=producto.id%>?_method=DELETE" method="post">
+                <button class="form-control"  href="/product/edit/<%=producto.id%>"> Editar </button>
+                <button class="form-control" type="submit">Borrar producto</button>
+            </form>
+        </article>
 
    </main>
 <%- include('./partials/footer') %> 

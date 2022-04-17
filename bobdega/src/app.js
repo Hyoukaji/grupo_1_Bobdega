@@ -8,6 +8,12 @@ const userRoutes = require ('./routes/usersRoutes');
 const cookie = require('cookie-parser');
 const session = require('express-session')
 
+//API
+
+const apiUsersRoutes = require('./routes/apis/apiUsersRoutes')
+const apiProductsRoutes = require('./routes/apis/apiProductsRoutes')
+
+
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 app.set('view engine', 'ejs');
@@ -27,9 +33,9 @@ app.use(session({
  app.use(userLoggedMD);  
 
 
-app.listen(process.env.PORT || 3000,()=>
-    console.log("Levantando un servidor con Express en 3000")
-    ) 
+app.listen(process.env.PORT || 3001,()=>
+    console.log("Levantando un servidor con Express en 3001")
+    )
 
 app.use('/',homeRoutes)
 
@@ -37,6 +43,11 @@ app.use('/product',productRoutes)
 
 app.use('/user', userRoutes);
 
+// API
 
+app.use(apiUsersRoutes);
+app.use(apiProductsRoutes);
 
-
+app.use((req, res, next) => {
+    res.status(404).render('error404');
+});
