@@ -5,7 +5,7 @@ function userLoggedMiddleware (req, res, next) {
 	if (req.session.userLogged !== undefined) {
 		res.locals.isAnUserLogged = true;
 		res.locals.userData = {
-			name: req.session.userLogged.firstName,			
+			name: req.session.userLogged.firstName,			  //valida usuario logueado
 		}
 		if (req.session.userLogged.category == "Admin"){
 			res.locals.isAnAdminLogged = true;

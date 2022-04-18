@@ -1,7 +1,6 @@
-function adminMiddleware(req, res, next) {
+function adminMiddleware(req, res, next) {             //valida si el usuario logueado es un Admin, si no lo es te redirige al home 
     if (req.session.userLogged){
         if (req.session.userLogged.category === "User") {
-            console.log("No puedes crear admin si no eres uno")
             return res.redirect("/");
         } 
     }else{

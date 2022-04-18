@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs')
 const filePath = path.resolve(__dirname, '../../data/users.json');
 
 // Lectura del archivo JSON y parseado a array 
-const usersArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+const usersArray = JSON.parse(fs.readFileSync(filePath, 'utf8'));   /** encriptacion de la contraseña */
 
 function validationPassword (req, res, next) {
     const userToLogin = usersArray.find(oneUser => oneUser.name === req.body.usuario);

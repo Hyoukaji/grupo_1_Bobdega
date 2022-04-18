@@ -11,13 +11,13 @@ const controller = {
         let gift = []
         let tintos = []
         let blancos = []
-        for (let i = 0; i < productsGo.length; i++){
+        for (let i = 0; i < productsGo.length; i++){   //productos de quizas te interese
             products.push(productsGo[i].dataValues)
-            if (productsGo[i].dataValues.typeId == 5){
+            if (productsGo[i].dataValues.typeId == 5){  /**aqui para abajo son los arrays para carruceles */
                 gift.push(productsGo[i].dataValues)
             }else if(productsGo[i].dataValues.typeId == 2){
                 tintos.push(productsGo[i].dataValues)
-            }else if(productsGo[i].dataValues.typeId == 3){
+            }else if(productsGo[i].dataValues.typeId == 3){ 
                 blancos.push(productsGo[i].dataValues)
             }
         }

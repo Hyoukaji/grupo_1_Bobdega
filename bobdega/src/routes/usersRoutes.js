@@ -8,8 +8,10 @@ const validationsLogin = require('../middlewares/validationLogin');
 const upload = require('../middlewares/multer');
 const signInValidations = require('../middlewares/validationSignIn');
 const guestMiddleware = require("../middlewares/guestMiddleware");
-const userLoggedAdminMiddleware = require('../middlewares/userLoggedAdminMiddleware');
-const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
+
+
+// probablemente no se este usando  const userLoggedAdminMiddleware = require('../middlewares/userLoggedAdminMiddleware');
+
 const adminMiddleware = require("../middlewares/adminMiddleware");
 
 

@@ -35,7 +35,7 @@ router.get('/productByCategory/:id', controller.productByCategory);
 router.get('/edit/:id', controller.edit); 
 router.put("/:id", upload.single("imageProduct"), createValidations, controller.update); 
 
-// DELETE ONE PRODUCT/ 
+// eliminar un producto/ 
 router.delete('/:id', controller.destroy);
 
 module.exports = router

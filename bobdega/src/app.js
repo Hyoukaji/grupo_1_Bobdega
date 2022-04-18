@@ -29,8 +29,8 @@ app.use(session({
 	saveUninitialized: true,
 }));
 
- const userLoggedMD = require("./middlewares/userLoggedMiddleware");
- app.use(userLoggedMD);  
+ const userLoggedMD = require("./middlewares/userLoggedMiddleware"); 
+ app.use(userLoggedMD); /**comprueba siempre si el usuario esta logueado */ 
 
 
 app.listen(process.env.PORT || 3001,()=>
