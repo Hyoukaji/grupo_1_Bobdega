@@ -45,50 +45,88 @@
 
    </div>
       
-     <div class="homeCarrousel ">
-      
+     
 
-      <section class="articulosHome" >
-         <h2 class="title">Quizás te interese</h2>
-         <div id="carouselExampleInterval"  class="carousel slide" data-bs-ride="carousel">
+     <div class="carruselTipos">
+
+
+      <section class="articulosHome2">
+         <h2 class="title">Regalos</h2>
+         <div id="carouselExampleInterval1"  class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="2000">
-               <a href="/product/detail/1"><img src="/uploads/<%= products[0].image %>" width="300"  alt="Producto 1"></a> 
+               <a href="/product/detail/<%= gift[0].id %>"><img src="/uploads/<%= gift[0].image %>" width="300"  alt="Producto 1"></a> 
                </div>
               <div class="carousel-item" data-bs-interval="2000">
-               <a href="/product/detail/2"><img src="/uploads/<%= products[1].image %>" width="300"  alt="Producto 1"></a> 
+               <a href="/product/detail/<%= gift[1].id %>"><img src="/uploads/<%= gift[1].image %>" width="300"  alt="Producto 2"></a> 
               </div>
               <div class="carousel-item">
-               <a href="/product/detail/3"><img src="/uploads/<%= products[2].image %>" width="300"  alt="Producto 1"></a> 
+               <a href="/product/detail/<%= gift[2].id %>"><img src="/uploads/<%= gift[2].image %>" width="300"  alt="Producto 3"></a> 
               </div>
-              <div class="carousel-item" data-bs-interval="2000">
-               <a href="/product/detail/2"><img src="/uploads/<%= products[3].image %>" width="300"  alt="Producto 1"></a> 
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-               <a href="/product/detail/2"><img src="/uploads/<%= products[4].image %>" width="300"  alt="Producto 1"></a> 
-              </div>
-              
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval1" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval1" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
           </div>
       </section>
 
-     
-   </div>
-
-   
-      <section class="articulosHome">
-         <h2 class="title">Ofertas de esta temporada</h2>
-         <img src="/images/fondo.jpg" alt="" width="250">
+      <section class="articulosHome2">
+         <h2 class="title">Tintos</h2>
+         <div id="carouselExampleInterval2"  class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="2000">
+               <a href="/product/detail/<%= tintos[0].id %>"><img src="/uploads/<%= tintos[0].image %>" width="300"  alt="Producto 1"></a> 
+               </div>
+              <div class="carousel-item" data-bs-interval="2000">
+               <a href="/product/detail/<%= tintos[1].id %>"><img src="/uploads/<%= tintos[1].image %>" width="300"  alt="Producto 2"></a> 
+              </div>
+              <div class="carousel-item">
+               <a href="/product/detail/<%= tintos[2].id %>"><img src="/uploads/<%= tintos[2].image %>" width="300"  alt="Producto 3"></a> 
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
       </section>
-      
+
+      <section class="articulosHome2">
+         <h2 class="title">Blancos</h2>
+         <div id="carouselExampleInterval3"  class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="2000">
+               <a href="/product/detail/<%= blancos[0].id %>"><img src="/uploads/<%= blancos[0].image %>" width="300"  alt="Producto 1"></a> 
+               </div>
+              <div class="carousel-item" data-bs-interval="2000">
+               <a href="/product/detail/<%= blancos[1].id %>"><img src="/uploads/<%= blancos[1].image %>" width="300"  alt="Producto 2"></a> 
+              </div>
+              <div class="carousel-item">
+               <a href="/product/detail/<%= blancos[2].id %>"><img src="/uploads/<%= blancos[2].image %>" width="300"  alt="Producto 3"></a> 
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval3" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval3" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      </section>
+
+
+     </div>
    <%- include('./partials/quizasTeInterese',products) %>
 
       <section class="articulosHome" >

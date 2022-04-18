@@ -10,20 +10,16 @@
 </head>
 <body>
     <header>
-        <div class="general">
-            <div class="imagen" > 
-                <a href="/"><img src="/images/final_2.png" alt="Bobdega" width="80"></a>
-            </div>
-
-          
-            <div class="barraBusqueda">
-                <form action="/product/search" method="post">
-                    <input name="search" type="text" placeholder="Buscar productos">
-                    <button type="submit" name="buscar"><i class="fas fa-search"></i></button>
-                </form>    
-            </div>
-
+       
+          <nav class="navbar navbar-light bg-light">
             
+            <a href="/"><img src="/images/final_2.png" alt="Bobdega" width="80"></a>
+            <div class="barraBusqueda">
+                <form action="/product/search" method="post" class="form-inline">
+                   <input name="search" class="form-control mr-sm-2" type="search" placeholder="Buscar productos" aria-label="Search">
+                    <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                  </form>
+            </div>
             <% if (locals.isAnUserLogged){ %>
                 <h2><%= locals.userData.name %></h2>
                 <form action="/user/logout" method="post" class="buttonForm">
@@ -37,8 +33,9 @@
                 <li><a href="/product/shoppingCart"><i class="fas fa-cart-plus"></i></a></li>
                 </ul>
                 <% } %> 
-            
-        </div>
+          </nav>
+
+
         <div class="cate-div">
             <nav class="menuCategorias">
                 <ul class="categorias">
