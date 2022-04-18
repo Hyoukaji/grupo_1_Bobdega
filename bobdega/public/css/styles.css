@@ -35,6 +35,11 @@ header {
     background-color: white ;
 }
 
+header nav {
+    align-content: space-around;
+    justify-content: space-around
+}
+
 .general {
     display: flex;
     width: 100%;
@@ -44,7 +49,12 @@ header {
 
 .articulosHome {
     margin: 40px;
+    
 
+}
+
+.articulosHome img {
+    border-radius: 50%;
 }
 
 
@@ -68,9 +78,6 @@ header {
     width: 70%;
     border-radius: 18px;
     height: 30px;
-    position: relative;
-    top: 40px;
-    left: 10px;
     border-color: #6f1c48;
 }
 
@@ -81,10 +88,9 @@ header {
     border-radius: 10px;
 }
 
+
 .barraBusqueda form button{
-    position: relative;
-    right: -10px;
-    height: 15px;
+    
     background-color: transparent;
     color: (0,0,0,0.5);
     border-color: transparent;
@@ -260,6 +266,30 @@ main {
     justify-content: space-around;
 }
 
+.buttonForm1 section a {
+    color: white;
+    background-color: #6f1c48;
+    border-color: #6f1c48;
+    border-radius: 10px;
+    display: flex;
+    justify-items: auto;
+    margin: 20px;
+    text-decoration: none;
+}
+.buttonForm1 h2 {
+    margin-top: 2px;
+    padding: 3px;
+    font-size: 13px;
+}
+.buttonForm1{
+    display: flex;
+    
+    flex-wrap: wrap;
+
+    
+}
+
+
 
 
 /* fin  Home */
@@ -430,8 +460,25 @@ main {
 /* product detail y Quizas Te Interese */
 
 .productos img {
+    border-radius: 50%;
     width: 70%;
 }
+
+.carruselTipos {
+    width: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+}
+.articulosHome2 img{
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+
+
 
 .productos{ 
     display: flex;
@@ -526,6 +573,8 @@ main {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    height: 100%;
+    width: 100%;
 }
 
 .imagenProducto img {
@@ -537,6 +586,8 @@ main {
 /* Fin  Products Detail y Quizas Te Interese*/
 
 /* Admin Products */
+
+
 
 .cardCreate{
     max-width: 100%;
@@ -729,6 +780,31 @@ main {
 /* media queris */
 
 @media (min-width:768px) {
+
+    .carruselTipos {
+     flex-direction: row;
+    }
+
+    .articulosHome2 img{
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+        border-radius: 50%;
+    }
+
+    .buttonForm1 section a {
+        display: flex;
+        justify-items: auto;
+        margin: 20px;
+        text-decoration: none;
+    }
+    .buttonForm1 h2 {
+        margin-top: 2px;
+        padding: 3px;
+        font-size: 25px;
+    }
+
+
     .right {
         position: relative;
         bottom: 19px;
