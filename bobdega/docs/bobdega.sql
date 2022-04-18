@@ -22,7 +22,7 @@ SET time_zone = "+00:00";
 --
     DROP DATABASE IF EXISTS bobdega;
     CREATE DATABASE bobdega;
-    USE bobdega
+    USE bobdega;
 -- --------------------------------------------------------
 
 --
