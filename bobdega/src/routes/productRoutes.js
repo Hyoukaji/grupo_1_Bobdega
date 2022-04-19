@@ -31,7 +31,7 @@ router.get('/create',userMiddleware,   controller.create);
 router.post('/search',userMiddleware, controller.search);
 router.post('/', upload.single('imageProduct'),createValidations, controller.store); 
 router.get('/detail/:id', controller.detail); 
-router.get('/productByCategory/:id', controller.productByCategory); 
+router.get('/productByCategory/:id',userMiddleware, controller.productByCategory); 
 router.get('/edit/:id', controller.edit); 
 router.put("/:id", upload.single("imageProduct"), createValidations, controller.update); 
 

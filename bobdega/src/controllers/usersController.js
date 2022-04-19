@@ -87,9 +87,10 @@ const controller = {
 				// 3. Guardar al usuario logeado en Session
 		 		delete userToLogin.password; // Borramos el password del usuario que estamos almacenando en sesion
 		 		req.session.userLogged = userToLogin;
-                
-		 		 if(req.body.reUser) {
-		 		 	res.cookie("userEmail", userToLogin.email, { maxAge: (1000 * 60) * 10 }); //cookie tiempo de logueo 
+                 
+		 		 if(req.body.reUser === "on") {
+                    console.log("ENTRE AL IF DE REUSER")
+		 		 	res.cookie("usuario", userToLogin.email, { maxAge: (1000 * 60) * 10}); //cookie tiempo de logueo 
 		 		 }
             
 		 		// 4. Finalmente redireccionamos a user/profile
@@ -111,7 +112,7 @@ const controller = {
     },
 
     logout: (req, res) => {
-		res.clearCookie("userEmail");      //cookie para desloguear al usuario 
+		res.clearCookie("usuario");      //cookie para desloguear al usuario 
 		req.session.destroy();
 		return res.redirect("/");
 	},

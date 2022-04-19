@@ -14,7 +14,7 @@ const apiUsersRoutes = require('./routes/apis/apiUsersRoutes')
 const apiProductsRoutes = require('./routes/apis/apiProductsRoutes')
 
 
-
+app.use(cookie());
 app.use(express.static(path.resolve(__dirname, '../public')));
 app.set('view engine', 'ejs');
 
