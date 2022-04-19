@@ -34,7 +34,7 @@ const usersController = {
                     name: data.firstName,
                     lastname: data.lastName,
                     email: data.email,
-                    image: data.image
+                    image: 'http://localhost:3001/images/uploads/' + data.image
                     };
                     
                 res.status(200).json( {

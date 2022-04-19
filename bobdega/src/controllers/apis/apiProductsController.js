@@ -66,7 +66,7 @@ const productsController = {
                     price: data.price,
                     alcohol: data.alcohol,
                     description: data.description,
-                    image: `uploads/${data.image}`
+                    image: `/images/uploads/${data.image}`
                   
                     };
                     
