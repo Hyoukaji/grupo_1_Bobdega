@@ -1,11 +1,17 @@
 const path = require('path');
 const fs = require('fs');
 
-const { Product , Type } = require("../../database/models");
+const { Product , Type , User } = require("../../database/models");
 
 
 const controller = {
     home : async (req,res)=>{
+        // if (req.cookies){
+        //     const usuarioGo = await User.findOne({where :{email : req.cookies.usuario}})
+        //     console.log(usuarioGo.dataValues)
+        //     req.session.userLogged = usuarioGo.dataValues;
+
+        // }
         const productsGo = await Product.findAll()
         let products = []
         let gift = []
