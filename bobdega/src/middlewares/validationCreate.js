@@ -13,7 +13,7 @@ validationCreate =  [
 
     body('price')
         .notEmpty().withMessage('Completar precio').bail()  /** validacion input precio */
-        .isInt().withMessage("Tiene que ser un número"),
+        .isFloat().withMessage("Tiene que ser un número"),
     
     body('alcohol')
         .notEmpty().withMessage('Completar volumen alcoholico').bail()  /**validacion input alcohol */

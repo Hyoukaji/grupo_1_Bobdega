@@ -89,7 +89,7 @@ const controller = {
 		 		req.session.userLogged = userToLogin;
                 
 		 		 if(req.body.reUser) {
-		 		 	res.cookie("userEmail", userToLogin.email, { maxAge: (1000 * 60) * 1000 }); //cookie tiempo de logueo 
+		 		 	res.cookie("userEmail", userToLogin.email, { maxAge: (1000 * 60) * 10 }); //cookie tiempo de logueo 
 		 		 }
             
 		 		// 4. Finalmente redireccionamos a user/profile

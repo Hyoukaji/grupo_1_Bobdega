@@ -8,7 +8,7 @@ const productsController = {
         Product.findAll({
             include: ["types"]   
         })
-        .then(allUsers => {
+        .then(allProducts => {
             let products = [];
             let countByCategory = {
                 espumantes: 0,
@@ -17,7 +17,7 @@ const productsController = {
                 rosados: 0,
                 regalos: 0,
             }
-            allUsers.forEach(data => {
+            allProducts.forEach(data => {
                 let product = {
                     id: data.id,
                     name: data.name,
@@ -46,13 +46,12 @@ const productsController = {
                
             })
             res.status(200).json( {
-                meta: {
+                    
                     status:200,
                     count: products.length,
                     countByCategory: countByCategory,
-                    url: "api/products"
-                },
-                products
+                    url: "api/products",
+                    products
             })
         })
     },
@@ -72,11 +71,9 @@ const productsController = {
                     };
                     
                 res.status(200).json( {
-                    meta: {
                         status:200,
-                        url: "api/product/:id"
-                    },
-                    product
+                        url: "api/product/:id",
+                        product
                 });
             });
     }

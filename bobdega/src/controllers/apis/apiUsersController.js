@@ -19,12 +19,10 @@ const usersController = {
                
             })
             res.status(200).json( {
-                meta: {
                     status:200,
                     count: users.length,
-                    url: "api/users"
-                },
-                users
+                    url: "api/users",
+                    users
             })
         })
     },
@@ -40,10 +38,8 @@ const usersController = {
                     };
                     
                 res.status(200).json( {
-                    meta: {
-                        status:200,
-                        url: "api/users/:id"
-                    },
+                    status:200,
+                    url: "api/users/:id",
                     user
                 });
             });

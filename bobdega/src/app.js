@@ -48,6 +48,7 @@ app.use('/user', userRoutes);
 app.use(apiUsersRoutes);
 app.use(apiProductsRoutes);
 
+//error 404
 app.use((req, res, next) => {
     res.status(404).render('error404');
 });

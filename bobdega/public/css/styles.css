@@ -788,6 +788,9 @@ main {
      flex-direction: row;
     }
 
+    .carruselTipos section {
+     width: 33.33%;
+       }
     .articulosHome2 img{
         width: 300px;
         height: 300px;
