@@ -775,7 +775,10 @@ main {
 
 /* fin de carrusel */
 
-
+.error404 {
+    width: 100%;
+    background-color: #fff;
+}
 
 /* media queris */
 

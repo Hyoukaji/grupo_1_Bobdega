@@ -16,7 +16,7 @@ const validateField = (e) => {
     const spanError = field.nextElementSibling;
     if (field.value.trim() === "") {
     field.classList.add("is-invalid");
-    spanError.innerText = `El campo ${field.placeholder} es obligatorio`;
+    spanError.innerText = `El campo ${field.placeholder} es obligatorio`;  
     spanError.classList.add ("invalid-feedback");
     errorCount = true;
     } else {
@@ -29,7 +29,7 @@ const validateField = (e) => {
 
 const validateName = (e) => {
     const field = e.target;
-    const spanError = field.nextElementSibling;
+    const spanError = field.nextElementSibling;                        /** validacion input nombre */
     if (field.value.trim() === "" ||  field.value.length < 5) {
     field.classList.add("is-invalid");
     spanError.innerText = `El campo ${field.placeholder} es obligatorio y debe tener como minimo 5 caracteres`;
@@ -46,7 +46,7 @@ const validateName = (e) => {
 const validateDescription = (e) => {
     const field = e.target;
     const spanError = field.nextElementSibling;
-    if (field.value.trim() === "" ||  field.value.length < 20) {
+    if (field.value.trim() === "" ||  field.value.length < 20) { /** validacion campo descripcion y el largo */
     field.classList.add("is-invalid");
     spanError.innerText = `El campo ${field.placeholder} es obligatorio y debe tener como minimo 20 caracteres`;
     spanError.classList.add ("invalid-feedback");
@@ -65,7 +65,7 @@ imageProduct.addEventListener("change", (e) => {
     const spanError = field.nextElementSibling;
 
     let extensions = /(.jpg|.jpeg|.png|.gif)$/i;
-        if(!image.match(extensions)){
+        if(!image.match(extensions)){                      /**validacion formato de imagen  */
             field.classList.add("is-invalid");
             spanError.innerText = `El formato de imagen debe ser .jpg, .jpeg, .png o gif `;
             spanError.classList.add ("invalid-feedback");
@@ -93,7 +93,7 @@ imageProduct.addEventListener("change", (e) => {
             const spanError = oneField.nextElementSibling;
             if (field.value.trim() === "") {
                 field.classList.add("is-invalid");
-                spanError.innerText = `El campo ${field.placeholder} es obligatorio`;
+                spanError.innerText = `El campo ${field.placeholder} es obligatorio`; /** si no hay erroes envia el formulario */
                 spanError.classList.add ("invalid-feedback");
                 errorCount = true;
                 } else {

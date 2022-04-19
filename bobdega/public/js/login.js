@@ -7,7 +7,7 @@ const validateField = (e) => {
     const field = e.target;
     const spanError = field.nextElementSibling;
     if (field.value.trim() === "") {
-    field.classList.add("is-invalid");
+    field.classList.add("is-invalid");                                    /**valida email */
     spanError.innerText = `El campo ${field.placeholder} es obligatorio`;
     spanError.classList.add ("invalid-feedback");
     } else {
@@ -25,7 +25,7 @@ email.addEventListener("blur", (e) => {
 
     if (field.value.trim() === "") {
     field.classList.add("is-invalid");
-    spanError.innerText = `El campo ${field.placeholder} es obligatorio`;
+    spanError.innerText = `El campo ${field.placeholder} es obligatorio`;     /** valida que la clave sea correcta*/
     spanError.classList.add ("invalid-feedback");
 
     } else if (!field.value.match(regexEmail)) {
@@ -37,7 +37,6 @@ email.addEventListener("blur", (e) => {
         spanError.innerText = "";
         spanError.classList.remove("invalid-feedback");
         field.classList.add("is-valid");
-        console.log("Estaria todo ok");
 
     }
 })
@@ -52,7 +51,7 @@ formCreate.addEventListener("submit", (e) => {
     const formField = [...formCreate.elements];
     formField.pop();
     
-    formField.forEach(oneField => {
+    formField.forEach(oneField => {                                  /** si no hay errores envia el formulario, si los hay muestra los errores */
         const spanError = oneField.nextElementSibling;
         if (field.value.trim() === "") {
             field.classList.add("is-invalid");
