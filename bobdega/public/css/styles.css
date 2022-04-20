@@ -247,7 +247,8 @@ main {
 
 .editProductDetail {
     display: flex;
-    flex-direction: rows;
+    flex-direction: column;
+    
 }
 
 
@@ -522,16 +523,27 @@ main {
 
 .botones{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     
     
 }
 
+.botones select {
+    width: 172px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.botones form button {
+    width: 172px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .buttons{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 25px;
+    margin-top: 5px;
 }
 
 .buttons button{
@@ -683,9 +695,9 @@ main {
 .product {
     display: flex;
     flex-direction: row;
-    
     align-items: center;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .product li img {
@@ -784,8 +796,18 @@ main {
 
 @media (min-width:768px) {
 
-    .product{
-        margin-left: 80px;
+    .botones{
+        display: flex;
+        flex-direction: row;
+        
+        
+    }
+
+   
+    .editProductDetail {
+        display: flex;
+        flex-direction: row;
+        
     }
 
     .carruselTipos {
