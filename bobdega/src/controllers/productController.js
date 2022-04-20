@@ -15,7 +15,7 @@ const products = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
 const controller = {
 	mock: async (req, res) => {
-		const mockData = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../MOCK_DATA.json"), "utf8")); // averiguar que hace 
+		const mockData = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../MOCK_DATA.json"), "utf8")); 
 		const x = await Product.bulkCreate(mockData);
 		console.log(x)
 		return res.json(mockData);
@@ -222,33 +222,37 @@ const controller = {
 	},										/**SI EMMM NO ANDA EN REALIDAD EL CARRITO, ES SOLO UNA MUESTRA */
 
 	buyProduct: async (req,res) => {/**agregamos un producto al carrito del usuario logueado */
-		
+		console.log("entre al buyProduct")
 		let user = req.session.userLogged
 		let uId = user.id
 		let carts = []
+		let cId = null
 		const cartGo = await Cart.findAll()/**buscamos todos los carritos */
 		for (let i = 0; i < cartGo.length; i++){
 			carts.push(cartGo[i].dataValues)
 		}
-		
+		console.log(carts)
 		if (carts != undefined){		/**si hay carritos buscamos el q le pertenece al usuario logueado (tal vez deba ir un []) */
-			
+			console.log(uId)
 			const myCart = carts.find(function(element) {
-				return element.userId = uId;
+			return element.userId === uId;
 			  });
+			console.log("myCart")
+			console.log(myCart)
 			if (myCart){/**si tiene un carrito guardamos el id de ese carrito */
-				let cId = myCart.id
+				cId = myCart.id
 			}else{/**si no tenia carrito le hacemos uno con el ultimo id */
-				let cId = carts.length + 1
+				cId = carts.length + 1
 				const createCart = await Cart.create({ 
 					userId : uId });
 			}
 		}else{							/**si no existe ningun carrito creamos uno para el usuario logueado */
-			let cId = 1
+			cId = 1
 			const createCart = await Cart.create({ 
 				userId : uId });
 		}
-		
+		console.log("id de lcarrito")
+		console.log(cId)
 		const producto = await Product.findByPk(req.params.id, { include: ["types"] }); 	/**buscamos el producto por id */
 		const createProductInCart = await ProductCart.create({ /**"CREAMOS" el producto en el carrito */
 			productId: producto.id,

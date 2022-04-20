@@ -120,32 +120,18 @@ const controller = {
     adminCreate: async (req,res) => {
         console.log("entre a adminCreate")  //formulario para crear admin
         let searchEmail = req.body.email
-        console.log(req.body)
-        console.log(searchEmail)
-        // let users = []
-        // let userToAdminGo = await User.findAll()
+       
 
-
-        // for (let i = 0; i < userToAdminGo.length; i++){
-        //     users.push(userToAdminGo[i].dataValues)
-        //    }
         
-        // let userToAdminA = users.filter((oneUser)=>{
-        //     return oneUser.email == searchEmail
-        // })
-        
-        // let userToAdmin = userToAdminA[0]
         let userToAdmin = await User.findOne({where :{email : searchEmail}})
         console.log(userToAdmin)
         
         let usuario = userToAdmin
-        console.log("voy a updatear")
         if (userToAdmin){
             let copy = userToAdmin
             userToAdmin.update({
                 category:"Admin",},
                 {where: {email:searchEmail}});
-            console.log("update completado")
         }else{
             console.log("Debe ser un email registrado") /**esto deberia ser un alert */
             res.redirect("/user/rename")
