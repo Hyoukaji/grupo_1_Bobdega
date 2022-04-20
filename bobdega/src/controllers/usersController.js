@@ -138,7 +138,7 @@ const controller = {
         let userToAdmin = await User.findOne({where :{email : searchEmail}})
         console.log(userToAdmin)
         
-        let usuario = userToAdmincd 
+        let usuario = userToAdmin
         console.log("voy a updatear")
         if (userToAdmin){
             let copy = userToAdmin

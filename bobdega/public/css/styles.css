@@ -683,7 +683,7 @@ main {
 .product {
     display: flex;
     flex-direction: row;
-    margin-left: 80px;
+    
     align-items: center;
     flex-wrap: wrap;
 }
@@ -783,6 +783,10 @@ main {
 /* media queris */
 
 @media (min-width:768px) {
+
+    .product{
+        margin-left: 80px;
+    }
 
     .carruselTipos {
      flex-direction: row;
