@@ -138,7 +138,7 @@ const controller = {
         let userToAdmin = await User.findOne({where :{email : searchEmail}})
         console.log(userToAdmin)
         
-
+        let usuario = userToAdmincd 
         console.log("voy a updatear")
         if (userToAdmin){
             let copy = userToAdmin
@@ -152,12 +152,13 @@ const controller = {
         }
         
 
-        res.redirect("/")
+        res.render("adminUp",{usuario})
     },
 
     rename: (req,res) => {
         res.render("adminCreate")  // renderiza formulario admin create 
     }
+
     
 }
 
