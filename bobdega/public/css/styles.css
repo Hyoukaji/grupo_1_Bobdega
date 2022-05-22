@@ -32,7 +32,7 @@ main form input{
 /* HEADER */
 
 header {
-    background-color: white ;
+    background-color: #FFFFFF;
 }
 
 header nav {
@@ -326,6 +326,10 @@ main {
     margin-top: 20px;
 }
 
+.ImagenLogo{
+    margin-left: 5px;
+}
+
 .logos {
     align-items: baseline;
     margin-bottom: 10px;
@@ -460,6 +464,11 @@ main {
 
 /* product detail y Quizas Te Interese */
 
+
+.detalleProducto{
+    padding: 10px;
+}
+
 .productos img {
     border-radius: 50%;
     width: 70%;
@@ -587,6 +596,8 @@ main {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     height: 100%;
     width: 100%;
+    max-width: fit-content;
+    align-self: center;
 }
 
 .imagenProducto img {
@@ -1020,5 +1031,7 @@ main {
     .homeCarrousel section {
         margin-inline: 100px;
     }
-    
+    .imagenProducto {
+        max-width: fit-content;
+    }
 }
